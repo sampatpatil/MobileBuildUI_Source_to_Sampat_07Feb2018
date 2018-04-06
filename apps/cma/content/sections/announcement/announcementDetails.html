@@ -1,0 +1,28 @@
+﻿#
+var baseQuery='State.Query.'+data.QueryId+'.Announcements.selectedItem';
+var Content = data.AP.Config.loadQuery(data.QueryId).get('Announcements.selectedItem.Content');
+#
+<div class="Field">
+    <span class="FieldTitle">Title:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.Title"></span>
+</div>
+<div class="Field">
+    <span class="FieldTitle">Date:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.SubTitle"></span>
+</div>
+<!--<div class="Field">
+    <span class="FieldTitle">Created On:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.CreatedOn"></span>
+</div>-->
+<!-- <div class="Field">
+    <span class="FieldTitle">Category:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.Category"></span>
+</div> -->
+<div class="Field">
+    <span class="FieldTitle">Platforms:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.Platforms"></span>
+</div>
+<div class="Field">
+    <span class="FieldTitle">Message:</span>
+    <span class="FieldValue">#=Content#</span>
+</div>

@@ -1,0 +1,29 @@
+﻿#
+var platformSelectorTitle=data.T('sections.addNewApp.platformSelector.title'),
+    authenticationConfigurationTitle=data.T('sections.addNewApp.authenticationConfiguration.title'),
+    applicationSettingsTitle=data.T('sections.addNewApp.applicationSettings.title'),
+    uploadImagesTitle=data.T('sections.addNewApp.uploadImages.title'),
+    navigationPanelTitle=data.T('sections.addNewApp.navigationPanel.title'),
+    baseQuery='State.Query.'+data.QueryId+'.Form';
+#
+
+ <!-- <div class="Header">#:navigationPanelTitle#</div> -->
+ <div style="font-size:1.2em; font-weight:700;">Section Menu:</div>
+<div style="display:flex;">
+<div class="StatusContainer">
+    <!-- Basic Settings -->
+    <!-- <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationSettings.isComplete,ActiveStep:#=baseQuery#.ApplicationSettings.isActive}">#:applicationSettingsTitle#</span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationSettings.isComplete,ActiveStep:#=baseQuery#.ApplicationSettings.isActive}">Company Details</span>
+    
+</div>
+<div class="StatusContainer">
+    <!-- Application Filters -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationFilter.isComplete,ActiveStep:#=baseQuery#.ApplicationFilter.isActive}">Application Filters</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- Build App -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.NotificationList.isComplete,ActiveStep:#=baseQuery#.NotificationList.isActive}">Notifications</span>
+</div>
+<!-- <div class="cmaicons cmaicons-BuildApp2 cmaicons-3x"></div> -->
+</div>

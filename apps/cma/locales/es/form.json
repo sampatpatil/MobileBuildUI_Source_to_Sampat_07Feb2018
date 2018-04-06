@@ -1,0 +1,241 @@
+﻿{
+  "UserName": {
+    "label": "User Name",
+    "help": "Enter User Name",
+    "placeholder": "User Name"
+  },
+  "DomainUserName": {
+    "label": "Ex: Domain\\UserName"
+  },
+  "ServerName": {
+    "label": "Server Name",
+    "help": "Server Name",
+    "placeholder": "Server Name"
+  },
+  "User": {
+    "label": "User:",
+    "help": "User",
+    "placeholder": "User"
+  },
+  "UserCB": {
+    "label": "User:",
+    "help": "Select User",
+    "placeholder": "Select User"
+  },
+  "Password": {
+    "label": "Password",
+    "help": "Enter Password",
+    "placeholder": "Password"
+  },
+  "Domain": {
+    "label": "Domain",
+    "help": "Enter Domain Name",
+    "placeholder": "Enter Domain Name"
+  },
+  "StaySignedIn": {
+    "label": "Stay signed in",
+    "help": "Stay signed in",
+    "placeholder": "Stay signed in"
+  },
+  "RememberMe": {
+    "label": "Remember Me",
+    "help": "Remember Me"
+  },
+  "Comment": {
+    "label": "Comment",
+    "help": "Enter Comment",
+    "placeholder": "Enter Comment"
+  },
+  "AppTitle": {
+    "label": "App Title",
+    "help": "Enter Title",
+    "placeholder": "Enter Title"
+  },
+  "Category": {
+    "label": "Category",
+    "help": "Select Category",
+    "placeholder": "Select Category"
+  },
+  "AppLogo": {
+    "label": "App Logo",
+    "help": "Upload App Logo",
+    "placeholder": "Upload App Logo"
+  },
+  "AppOverview": {
+    "label": "Overview",
+    "help": "Enter Overview",
+    "placeholder": "Enter Overview"
+  },
+  "SupportedCountries": {
+    "label": "Supported Countries",
+    "help": "Select Supported Countries",
+    "placeholder": "Select Supported Countries"
+  },
+  "SupportedLocale": {
+    "label": "Supported Languages",
+    "help": "Select Supported Languages",
+    "placeholder": "Select Supported Languages"
+  },
+  "SupportDocumentLink": {
+    "label": "Support Document Link",
+    "help": "Enter Support Document Link",
+    "placeholder": "Enter Support Document Link"
+  },
+  "LicenceAgreement": {
+    "label": "End User Licence Agreement (optional)",
+    "help": "End User Licence Agreement",
+    "placeholder": "End User Licence Agreement"
+  },
+  "ScreenShots": {
+    "label": "Screenshots",
+    "help": "Screenshots",
+    "placeholder": "Screenshots"
+  },
+  "PrimaryImage": {
+    "label": "Primary",
+    "help": "Primary Screenshot",
+    "placeholder": "Primary"
+  },
+  "OptionalImage1": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage2": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage3": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage4": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "SupportingFile": {
+    "label": "Supporting File (optional)",
+    "help": "Supporting File",
+    "placeholder": "Supporting File"
+  },
+  "PublishStatus": {
+    "label": "Publish Status",
+    "help": "Publish Status",
+    "placeholder": "Publish Status"
+  },
+  "Warning": { "help": "Warning" },
+  "Buttons": {
+    "Next": "Next",
+    "Previous": "Previous",
+    "Finish": "Finish",
+    "Back": "Back",
+    "Cancel": "Cancel",
+    "Create": "Create",
+    "Save": "Save",
+    "Submit": "Submit",
+    "StartBuild":"Start Build"
+  },
+  "Sections": { "AddNewApp": { "Title": "Add New App" } },
+  "AppName": {
+    "label": "App Name",
+    "help": "Enter App Name",
+    "placeholder": "Enter App Name"
+  },
+  "AppDescription": {
+    "label": "Application Description",
+    "help": "Enter Application Description",
+    "placeholder": "Enter Application Description"
+  },
+  "ApplicationIcon": {
+    "label": "Application Icon",
+    "help": "Select Application Icon"
+  },
+  "BackgroundImage": {
+    "label": "Background Image",
+    "help": "Select Background Image"
+  },
+  "Logo": {
+    "label": "Logo",
+    "help": "Select Logo"
+  },
+  "SplashScreen": {
+    "label": "Splash Screen",
+    "help": "Select Splash Screen"
+  },
+  "StoreLogo": {
+    "label": "Store Logo",
+    "help": "Select Store Logo"
+  },
+  "SiteUrl": {
+    "label": "Server Url",
+    "help": "Enter Server URL",
+    "placeholder": "Enter Server URL"
+  },
+  "ServerInstanceUrl": {
+    "label": "Server Instance Url",
+    "help": "Enter Server Instance URL",
+    "placeholder": "Enter Server Instance URL"
+  },
+  "Name": {
+    "label": "Application Name",
+    "help": "Enter Application Name",
+    "placeholder": "Enter Application Name",
+    "decription": "App name to be displayed on mobile device"
+  },
+  "CompanyName": {
+    "label": " Company Name",
+    "help": "Enter Company Name",
+    "placeholder": "Enter Company Name"
+  },
+  "SelectImageOfSize": {
+    "label": "Select Image of Size "
+  },
+  "RemoveSelectedImage": {
+    "help": "Remove Selected Image"
+  },
+  "Download": {
+    "label": "Click here to download"
+  },
+  "Android": {
+    "label": "Android"
+  },
+  "Apple": {
+    "label": "iPhone and iPad"
+  },
+  "Windows": {
+    "label": "Windows"
+  },
+  "ClientId": {
+    "label": "Client Id",
+    "help": "Enter Client Id",
+    "placeholder": "Enter Client Id"
+  },
+  "ClientSecretId": {
+    "label": "Return URL",
+    "help": "Enter Return URL",
+    "placeholder": "Enter Return URL"
+  },
+  "URL": {
+    "label": "Company Website",
+    "help": "Enter Company Website",
+    "placeholder": "Enter Company Website"
+  },
+  "StagingServerInstanceUrl": {
+    "label": "Staging Server Instance Url",
+    "help": "Enter Staging Server Instance Url",
+    "placeholder": "Enter Staging Server Instance Url"
+  },
+  "ProductionServerInstanceUrl": {
+    "label": "Production Server Instance Url",
+    "help": "Enter Production Server Instance Url",
+    "placeholder": "Enter Production Server Instance Url"
+  },
+  "DevelopmentServerInstanceUrl": {
+    "label": "Development Server Instance Url",
+    "help": "Enter Development Server Instance Url",
+    "placeholder": "Enter Development Server Instance Url"
+  }
+}

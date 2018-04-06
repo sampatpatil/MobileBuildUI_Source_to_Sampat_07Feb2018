@@ -1,0 +1,16 @@
+﻿<div>
+    <div class="topbar">
+        <span class="title" data-bind="html:message">
+        </span>
+        <span class="actions">
+            <input type="button" data-role="button" data-action="close" />
+        </span>
+    </div>
+    <div class="content">
+        <span class="icon24 action"></span>
+        <span data-bind="html:message"></span>       
+        <span class="actions">            
+            <input type="button" data-role="button" data-bind="visible:running" data-action="stop" />
+        </span>
+    </div>
+</div>

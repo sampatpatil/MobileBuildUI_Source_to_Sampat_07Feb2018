@@ -1,0 +1,316 @@
+﻿/*Variables -import */
+@import "../variables.less";
+@import "../utilities.less";
+@borderColor: #57b1c9;
+
+.MyAppsContainer, .AddNewApp {
+    height: 100% !important;
+    width: 88% !important;
+    margin: 0 auto 0 auto !important;
+    position: absolute;
+    right: 0;    
+    .settransition;
+    .innerbox;
+    left: 215px;
+
+    .AppListToolBar, .MyAppListContainer {
+
+        .AddApp {
+            width: 150px;
+            height: 165px;
+            background-color: #fff;
+            border: 1px dashed #a5a5a5 !important;
+            /*color: #333;*/
+            color: #787878;
+            font-size: 13px;
+            margin: 12px 7px;
+            margin: 12px 7px;
+            //box-shadow: 0 0px 10px rgba(0, 0, 0, 0.05), 0 0 3px rgba(0, 0, 0, 0.3) !important;
+            .k-toolbar-button-text {
+                display: inline-block;
+            }
+
+            .plus-sign {
+                font-size: 70px;
+                padding-top: 44px;
+                display: inline-block;
+            }
+
+            &:hover {
+                background-color: #fff !important;
+            }
+        }
+
+        .SearchBox {
+            position: absolute;
+            right: 10px;
+
+            .SearchButton {
+                height: 22px;
+                width: 22px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .UserSettings{
+        
+        .TitleHeader{
+            margin: 10px 0 0 6px;
+            display: block;
+            font-size: 1.75em;
+            font-weight:700;
+            text-transform: uppercase;
+        }
+
+    }
+
+    .MyAppListContainerMainBlock {
+        height: ~"calc(100% - 20px)";
+        display: block;
+        width: 100%;
+        /*margin-top: 30px;*/
+        margin-top: 0;
+
+        .MyAppListContainerBlocks {
+            height: 100%;
+
+            > .Block {
+                height: 100%;
+            }
+
+            .MyAppList {
+                margin: auto;
+                width: 100%;
+                height: 100%;
+
+                .TitleHeader {
+                    margin: 10px 0 0 6px;
+                    display: block;
+                    font-size: 1.75em;
+                    font-weight:700;
+                    text-transform: uppercase;
+                }
+
+                .MyAppListContainer {
+                    margin: 0 0 10px 0;
+                    padding-top: 10px;
+                    width: 100%;
+                    height: 100%;
+
+                    .itemsContainer, .k-widget.k-listview {
+                        position: relative;
+                        border: none;
+                        background-color: transparent;
+                        width: 100%;
+                        height: ~"calc(100% - 45px)";
+
+                        .itemContainer {
+                            margin: 12px 7px;
+                            width: 220px !important;
+                            padding: 15px 0 0;
+                            color: #181818;
+                            cursor: default;
+                            overflow: hidden;
+                            height: 300px;
+                            position: relative;
+                            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.3);
+
+                            &:hover {
+                                box-shadow: 0 0px 10px rgb(0, 0, 0), 0 0 10px rgb(255, 166, 0);
+                                -webkit-transition: box-shadow 0.5s;
+                                transition: box-shadow 0.5s;
+                                .card-front .AppIconHolder{
+                                    /*-webkit-transform: rotateY(-180deg);
+                                    transform: rotateY(-180deg);*/
+                                    background: rgba(87, 177, 201, 0.314) !important;
+                                    /*-webkit-transition: background 0.5s;
+                                    transition: background 0.5s;*/
+                                }
+
+                                .card-back {
+                                    -webkit-transform: rotateY(0);
+                                    transform: rotateY(0);
+                                }
+                            }
+
+                            .card-front {
+                                backface-visibility: hidden;
+                                transition: transform 0.3s;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                text-align: left;
+
+                                .AppVersionHolder{
+                                    position:absolute; 
+                                    right:5px;
+                                    font-size:1.25em; 
+                                    font-weight:700;
+                                    max-width:150px; 
+                                    overflow:hidden; 
+                                    text-overflow:ellipsis; 
+                                    cursor:default;
+                                }
+
+                                .AppIconHolder {
+                                    padding-top: 9px !important;
+                                    height: 50px !important;
+                                    border-bottom:1px solid #aaa;
+                                    /*width: 70px !important;
+                                    border-radius: 80px;*/
+                                    /*background-color: transparent !important;*/
+                                    
+                                    .AppIcon {
+                                        /*height: 43px !important;
+                                        width: auto !important;
+                                        margin: 3px 0 0 0 !important;*/
+                                    }
+
+                                    .AppSymbol {
+                                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                        color: white;
+                                        line-height: 50px;
+                                        font-weight: 600;
+
+                                        .Char1 {
+                                            font-size: 40px;
+                                            text-transform: uppercase;
+                                        }
+
+                                        .Char2 {
+                                            font-size: 25px;
+                                            text-transform: lowercase;
+                                        }
+                                    }
+                                }
+
+                                .AppName {
+                                    height: 30px;
+                                    line-height: 30px;
+                                    text-align: center;
+                                    color: #333;
+                                    background-color: #fff;
+                                    position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    text-overflow: ellipsis;
+                                    font-size: 13px;
+                                }
+                                .AppActionsContainer {
+                                    display: flex;
+                                    height: 50px;
+                                    line-height: 30px;
+                                    text-align: center;
+                                    color: #333;
+                                    background-color: white;
+                                    position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    text-overflow: ellipsis;
+                                    font-size: 13px;
+                                    /*padding:1px;*/
+                                    justify-content: space-around;
+                                    border-top:1px solid #ccc;
+
+                                    .AppActionHolder{
+                                        width:33.33%;
+                                        /*border:1px solid #aaa;*/
+                                        cursor: pointer;
+                                        /*background-image: url(../../../resources/img/sprites/temp_action_icons2.png);*/
+                                        background-repeat: no-repeat;
+                                        color: #156377;
+                                        /*background-size: cover;*/
+
+                                        &.ViewEdit{
+                                            background-image: url(../../../resources/img/svg_icons/Icon_A_View_Edit.svg);
+                                            background-size: 40px;
+                                            background-position: center;
+                                            background-color: transparent;
+
+                                            &:hover{
+                                                /*background-color:#57b1c9;*/
+                                            }
+                                        }
+
+                                        &.Build{
+                                            background-image: url(../../../resources/img/svg_icons/Icon_A_Build_App.svg);
+                                            background-size: 40px;
+                                            background-position: center;
+                                            background-color: transparent;
+                                            &:hover{
+                                                /*background-color:#c9ae57;*/
+                                            }
+                                        }
+
+                                        &.Archive{
+                                            background-image: url(../../../resources/img/svg_icons/Icon_A_Archive.svg);
+                                            background-size: 40px;
+                                            background-position: center;
+                                            background-color: transparent;
+                                            &:hover{
+                                                /*background-color:#c957ac;*/
+                                            }
+                                        }
+
+                                        &.Restore{
+                                            background-position: -317px 6px;
+                                            background-color:#57b8c975;
+                                            &:hover{
+                                                background-color:#57b8c9;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+
+                            .card-back {
+                                backface-visibility: hidden;
+                                transition: transform 0.3s;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                -webkit-transform: rotateY(-180deg);
+                                transform: rotateY(-180deg);
+                                padding: 4px;
+                                color: #000;
+                                background-color: #fff;
+
+                                .AppName {
+                                    font-size: 14px;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    padding-bottom: 6px;
+                                }
+
+                                .Description {
+                                    font-size: 12px;
+                                    height: 114px;
+                                    overflow: hidden;
+                                    width: 100%;
+                                    word-wrap: break-word;
+                                }
+
+                                .Delete {
+                                    position: absolute;
+                                    bottom: 5px;
+                                    right: 5px;
+                                    height: 20px;
+                                    width: 20px;
+                                    background-size: 275px;
+                                    background-position: -67px -553px;
+                                    background-color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

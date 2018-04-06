@@ -1,0 +1,68 @@
+﻿#
+var header=data.T('sections.addNewApp.applicationSettings.title'),
+    decription=data.T('sections.addNewApp.applicationSettings.description'),
+    baseQueryPath='State.Query.'+data.QueryId+'.Form.ApplicationSettings',
+    decriptionText=data.T('form:AppDescription.label'),
+    decriptionHelp=data.T('form:AppDescription.help'),
+    decriptionPlaceholder=data.T('form:AppDescription.placeholder'),
+    nameText=data.T('form:Name.label'),
+    nameHelp=data.T('form:Name.help'),
+    namePlaceholder=data.T('form:Name.placeholder'),
+    nameDescription=data.T('form:Name.decription'),
+    domainText=data.T('form:Domain.label'),
+    domainHelp=data.T('form:Domain.help'),
+    domainPlaceholder=data.T('form:Domain.placeholder'),
+    urlText=data.T('form:URL.label'),
+    urlHelp=data.T('form:URL.help'),
+    urlPlaceholder=data.T('form:URL.placeholder')
+    companyNameText=data.T('form:CompanyName.label'),
+    companyNameHelp=data.T('form:CompanyName.help'),
+    companyNamePlaceholder=data.T('form:CompanyName.placeholder');
+#
+
+<span class="Headers" title="#:header#">#:header#</span>
+
+
+<div class="ApplicationSettingsConatiner custom-scrollable">
+    <span class="Description" title="#:header#">#:decription#</span>
+    <div class="Field">
+        <span class="FieldText required">#:nameText#</span>
+        <input class="FieldInput" title="#:nameHelp#" placeholder="#:namePlaceholder#" data-bind="value:#:baseQueryPath#.Name" type="text" required name="Name" />
+        <span class="FieldDescription">#:nameDescription#</span>
+    </div>
+    <div class="Field">
+        <span class="FieldText">#:decriptionText#</span>
+        <textarea class="FieldInput" title="#:decriptionHelp#" placeholder="#:decriptionPlaceholder#" data-bind="value:#:baseQueryPath#.Description" maxlength="2000"></textarea>
+        <span class="FieldDescription">Maximum 2000 characters</span>
+    </div>
+    <div class="Field">
+        <span class="FieldText required">Mobile App Version</span>
+        <input class="FieldInput" title="Enter Mobile App Version" placeholder="Enter Mobile App Version" data-bind="value:#:baseQueryPath#.AppVersion" type="text" required name="AppVersion" />
+    </div>
+    <div class="Field">
+        <span class="FieldText required">Default Locale</span>
+        <div class="DefaultLocale" title="Select Default Locale" placeholder="Select Default Locale" data-role="dropdownlist" data-bind="value:#:baseQueryPath#.DefaultLocale" data-text-field="Name" data-value-field="Value"></div>
+    </div>
+    <div class="Field">
+        <span class="FieldText required">#:companyNameText#</span>
+        <input class="FieldInput" title="#:companyNameHelp#" placeholder="#:companyNamePlaceholder#" data-bind="value:#:baseQueryPath#.CompanyName" type="text" required name="CompanyName" />
+    </div>
+    <div class="Field">
+        <span class="FieldText required">#:urlText#</span>
+        <input class="FieldInput" title="#:urlHelp#" placeholder="#:urlPlaceholder#" data-bind="value:#:baseQueryPath#.CompanyWebsite" type="text" data-rules="regexValidationForWebAddress" required name="ServerInstanceUrl" />
+    </div>
+    <div class="Field">
+        <span class="FieldText required">Company Support Email</span>
+        <input class="FieldInput" title="Enter Company Support Email" data-rules="regexValidationForEmail" placeholder="Enter Company Support Email" data-bind="value:#:baseQueryPath#.CompanySupportEmail" type="text" required name="CompanySupportEmail" />
+    </div>
+    <div class="Field">
+        <span class="FieldText required">Company Info Email</span>
+        <input class="FieldInput" title="Enter Company Info Email" data-rules="regexValidationForEmail" placeholder="Enter Company Info Email" data-bind="value:#:baseQueryPath#.CompanyInfoEmail" type="text" required name="CompanyInfoEmail" />
+    </div>
+    <div class="Field">
+        <span class="FieldText">Copyright Info</span>
+        <input class="FieldInput" title="Enter Copyright Info" placeholder="Enter Copyright Info" data-bind="value:#:baseQueryPath#.CopyrightInfo" type="text" name="CopyrightInfo" />
+    </div>
+</div>
+
+<div class="Buttons"></div>

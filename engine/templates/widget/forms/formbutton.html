@@ -1,0 +1,15 @@
+	#
+		var TextKey = data.text || '',
+			Text = data.AP.View.Internationalize.translate(TextKey),
+			Action = data.action || '',
+            iconRequired = data.iconRequired ? iconRequired : true,
+			IconClass = data.iconClass || '';
+	#
+	
+	<a href="\\#"
+	   # if(data.id) { #id="#= data.id #"# } #
+	   class="k-button k-button-icontext #= Action # #= data.class||'' #"
+	   data-action="#= Action #">
+        # if(iconRequired == true){ # 	<span class="k-icon #= IconClass #"></span> # }#
+		<span class="k-toolbar-button-text">#= Text #</span>
+	</a>

@@ -1,0 +1,29 @@
+#var itemData = data.itemData;
+if(itemData){#
+<li class="menu-item #=itemData.extraCls||'' # #=itemData.lockedCls||''#">
+    #if(itemData.href) {
+    var targetAttr = itemData.target? kendo.format('target="{0}"',itemData.target):'';
+    #
+    <a class="link" href="#=itemData.href#" #=targetAttr#>
+        <span class="menu-icon #=itemData.iconCls#"></span>
+        <span class="text" title="#= data.T(itemData.text)#">#= data.T(itemData.text)#</span>
+    </a>
+    #}
+    else{#
+    <span class="link"><span class="menu-icon #=itemData.iconCls#"></span> <span class="text" title="#= data.T(itemData.text)#">#= data.T(itemData.text)#</span></span>
+    #}
+    if(itemData.locked){#
+    <span class='EM-Icon BlueLockIcon Medium'></span>
+    #}
+    if(itemData.items && itemData.items.length){#
+    <ul class="sub-menu">
+        #_.each(itemData.items,function(item){#
+        #= data.renderTemplate('widget/menus/css3menuitem', {  itemData:item })#
+        #})#
+    </ul>
+    #}#
+</li>
+#}#
+
+
+

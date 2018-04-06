@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Locales>
+  <Locale>
+    <Name>Default Language</Name>
+    <Value>default</Value>
+  </Locale>
+  <Locale>
+    <Name>English</Name>
+    <Value>en-US</Value>
+  </Locale>
+  <Locale>
+    <Name>Japanese</Name>
+    <Value>ja-JP</Value>
+  </Locale>
+  <Locale>
+    <Name>French</Name>
+    <Value>fr</Value>
+  </Locale>
+  <Locale>
+    <Name>German</Name>
+    <Value>de</Value>
+  </Locale>
+  <Locale>
+    <Name>Dutch</Name>
+    <Value>nl</Value>
+  </Locale>
+  <Locale>
+    <Name>Spanish</Name>
+    <Value>es</Value>
+  </Locale>
+  <Locale>
+    <Name>Chinese-Traditional</Name>
+    <Value>zh-CN</Value>
+  </Locale>
+  <Locale>
+    <Name>Chinese-Simplified</Name>
+    <Value>zh-TW</Value>
+  </Locale>
+</Locales>

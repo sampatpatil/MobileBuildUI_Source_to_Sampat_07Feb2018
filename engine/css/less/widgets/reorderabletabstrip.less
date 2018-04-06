@@ -1,0 +1,46 @@
+
+.APReorderableTabStrip {
+
+    .addtab {
+        position: relative;
+        top: @generalpadding;
+        left: 0;
+        z-index: 1;
+        margin: @generalpadding 0 0 @generalpadding * 1.5;
+        cursor: pointer;
+        .pull-left;
+    }
+
+    > .Blocks {
+        z-index: 0;
+
+        .TabBar {
+            padding-left: 0;
+            height: @barsheight - @generalpadding * 2 - 1;
+            //margin-left:@Margin5;
+            //margin: 0 0 0 @barsheight - @generalpadding * 3;
+            .pull-left;
+
+            a {
+
+                .Fields {
+                    display: inline-block !important;
+
+                    > .Title {
+                        padding: 0 0 @generalpadding 0 !important;
+                        .bold;
+                    }
+                }
+
+                .k-icon {
+                    margin: 2px -5px 0 5px;
+                }
+            }
+        }
+
+        > .Block {
+            .innerbox;
+            margin: @generalpadding;
+        }
+    }
+}

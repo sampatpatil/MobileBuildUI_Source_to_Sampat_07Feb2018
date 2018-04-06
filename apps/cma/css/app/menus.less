@@ -1,0 +1,180 @@
+﻿@import "menuvariables.less";
+@import "menuutilities.less";
+
+
+.MainMenu {
+    .settransition;
+    .innerbox;
+    width: @menuwidth;
+    height: 100% !important;
+    background-size: 100% 100%;
+    z-index: 3;
+    font-family: Arial;
+    font-size: 14px;
+    //position: fixed;
+    top:0;
+    //top: @upperbarheight + 3;
+    .text-unselectable;
+    //border-right: 5px solid @menuBorder;
+    //background-color: @menu-item-bg-color;
+    //background: linear-gradient(#ececeb 95%, transparent);
+    background: linear-gradient(#ececeb 95%, transparent);
+    background: -webkit-linear-gradient(#ececeb 95%, transparent);
+    background: -moz-linear-gradient(#ececeb 95%, transparent);
+    background: -o-linear-gradient(#ececeb 95%, transparent);
+    background: -ms-linear-gradient(#ececeb 95%, transparent);
+
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+    }
+
+    &:after {
+        height: 100%;
+        width: 5px;
+        right: -5px;
+        top: 0;
+        z-index: -1;
+        background-image: linear-gradient(to bottom, #e1e1e1 95%, transparent 5%);
+        background-image: -webkit-linear-gradient(top, #e1e1e1 95%, transparent);
+        background-image: -moz-linear-gradient(top, #e1e1e1 95%, transparent);
+        background-image: -ms-linear-gradient(top, #e1e1e1 95%, transparent);
+        background-image: -o-linear-gradient(top, #e1e1e1 95%, transparent);
+    }
+
+    .menu-item {
+        height: @menu-item-height;
+        border-style: solid;
+        border-color: @menuBorder;
+        border-width: 1px 1px 1px 0;
+        cursor: pointer;
+        position: relative;
+        background-color: @menu-item-bg-color;
+        margin-left: 0;
+
+        &-active {
+            background-color: @white;
+
+            .link {
+                color: @menu-text-hover-color !important;
+            }
+        }
+
+        .text {
+            display: inline-block;
+            padding: 11px 0 0 10px;
+            .setFont(Arial,13px,normal) !important;
+            width: 137px;
+            white-space: normal;
+        }
+
+        .menu-icon {
+            display: inline-block;
+            float: left;
+        }
+
+        .link {
+            padding: 12px 0 0 17px;
+            display: inline-block;
+            color: @menu-text-color !important;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .BlueLockIcon {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+        }
+
+        .MenuNotAllowed {
+            margin: 0;
+
+            > .link {
+                cursor: not-allowed;
+            }
+        }
+        /*.appbuildermenu {
+            .sub-menu {
+                top: -1px !important;
+            }
+        }*/
+    }
+
+    .sub-menu {
+        > .menu-item {
+            height: @menu-item-height - 30;
+            display: inline-block;
+            border: 1px solid @menuBorder !important;
+            width: @menuwidth + 20;
+
+            .link {
+                padding: 0 0 0 15px;
+                text-decoration: none;
+
+                .menu-icon {
+                    .hide;
+                }
+
+                .text {
+                    //width: @menuwidth -5;
+                    .ellipsis(@menuwidth - 20);
+                }
+            }
+
+            &:hover {
+                .link {
+                    color: @menu-text-hover-color !important;
+                }
+            }
+        }
+    }
+
+
+    .Blocks {
+        position: static !important;
+        overflow: visible !important;
+        margin-top: 20px !important;
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+    .MainMenu {
+        width: 60px !important;
+
+        .menu {
+            &.expanded {
+                width: @collapsed-width !important;
+            }
+        }
+
+        .menu-item {
+            width: @collapsed-width !important;
+
+            .text {
+                .hide;
+            }
+
+            &:hover {
+                width: @menuwidth !important;
+
+                .text {
+                    display: inline-block !important;
+                }
+
+                .sub-menu {
+                    > .menu-item {
+                        width: @menuwidth !important;
+
+
+                        .text {
+                            width: @menuwidth !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

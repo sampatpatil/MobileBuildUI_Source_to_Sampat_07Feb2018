@@ -1,0 +1,57 @@
+﻿#
+var fallbackLogo= APPS[0].Config.loadQuery('CMADataStore').get('DefaultImages.Android.HDPI.Logo');
+//console.log(data);
+#
+
+<!-- <div class="ListItem">
+    <div class="IconHolder">
+        <img class="AppIcon" src="#:data.AppLogoURL#" onerror="var $target = $(this); $target.prop('src', $target.data('fallback-logo')||'')" data-fallback-logo="#:fallbackLogo#" />
+    </div>
+    <div class="DetailsContainer">
+        <span class="AppName">#:data.AppDisplayName#</span><span class="Version">#:data.AppAutoNewVersion#</span>
+        <div class="Description">#:data.AppDescription#</div>
+    </div>
+    <div class="ActionButtons">
+        <span class="k-button Restore" data-command="Restore">Restore</span>
+    </div>
+</div> -->
+
+#if(data.AppDisplayName){ if(!data.AppDisplayName.startsWith("aaaNew")) {#
+    <div class="itemContainer pull-left box">
+        <div class="card-front">
+                <span class="AppVersionHolder" title="v#:data.AppVersion#">v#:data.AppVersion#</span>
+                <div class="AppIconHolder">
+                    <div class="AppIconWrapper"><img class="AppIcon" src="#:data.AppLogoURL#" onerror="var $target = $(this); $target.prop('src', $target.data('fallback-logo')||'')" data-fallback-logo="#:fallbackLogo#" /></div>
+                    <span style="float:right; position:relative; top:25px;">
+                        #if(data.Android){#
+                        <span class="cmaicons cmaicons-Android cmaicons-2x LogoColorAndroid"></span>
+                        #}#
+                        #if(data.iOS){#
+                        <span class="cmaicons cmaicons-iOS cmaicons-2x LogoColoriOS"></span>
+                        #}#
+                        #if(data.Windows){#
+                        <span class="cmaicons cmaicons-Windows cmaicons-2x LogoColorWindows"></span>
+                        #}#
+                        #if(!data.Windows && !data.iOS && !data.Android){#
+                        <span style="position:relative; top:-5px; left:-5px; font-weight:700;">Draft</span>
+                        #}#
+                    </span>
+                </div>
+                <div style="padding:5px;">
+                    <div class="AppNameNewTile" style="font-size:1.5em; overflow:hidden; text-overflow:ellipsis; font-weight:700; white-space:nowrap">#:data.AppDisplayName#</div>
+                    <div class="Description" style="white-space: pre-line">#:data.AppDescription#</div>
+                </div>
+                <div class="AppActionsContainer"><span class="AppActionHolder cmaicons cmaicons-Unarchive cmaicons-4x" data-command="Restore" title="Restore" style="width:100%">&nbsp;</span></div>
+        </div>
+        <!-- <div class="card-back">
+            <div class="AppName">#:data.AppDisplayName#</div>
+            <div class="Description">#:data.AppDescription#</div>
+            <span class="k-icon CMA-Icon Delete" data-command="MoveToTrash" title="Move to Archive"></span>
+        </div> -->
+    </div>
+    # }}
+    else if (data.Status === "ArchiveEmpty"){#
+    <div style="font-size:1.4em; margin:12px 7px;">
+        <p>There are no Archived apps.</p>
+    </div>
+    #}#

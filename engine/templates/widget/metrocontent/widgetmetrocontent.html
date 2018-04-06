@@ -1,0 +1,67 @@
+﻿#
+var Block = data.AP.Model.getBlock(data.BlockId),
+            vmPath = 'State.Query.' + data.QueryId,
+            FieldPath = vmPath + '.Message';
+var vm = data.AP.Model.ViewModel.get(vmPath);
+var canBind = true;
+var msgData = null,Color = null;
+if(vm!=null){msgData =vm.get('Message');Color = vm.get('Color');}
+if(msgData == null && Block !=null){
+msgData = Block.get('Widget.Config.Message');
+if(msgData!=null)
+Color = msgData.get('Color');
+canBind = false;
+}
+Color = Color ||''
+var Title = msgData? msgData.get('Title'):null;
+var Content = msgData? msgData.get('Content'):null;
+
+if(Content == null && Block!=null){ Content = Block.get('Content');}
+if(Title == null && Block!=null){ Title = Block.get('Title');}
+    if(canBind){
+ #
+    <div class="MetroWidget" data-bind="appendClass: #= FieldPath #.Color">
+        <div class="MetroWidgetTopBar" data-bind="appendClass: #= FieldPath #.Color">
+            #}else{#
+            <div class="MetroWidget #= Color #">
+                <div class="MetroWidgetTopBar #= Color #">
+                    #}switch(Title.isKey){
+      case true:#
+      <h2 data-text-key="#= Title.getEncoded()#" data-bind="text: translate('#= Title.getEncoded() #'),visible:#=FieldPath #.Title.isLoaded" />
+                    <div class="Preloader" data-bind="visible:#=FieldPath #.Title.isLoading" />
+                    #break;    
+      case false:#     
+     <h2 data-bind="text:  #= FieldPath #.Title.value,visible:#=FieldPath #.Title.isLoaded" />
+                    <div class="Preloader" data-bind="visible:#=FieldPath #.Title.isLoading" />
+                    #break;    
+      default:
+     if(canBind){#
+      <h2 data-bind="text:  #= FieldPath #.Title" />
+                    #}else{#
+     <h2 data-text-key="#= Title#" data-bind="text: translate('#= Title #')" />
+                    #}break;
+    }#
+                    <span class="ExtraContent" />
+                </div>
+                #if(Content !=null){#
+     <div class="MetroWidgetContent">
+         #switch(Content.isKey){
+      case true:#
+      <span class="ContentHolder" data-text-key="#= Content.getEncoded()#" data-bind="text: translate('#= Content.getEncoded() #')" />
+         <div class="Preloader" data-bind="visible:#=FieldPath #.Content.isLoading" />
+         #break;    
+      case false:#
+      <span class="ContentHolder" data-bind="text:  #= FieldPath #.Content.value" />
+         <div class="Preloader" data-bind="visible:#=FieldPath #.Content.isLoading" />
+         #break;    
+      default:
+       if(canBind){#
+      <span class="ContentHolder" data-bind="text:  #= FieldPath #.Content" />
+         #}else{#
+     <span class="ContentHolder" data-text-key="#= Content#" data-bind="text: translate('#= Content #')" />
+         #}break;
+    }#
+         <span class="ExtraContent" />
+     </div>
+                #}#
+            </div>

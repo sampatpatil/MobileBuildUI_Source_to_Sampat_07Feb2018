@@ -1,0 +1,15 @@
+#
+		var Text = data.text || 'defaults.fieldnotext',AP = data.AP,
+			Action = data.action || '',
+            ModuleAccessCode  = data.hasOwnProperty('accessCode') ? data.accessCode : ''
+			IconClass = data.iconClass || '';	
+	if(data.externalTemplate){#
+#= AP.View.Templates.renderTemplate(data.externalTemplate,data)#
+#}else{#
+<span class="TabButtonWrapper #= Action #">
+    <span class="TabButton k-icon #= IconClass #"
+        # if(ModuleAccessCode != '') { #data-accesscode="#= ModuleAccessCode #"# } #
+        data-action="#= Action #"
+        data-text-key="#= Text #"></span>
+</span>
+#}#

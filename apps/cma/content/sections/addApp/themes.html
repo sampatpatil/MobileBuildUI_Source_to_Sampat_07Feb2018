@@ -1,0 +1,78 @@
+﻿#
+var baseQuery='State.Query.'+data.QueryId+'.Form.ApplicationThemes'
+#
+
+<span class="Headers">Theme</span>
+
+
+<div class="ThemesContent custom-scrollable">
+    <div style="width:100%">
+        <div class="ThemeConfig">
+            <table class="ColorConfig" style="float: right">
+                <tr>
+                    <td style="font-weight:700; padding:0 10px;">Selected theme colors:</td>
+                    <td><span class="Text">Background Color:</span></td>
+                    <td><span class="ColorPreview" data-bind="style:{background-color:#:baseQuery#.backgroundColorCode}"></span></td>
+                    <!-- <td><span class="ColorCode" data-bind="text:#:baseQuery#.backgroundColorCode"></span></td> -->
+                    <td><span class="Text">Menu Color:</span></td>
+                    <td><span class="ColorPreview" data-bind="style:{background-color:#:baseQuery#.menuColorCode}"></span></td>
+                    <!-- <td><span class="ColorCode" data-bind="text:#:baseQuery#.menuColorCode"></span></td> -->
+                    <td><span class="Text">Button Color:</span></td>
+                    <td><span class="ColorPreview" data-bind="style:{background-color:#:baseQuery#.buttonColorCode}"></span></td>
+                    <!-- <td><span class="ColorCode" data-bind="text:#:baseQuery#.buttonColorCode"></span></td> -->
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="Description">Select a Theme to be Applied</div>
+    <div class="ThemesList">
+        <div class="ThemeItem" data-name="Blue" data-bind="css:{ThemeSelected:#:baseQuery#.Blue.isSelected}, events:{click:#:baseQuery#.changeSelection}" data-background-color-code="537db3" data-menu-color-code="1f7cf5" data-button-color-code="15437E">
+            <!--<span class="ThemeIcon BlueColor"></span>
+            <span class="ThemeIcon2"></span>
+            <span class="ThemeIcon White"></span>-->
+            <span class="ThemeName">Standard Blue Theme</span>
+            <span class="Blue"></span>
+            <span class="tick-mark" style="display:none"></span>
+        </div>
+
+        <div class="ThemeItem" data-name="Orange" data-bind="css:{ThemeSelected:#:baseQuery#.Orange.isSelected}, events:{click:#:baseQuery#.changeSelection}" data-background-color-code="e46b3e" data-menu-color-code="b74115" data-button-color-code="D84710">
+            <!--<span class="ThemeIcon RedColor"></span>
+            <span class="ThemeIcon1"></span>
+            <span class="ThemeIcon White"></span>-->
+            <span class="ThemeName">Standard Orange Theme</span>
+            <span class="Orange"></span>
+            <span class="tick-mark" style="display:none"></span>
+        </div>
+
+        <div class="ThemeItem" data-name="Green" data-bind="css:{ThemeSelected:#:baseQuery#.Green.isSelected}, events:{click:#:baseQuery#.changeSelection}" data-background-color-code="1da650" data-menu-color-code="12cb57" data-button-color-code="0d6b30">
+            <!--<span class="ThemeIcon GreenColor"></span>
+            <span class="ThemeIcon2"></span>
+            <span class="ThemeIcon White"></span>-->
+            <span class="ThemeName">Standard Green Theme</span>
+            <span class="Green"></span>
+            <span class="tick-mark" style="display:none"></span>
+        </div>
+
+        <div class="ThemeItem" data-name="Red" data-bind="css:{ThemeSelected:#:baseQuery#.Red.isSelected}, events:{click:#:baseQuery#.changeSelection}" data-background-color-code="f52a2a" data-menu-color-code="f94f4f" data-button-color-code="f90404">
+            <!--<span class="ThemeIcon RedColor"></span>
+            <span class="ThemeIcon1"></span>
+            <span class="ThemeIcon White"></span>-->
+            <span class="ThemeName">Standard Red Theme</span>
+            <span class="Red"></span>
+            <span class="tick-mark" style="display:none"></span>
+        </div>
+    </div>
+
+    <div class="ThemePreview" style="display:none">
+
+        <span class="PhoneOuter">
+            <span class="PhoneInner">
+                <span class="PreviewImage" data-bind="appendClass:#:baseQuery#.previewImage"></span>
+            </span>
+            <span class="PhoneMenuButton"></span>
+        </span>
+    </div>
+</div>
+
+
+<div class="Buttons"></div>

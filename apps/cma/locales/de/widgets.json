@@ -1,0 +1,18 @@
+﻿{
+  "APLogOut": {
+    "Text": "Logout"
+  },
+  "APMessageBar": {
+    "close": "Close"
+  },
+  "APGrid": {
+    "selectedrows": {
+      "notdeleted": "Selected rows can't be deleted"
+    },
+    "toolbar": {
+      "menu": {
+        "title": "Actions"
+      }
+    }
+  }
+}

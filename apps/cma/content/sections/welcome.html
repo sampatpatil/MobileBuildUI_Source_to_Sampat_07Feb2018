@@ -1,0 +1,87 @@
+﻿# var baseQueryAllApps='State.Query.CMAGetCustomizedApps.Data.appList'; var baseQueryArchivedApps='State.Query.CMAGetTrashedApps.Data.appList';
+console.log(baseQueryArchivedApps.length); #
+
+<div class="welcomeContainter">
+
+    <!-- <div class="leftContainer" title="My Apps" style="background-color: rgb(236, 236, 235)">
+        <div class="leftContainerContent">
+            <h3 class="titleitem">Statstics</h3>
+                <p>Welcome to the AgilePoint NX online help. To find the information you are looking for, use this table, the table of contents in the left pane, or click the Search tab.</p>
+                <p>Number of Apps:<span> 23</span> </p>
+                <p>Number of Archived Apps:<span> 4</span> </p>
+        </div>
+    </div> -->
+    
+    <div id="QuickStats">
+        <div id="QTitle">#=data.T('welcomePage.quickStats')#</div>
+        <div id="QBody">
+            <div class="AppCount " data-action="loadMyApps" style="cursor:pointer">
+                <span id="spnAppCount" data-bind="text:#:baseQueryAllApps#.length"></span> #=data.T('welcomePage.apps')#
+            </div>
+            <div class="AppCount" data-action="loadArchive" style="cursor:pointer">
+                <span id="spnArchivedCount" data-bind="text:#:baseQueryArchivedApps#.length"></span> #=data.T('welcomePage.archivedApps')#
+            </div>
+        </div>
+    </div>
+
+    <div class="rightContainter">
+        <div class="tile " title="Add new App" style="background-color:rgb(143, 186, 63)">
+            <div class="marginLeft">
+                <div class="actionButtons">
+                    <div data-action="addNewApp">
+                        <span class="dataAction cmaicons cmaicons-CreateNewApp"></span>
+                    </div>
+                </div>
+                <div class="tileDescription">
+                    <h3>#=data.T('welcomePage.createNewAppTitle')#</h3>
+                    <p>#=data.T('welcomePage.createNewAppContent')#</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="tile" title="My Apps" style="background-color: rgb(73, 169, 190)">
+            <div class="marginLeft">
+                <div class="actionButtons">
+                    <div data-action="loadMyApps">
+                        <span class="dataAction cmaicons cmaicons-BuildApp"></span>
+                        <br/>
+                    </div>
+                </div>
+                <div class="tileDescription">
+                    <h3>#=data.T('welcomePage.myApps')# </h3>
+                    <p>#=data.T('welcomePage.myAppsContent')#<</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="tile " title="Archived Apps" style="background-color:rgb(247, 143, 30)">
+            <div class="marginLeft">
+                <div class="actionButtons">
+                    <div data-action="loadArchive">
+                        <span class="dataAction cmaicons cmaicons-Archive"></span>
+                    </div>
+                </div>
+                <div class="tileDescription">
+                    <h3>#=data.T('welcomePage.archivedAppsTitle')#</h3>
+                    <p>#=data.T('welcomePage.archivedAppsContent')#</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="tile " title="Announcements" style="background-color:rgb(238, 213, 23)">
+            <div class="marginLeft">
+                <div class="actionButtons">
+                    <div data-action="loadAnnouncements">
+                        <span class="dataAction cmaicons cmaicons-Announcement"></span>
+                    </div>
+                </div>
+                <div class="tileDescription">
+                    <h3>#=data.T('welcomePage.announcementsTitle')#</h3>
+                    <p>#=data.T('welcomePage.announcementsContent')#</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

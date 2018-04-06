@@ -1,0 +1,63 @@
+﻿# var path='State.Query.CMAUserSettings.Data.ApplicationList', field=data.AP.Config.loadQuery('CMAUserSettings').Data.ApplicationList;
+#
+
+<div class="WizardContent custom-scrollable">
+    <div class="ImportControlField">
+        <span class="Title" style="display:inline-block">#=data.T('sections.settings.ApplicationList.title')#: </span>
+        <a href="http://www.agilepoint.com" target="_blank" title="Learn how to import NX Applications list">
+            <span class="k-icon CMA-Icon HelpIcon"></span>
+        </a>
+        <input type="file" name="ApplicationListImport" data-role="filereader" placeholder="#= data.T('sections.settings.ApplicationList.placeholder') #"
+            accept="#=field.config.type#" data-vm-path="#:path#" data-bind="config:#=path#.config,content:#=path#.Content,events:{contentLoaded:#=path#.contentLoaded}"
+            title="#= data.T('sections.settings.ApplicationList.title') #" />
+    </div>
+
+    <div class="Options" style="display: none">
+        <label class="Option ">
+            <input type="radio" name="AppFilter" value="no" data-bind="" />
+            <span class="Title">Show all of my AgilePoint NX applications in the custom mobile app</span>
+        </label>
+        <label class="Option">
+            <input type="radio" name="AppFilter" value="yes" data-bind="" />
+            <span class="Title">Show only the AgilePoint NX applications selected below</span>
+        </label>
+    </div>
+    <!-- <div class="Description">Select the AgilePoint NX applications to show in your mobile app</div> -->
+
+    <div class="ApplicationFilterList" style="display:inline-block">
+        <table class="ColumnHeaders">
+            <tr>
+                <th class="" >Internal Name</th>
+                <th class="LeftAlign">NX Application</th>
+            </tr>
+        </table>
+        <!-- <table class="ColumnHeaders"><tr><th>Show</th><th class="LeftAlign">NX Application</th></tr></table> -->
+        <div class="ApplicationFilterListContainer custom-scrollable" data-template="AppItemTemplate" data-bind="source:State.Query.#:data.QueryId#.Data.ApplicationList.dataSource"></div>
+    </div>
+    <div class="ImportControlButtons" style="position:static; display:inline-block; vertical-align:top; margin-top:7px;">
+        <span class="k-button hide" data-action="ClearApplicationList">Remove Filters</span>
+    </div>
+    <div class="ControlFieldNoBorder" style="width: 80%; margin: 20px auto; position: relative; padding: 10px;">
+        <button class="btnSave" data-action="saveApplicationFilter"> #:data.T('form:GlobalSetting.GlobalSettingMenu.Save')# </button>
+        <button class="btnSave" data-action="ClearApplicationList"> #:data.T('form:GlobalSetting.GlobalSettingMenu.Reset')# </button>
+
+    </div>
+    <script id="AppItemTemplate" type="text/x-kendo-template">
+        <div class="ListItem" data-bind="attr:{title:Description}">
+            <label>
+                    <span class="CheckBoxContainer" style="display: none">
+                        <input type="checkbox" class="selectitem" data-bind="checked:isChecked,enabled:State.Query.#:data.QueryId#.Form.ApplicationFilter.isFilterEnabled,events:{click:State.Query.#:data.QueryId#.Form.ApplicationFilter.updateSelectedList}" />
+                    </span>
+                    <span class="AppTitle"  data-bind="text:Name"></span>
+                    <span class="AppTitle"  data-bind="text:Value"></span>
+            </label>
+        </div>
+    </script>
+</div>
+<div class="Buttons"></div>
+<style type="text/css">
+    .CheckBoxContainer {
+        display: none;
+    }
+    
+</style>

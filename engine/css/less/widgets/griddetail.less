@@ -1,0 +1,54 @@
+
+	.APGrid { 
+	
+		.Detail{
+			
+			border: 1px solid @active-border-color;
+			overflow: hidden;
+			padding:  0 @generalpadding @generalpadding 0;
+			
+			.Module {
+				
+				float: left;
+				border: 1px solid @widget-border-color;
+				margin: @generalpadding 0 0 @generalpadding;
+				position: relative;
+				
+				&.Width_,
+				&.Width_1 { width: @menuwidth; }
+				&.Width_2 { width: 2 + @menuwidth * 2 + @generalpadding; }
+				&.Width_3 { width: 4 + @menuwidth * 3 + @generalpadding * 2; }
+				&.Width_4 { width: 6 + @menuwidth * 4 + @generalpadding * 3; }
+				&.Width_5 { width: 8 + @menuwidth * 5 + @generalpadding * 4; }
+				&.Width_6 { width: 10 + @menuwidth * 6 + @generalpadding * 5; }
+				
+				&.Height_,
+				&.Height_1 { height: @upperbarheight; }
+				&.Height_2 { height: 2 + @upperbarheight * 2 + @generalpadding; }
+				&.Height_3 { height: 4 + @upperbarheight * 3 + @generalpadding * 2; }
+				&.Height_4 { height: 6 + @upperbarheight * 4 + @generalpadding * 3; }
+				&.Height_5 { height: 8 + @upperbarheight * 5 + @generalpadding * 4; }
+				&.Height_6 { height: 10 + @upperbarheight * 6 + @generalpadding * 5; }
+				
+				.Title {					
+					padding: @generalpadding @generalpadding * 2;
+					background-color: @widget-border-color;
+					color: #264e82;
+					font-weight: bold;
+				}
+			}
+			
+			.ToolBar {
+				
+				clear: both;
+				padding: @generalpadding 0 0 0;
+				text-align: right;
+				
+				a {
+					margin: 0 0 0 @generalpadding;	
+				}
+			}
+		}
+	}
+
+	

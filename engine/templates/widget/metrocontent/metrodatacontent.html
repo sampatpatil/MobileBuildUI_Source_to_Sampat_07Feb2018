@@ -1,0 +1,22 @@
+﻿#
+		var Block = data.AP.Model.getBlock(data.BlockId);
+			var MessageKey = Block.Widget.Config.Message;
+if(!MessageKey) return'';
+var IsPlaintext = MessageKey.IsPlaintext ? MessageKey.IsPlaintext : 'false';
+	 if(MessageKey.IsPlaintext == true) { #
+<div class="Description">
+    <span data-text-key="#= MessageKey.Content #">#= MessageKey.Content #</span>
+</div>
+# } else {# 
+<div class="TitleContainer">
+    #if(MessageKey.IconClass){#
+    <div class="#=MessageKey.IconClass#" />
+    #}#                      
+    <div class="Title">
+        <h2 data-text-key="#= MessageKey.Title #">#= MessageKey.Title #</h2>
+    </div>
+</div>
+<div class="Description">
+    <p data-text-key="#= MessageKey.Content #">#= MessageKey.Content #</p>
+</div>
+# } #

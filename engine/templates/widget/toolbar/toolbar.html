@@ -1,0 +1,17 @@
+#
+		var ModelBlock = data.Model || data.AP.Model.getBlock(data.BlockId),template = 'widget/toolbar/toolbarbutton',
+			Buttons = ModelBlock.Widget ? ModelBlock.Widget.Config.Buttons : ModelBlock;
+			(!_.isArray(Buttons) && !(Buttons instanceof kendo.data.ObservableArray)) && Buttons &&( Buttons = Buttons.buttons);
+
+		_.each(Buttons, function(Button, Index){
+		
+			var ButtonData = $.extend({ AP: data.AP }, Button);
+	         if (ButtonData.externalTemplate) {
+                           template =ButtonData.externalTemplate;
+                          }
+# 
+
+			#= data.AP.View.Templates.renderTemplate(template, ButtonData) #
+	# 
+		});
+	#

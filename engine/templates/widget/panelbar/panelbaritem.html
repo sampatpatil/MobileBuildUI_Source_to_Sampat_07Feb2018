@@ -1,0 +1,17 @@
+﻿#
+var display = data,itemIconAddon='';
+if(_.isObject(data)){
+var item = data.item,cfg = data.config,dm = cfg.displayMember,Locked = 'Locked',Unlocked = 'Unlocked';
+display = item[dm];
+itemIconAddon = item.hasOwnProperty(cfg.itemIconAddonMember||'')? item[cfg.itemIconAddonMember]:'';
+}
+#
+<span class="Fields">    
+    <span class="Field MenuIcon #=itemIconAddon#"
+        # if(itemIconAddon !='' ){ #data-accesscode="CheckInOutProcessTemplate"# } #></span>
+    <span class="Field Title">#=display#</span>
+</span>
+
+
+
+

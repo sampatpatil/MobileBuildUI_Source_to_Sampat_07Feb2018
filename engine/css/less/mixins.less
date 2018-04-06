@@ -1,0 +1,112 @@
+﻿
+/* ***********************************************************************************
+	
+		AgilePoint apps presets 
+	
+	*/
+
+.innerbox (@bgcolor: rgba(0, 0, 0, 0.0)) {
+    display: block;
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: @bgcolor;
+}
+
+.innerboxblocks {
+    .innerbox;
+
+    > .Blocks {
+        .innerbox;
+    }
+}
+
+.fullbox {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fullboxblocks {
+    .fullbox;
+
+    > .Blocks {
+        .fullbox;
+    }
+}
+
+.settransition ( @duration: 0.2s ) {
+    -webkit-transition: all @duration ease-in-out;
+    -moz-transition: all @duration ease-in-out;
+    -o-transition: all @duration ease-in-out;
+    -ms-transition: all @duration ease-in-out;
+    transition: all @duration ease-in-out;
+}
+
+.rounded-corners (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.rounded-bottom-corners (@radius: 5px) {
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+    -ms-border-bottom-right-radius: @radius;
+    -o-border-bottom-right-radius: @radius;
+    border-bottom-right-radius: @radius;
+}
+
+.background-gradient-colors(@direction: left,@startcolor: #002160,@endcolor: #1677a2) {
+    background-image: linear-gradient(@direction, @startcolor, @endcolor );
+    background-image: -ms-linear-gradient(@direction, @startcolor,@endcolor );
+    background-image: -o-linear-gradient(@direction, @startcolor, @endcolor );
+    background-image: -moz-linear-gradient(@direction, @startcolor, @endcolor);
+    background-image: -webkit-linear-gradient(@direction, @startcolor, @endcolor);
+}
+
+.opacity(@o) {
+    /* Required for IE 5, 6, 7 */
+    /* ...or something to trigger hasLayout, like zoom: 1; */
+    zoom: 1;
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{o})";
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=@o);
+    /* Older than Firefox 0.9 */
+    -moz-opacity: @o / 100;
+    /* Safari 1.x (pre WebKit!) */
+    -khtml-opacity: @o / 100;
+    /* Modern!
+		/* Firefox 0.9+, Safari 2?, Chrome any?
+		/* Opera 9+, IE 9+ */
+    opacity: @o / 100;
+}
+
+.Animation(@width: 100px,@height: 20px,@margin: 0 auto) {
+    background: transparent url('../kendo/@{image-folder}/loading-image.gif') no-repeat center center;
+    width: @width;
+    height: @height;
+    margin: @margin;
+}
+
+.boxshadow (@h-shadow: 0px, @v-shadow: 0px, @blur: 0px, @spread: 0px, @color: rgba(255, 255, 255, 0.00), @inset: inset) {
+    -webkit-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+    -moz-box-shadow: @h-shadow @v-shadow @blur @spread @color;
+    box-shadow: @h-shadow @v-shadow @blur @spread @color;
+}

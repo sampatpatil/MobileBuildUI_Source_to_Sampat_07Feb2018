@@ -1,0 +1,488 @@
+﻿@import "utilities.less";
+@import "variables.less";
+
+
+.UpperBar {
+    background-image: url(@header-bg);
+    width: 100%;
+    background-color: #333333;
+    background-repeat: no-repeat;
+    z-index: 999;
+}
+
+.mainmenu-icons(@position) {
+    background-image: url(@menu-icons);
+    width: 36px !important;
+    height: 36px !important;
+    background-repeat: no-repeat;
+    background-position: @position;
+    display: inline-block;
+}
+
+.Home-Icon {
+    .mainmenu-icons(-45px -13px);
+    .border-radius(25px);
+    border: 2px solid #88cadf;
+}
+
+.Dashboard-Icon {
+    .mainmenu-icons(-174px -11px);
+    .border-radius(25px);
+    border: 2px solid #f78f1e;
+}
+
+.Admin-Icon {
+    .mainmenu-icons(-234px -11px);
+    .border-radius(25px);
+    border: 2px solid #eed517;
+}
+
+
+//Runtime Management
+.Icons {
+    .pull-left;
+    width: 18px;
+    height: 18px;
+}
+
+.DetailIcons {
+    .pull-left;
+    width: 20px;
+    height: 20px;
+}
+
+.DownloadButtonIcon {
+    background-position: -157px -3px;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    background-size: 228px;
+    cursor: pointer;
+}
+
+.EmailButtonIcon {
+    background-position: -187px -2px;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    background-size: 228px;
+    cursor: pointer;
+}
+
+.Disabled {
+    filter: grayscale(1);
+    cursor: default !important;
+    color:gray;
+}
+
+.Category-Icon {
+    /*background-image: url(@category-path) !important;*/
+    background-image: none;
+}
+
+a.Button.OpenClose {
+    //display: none;
+    position: absolute;
+    //top: @upperbarheight - 39;
+    //top: 74px;
+    right: -5px;
+    background: url(@collaspemenu-path) 0px 0 no-repeat;
+    z-index: 2;
+    height: 25px;
+    width: 25px;
+    /*& when(@upperbarheight = 0px) {
+        top: 19px;
+    }
+
+    & when(@upperbarheight > 0px) {
+        top: @upperbarheight - 40px;
+    }*/
+    //top: @upperbarheight;
+    top:0;
+}
+
+.toggleMenu {
+    .MenuIcon {
+        .pull-left;
+        width: 25px;
+        height: 25px;
+        background-image: url(@toggle-path);
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+    }
+}
+
+.expand {
+    .MenuIcon {
+        background-position: -26px 2px !important;
+    }
+}
+
+
+.SearchIcon {
+    .Icons;
+    background-position: -28px -222px;
+}
+
+
+.List {
+   // min-width: 252px;
+    height: 95px;
+}
+
+.Setting {
+    .List;
+    background-position: 59px 13px;
+}
+
+.Profile {
+    .List;
+    background-position: 66px -97px;
+}
+
+.Task {
+    .List;
+    background-position: 62px -204px;
+}
+
+.Viewtask {
+    .List;
+    background-position: 62px -317px;
+}
+
+.Relaunch {
+    .List;
+    background-position: 65px -420px;
+}
+
+.App {
+    .List;
+    background-position: 65px -420px;
+}
+
+.Template {
+    .List;
+    background-position: 62px -317px;
+}
+
+.SettingsIcon {
+    background-position: -13px -1030px;
+    height: 45px;
+    width: 40px;
+}
+
+.BackButton-Page {
+    width: 36px;
+    height: 35px;
+    background-position: -267px -684px;
+    background-color: rgb(87, 177, 201);
+    border-radius: 40px;
+
+    &:hover {
+        background-color: #88cadf;
+    }
+}
+
+.k-link {
+    background-position: -16px -32px;
+}
+
+
+.DocIcon {
+    .CMA-New-Icon;
+    background-position: -39px -12px;
+    width: 20px;
+    height: 20px;
+}
+
+.MainMenu {
+    .CloseLoginMenu {
+        .CMA-New-Icon;
+        background-position: -9px -75px;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        display: none;
+    }
+}
+
+.LoginMenu {
+    .CloseLoginMenu {
+        //.CMA-New-Icon;
+        background-image: url(@signin-close);
+        width: 103px;
+        height: 37px;
+        position: absolute;
+        right: -20px;
+        top: -4px;
+        opacity: .2;
+    }
+}
+
+.RatingsIcon {
+    background-image: url(@ratings);
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.DownloadIcon {
+    display: inline-block;
+    background-image: url(../../resources/img/sprites/platformIcons.png);
+
+    &.Large {
+        width: 50px;
+        height: 55px;
+        background-size: 60px;
+
+        &.AndroidIcon {
+            background-position: -7px -9px;
+        }
+
+        &.AppleIcon {
+            background-position: -7px -68px;
+        }
+
+        &.WindowsIcon {
+            background-position: -7px -124px;
+        }
+    }
+
+    &.Small {
+        width: 45px;
+        height: 45px;
+        background-size: 53px;
+
+        &.AndroidIcon {
+            background-position: -3px -5px;
+        }
+
+        &.AppleIcon {
+            background-position: -4px -55px;
+        }
+
+        &.iOSIcon {
+            background-position: -4px -55px;
+        }
+
+        &.WindowsIcon {
+            background-position: -4px -107px;
+        }
+    }
+
+    &.UltraSmall {
+        width: 25px;
+        height: 25px;
+        background-size: 28px;
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        &.AndroidIcon {
+            background-position-y: -3px;
+        }
+
+        &.AppleIcon {
+            background-position-y: -28px;
+        }
+
+        &.iOSIcon {
+            background-position-y: -28px;
+        }
+
+        &.WindowsIcon {
+            background-position-y: -55px;
+        }
+    }
+}
+
+.LogoColorAndroid{
+    color:rgb(164, 198, 58);
+}
+
+.LogoColoriOS{
+    color:white;
+    text-shadow:0px 0px 1px black;
+}
+
+.LogoColorWindows{
+    color:rgb(4, 168, 243);
+}
+
+.CMA-Icon {
+    background-image: url(../../resources/img/sprites/sprites.png) !important;
+
+    &.AddIcon {
+        background-position: -172px -788px !important;
+    }
+
+    &.SearchIconDark {
+        background-position: -27px -203px !important;
+    }
+
+    &.HelpIcon {
+        background-position: -213px -281px;
+    }
+
+    &.Refresh {
+        background-position: -61px -256px;
+    }
+
+    &.Delete {
+        background-position: -75px -611px;
+    }
+
+    &.InfoIcon {
+        background-position: -15px -522px;
+        width:19px; 
+        height:20px;
+    }
+}
+
+/*kendo icons*/
+.k-plus {
+    background-position: -49px -64px !important;
+}
+
+.k-download {
+    background-position: -12px -32px;
+}
+
+.Orange {
+    background-image: url(@theme-o);
+    background-repeat: no-repeat;
+    display: block;
+    width: 165px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.Red {
+    background-image: url(@theme-r);
+    background-repeat: no-repeat;
+    display: block;
+    width: 165px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.Green {
+    background-image: url(@theme-g);
+    background-repeat: no-repeat;
+    display: block;
+    width: 165px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.Blue {
+    background-image: url(@theme-b);
+    background-repeat: no-repeat;
+    display: block;
+    width: 165px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.tick-mark {
+    background-image: url(@tick-mark);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 17px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    background-size: contain;
+}
+
+.mobile-icon, .ipadH-icon, .ipadV-icon {
+    background-repeat: no-repeat;
+    display: block;
+    width: 86px;
+    height: 170px;
+    float: left;
+    margin: 0 40px;
+}
+
+.mobile-icon {
+
+    &.Icon {
+        background-image: url(../../resources/img/uploadimages/m-application.png);
+    }
+
+    &.SplashScreen {
+        background-image: url(../../resources/img/uploadimages/m-splashscreen.png);
+    }
+
+    &.Logo {
+        background-image: url(../../resources/img/uploadimages/m-logo.png);
+    }
+
+    &.StoreLogo {
+        background-image: url(../../resources/img/uploadimages/m-store-screen.png);
+    }
+}
+
+.ipadH-icon {
+    width: 170px;
+    background-position: 0;
+
+    &.Icon {
+        background-image: url(../../resources/img/uploadimages/h-application.png);
+    }
+
+    &.SplashScreen {
+        background-image: url(../../resources/img/uploadimages/h-splashscreen.png);
+    }
+
+    &.Logo {
+        background-image: url(../../resources/img/uploadimages/h-logo.png);
+    }
+
+    &.StoreLogo {
+        background-image: url(../../resources/img/uploadimages/h-store-screen.png);
+    }
+}
+
+.ipadV-icon {
+    width: 114px;
+
+    &.Icon {
+        background-image: url(../../resources/img/uploadimages/v-application.png);
+    }
+
+    &.SplashScreen {
+        background-image: url(../../resources/img/uploadimages/v-splashscreen.png);
+    }
+
+    &.Logo {
+        background-image: url(../../resources/img/uploadimages/v-logo.png);
+    }
+
+    &.StoreLogo {
+        background-image: url(../../resources/img/uploadimages/v-store-screen.png);
+    }
+}
+
+.menu {
+    .menu-icon{
+        background-image: url(@leftmenu-image);        
+        height: 36px;
+        width: 36px;
+    }
+}
+
+.myApp{
+    background-position: -12px -82px;
+}
+.archive{
+    background-position: -12px -322px;
+}
+.notification {
+    background-position: -12px -443px;
+}
+.home {
+    background-position: -13px -203px;
+}

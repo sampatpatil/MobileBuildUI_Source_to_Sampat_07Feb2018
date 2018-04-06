@@ -1,0 +1,166 @@
+﻿#
+var baseQuery='State.Query.'+data.QueryId+'.Form.StoreCertificate',
+    platformSelectorBaseQuery='State.Query.'+data.QueryId+'.Form.PlatformSelector',
+    vm=data.AP.Config.loadQuery(data.QueryId),
+    config=null;
+#
+
+<span class="Headers">Platform Settings</span>
+
+<div class="StoreCertificatesContainer custom-scrollable">
+
+    #config=vm.get('Form.StoreCertificate.AndroidCertificate')#
+    #if(config.Enabled){#
+    <div data-bind="visible:#:baseQuery#.AndroidCertificate.isSelected">
+        <span class="Description">#:data.T('form:Android.label')#</span>
+        <div class="StoreCertificateItem Field AndroidCertificate">
+            <div class="BuildTypeContainer">
+                <span class="Description">Build Type</span>
+                <label class="BuildOption">
+                    <input type="radio" name="AndroidBuildType" class="BuildOptionCheckBox" value="MDM" data-bind="checked:#:platformSelectorBaseQuery#.AndroidBuildType" /><span class="Title">MDM Build (Intune)</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="AndroidBuildType" class="BuildOptionCheckBox" value="Store" data-bind="checked:#:platformSelectorBaseQuery#.AndroidBuildType" /><span class="Title">Store Build</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="AndroidBuildType" class="BuildOptionCheckBox" value="Device" data-bind="checked:#:platformSelectorBaseQuery#.AndroidBuildType" /><span class="Title">Device Specific Build</span>
+                </label>
+            </div>
+            <div class="Field">
+                <span class="Key" data-bind="css:{required:#=baseQuery#.AndroidCertificate.isSelected}">Package Name</span>
+                <input type="text" class="FieldInput" placeholder="Enter Package Name" data-rules="regexValidationForAndroidPackageName && false" title="Enter Package Name" name="Package Name" data-bind="value:#=baseQuery#.AndroidCertificate.PackageName, toggleAttr:{required:#=baseQuery#.AndroidCertificate.isSelected}" />
+                <span class="k-icon CMA-Icon HelpIcon HoveredHelp FromRight">
+                    <span class="HeplDescription">
+                        The naming rules for the PackageName (Application ID) are:<br />
+                        Each segment must start with an alphabet and seperated by period '.' (dot)<br />
+                        All characters must be alphanumeric or an underscore [a-zA-Z0-9_]<br />
+                    </span>
+                </span>
+            </div>
+
+            <div class="AndroidCertificateHolder" data-bind="visible:#=baseQuery#.AndroidCertificate.isVisible">
+                <!--<div class="form-row">
+                    <label>Use Custom Certificate</label>
+                    <fieldset>
+                        <input id="UseCustomCert" type="checkbox" data-bind="checked:#:baseQuery#.AndroidCertificate.UseCustomCert" class="input-switch" data-config-key="" data-config-group="">
+                        <label for="UseCustomCert"></label>
+                        <span class="switch-bg"></span><span data-on="Yes" data-off="No" class="switch-labels"></span>
+                    </fieldset>
+                </div>-->
+                <span class="Description" data-bind="css:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}">#:data.T('form:Certificate.label')#</span>
+                <input type="file" class="CertificateUploader" data-role="filereader" accept="*" data-bind="config:#=baseQuery#.AndroidCertificate.config, content:#=baseQuery#.AndroidCertificate.Content, events:{contentLoaded:#=baseQuery#.AndroidCertificate.saveFileName}" />
+                <div class="Field">
+                    <span class="Key" data-bind="css:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}">Key Alias</span>
+                    <input type="text" class="FieldInput" placeholder="Key Alias" title="Key Alias" name="key Alias" data-bind="value:#=baseQuery#.AndroidCertificate.keyAlias, toggleAttr:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}" />
+                </div>
+                <div class="Field">
+                    <span class="Key" data-bind="css:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}">Key Password</span>
+                    <input type="password" class="FieldInput" placeholder="Key Password" title="Key Password" name="Key Password" data-bind="value:#=baseQuery#.AndroidCertificate.keyPassword, toggleAttr:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}" />
+                </div>
+                <div class="Field">
+                    <span class="Key" data-bind="css:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}">Store Password</span>
+                    <input type="password" class="FieldInput" placeholder="Store Password" title="Store Password" name="Store Password" data-bind="value:#=baseQuery#.AndroidCertificate.storePassword, toggleAttr:{required:#=baseQuery#.AndroidCertificate.UseCustomCert}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    #}#
+
+    #config=vm.get('Form.StoreCertificate.WindowsCertificate')#
+    #if(config.Enabled){#
+    <div data-bind="visible:#:baseQuery#.WindowsCertificate.isSelected">
+        <span class="Description">#:data.T('form:Windows.label')#</span>
+        <div class="StoreCertificateItem Field WindowsCertificate">
+            <div class="BuildTypeContainer">
+                <span class="Description">Build Type</span>
+                <label class="BuildOption">
+                    <input type="radio" name="WindowsPhoneBuildType" class="BuildOptionCheckBox" value="MDM" data-bind="checked:#:platformSelectorBaseQuery#.WindowsPhoneBuildType" /><span class="Title">MDM Build (Intune)</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="WindowsPhoneBuildType" class="BuildOptionCheckBox" value="Store" data-bind="checked:#:platformSelectorBaseQuery#.WindowsPhoneBuildType" /><span class="Title">Store Build</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="WindowsPhoneBuildType" class="BuildOptionCheckBox" value="Device" data-bind="checked:#:platformSelectorBaseQuery#.WindowsPhoneBuildType" /><span class="Title">Device Specific Build</span>
+                </label>
+            </div>
+            <div class="Field" data-bind="visible:#=baseQuery#.WindowsCertificate.isPublisherFieldsRequired">
+                <span class="Key">Publisher Id</span>
+                <input type="text" class="FieldInput" placeholder="Enter Publisher Id" name="PublisherId" data-bind="value:#=baseQuery#.WindowsCertificate.PublisherId" data-rules="regexValidationForPublisherName" />
+                <span class="k-icon CMA-Icon HelpIcon HoveredHelp FromRight">
+                    <span class="HeplDescription">Provide Publisher Id as in certificate file.</span>
+                </span>
+            </div>
+           <div class="Field" data-bind="visible:#=baseQuery#.WindowsCertificate.isPublisherFieldsRequired">
+                <span class="Key">Phone Publisher Id</span>
+                <input type="text" class="FieldInput" placeholder="Enter Phone Publisher Id" data-rules="regexValidationForPhonePublisherId" name="PhonePublisherId" data-bind="value:#=baseQuery#.WindowsCertificate.PhonePublisherId" />
+               <span class="k-icon CMA-Icon HelpIcon HoveredHelp FromRight">
+                   <span class="HeplDescription">Provide Phone Publisher Id as in your developer account.</span>
+               </span>
+            </div>
+             <!--<div class="Field" data-bind="visible:#=baseQuery#.WindowsCertificate.isPublisherFieldsRequired">
+                <span class="Key">Phone Product Id</span>
+                <input type="text" class="FieldInput" placeholder="Enter Phone Product Id" name="PhoneProductId" data-bind="value:#=baseQuery#.WindowsCertificate.PhoneProductId" />
+            </div>-->
+            <div class="WindowsCertificate" data-bind="visible:#=baseQuery#.WindowsCertificate.isPublisherFieldsRequired">
+                <span class="Description force-inline-block #if(config.required){#required#}#">#:data.T('form:Certificate.label')#</span>
+                <span class="k-icon CMA-Icon HelpIcon HoveredHelp">
+                    <span class="HeplDescription">You must digitally sign your Windows Store apps before you deploy them.</span>
+                </span>
+                <input type="file" class="CertificateUploader" data-role="filereader" accept="*" data-bind="config:#=baseQuery#.WindowsCertificate.config, content:#=baseQuery#.WindowsCertificate.Content, events:{contentLoaded:#=baseQuery#.WindowsCertificate.saveFileName}"/>
+                <div class="Field">
+                    <span class="Key">Password</span>
+                    <input type="password" class="FieldInput" placeholder="Certificate Password" name="Password" data-bind="value:#=baseQuery#.WindowsCertificate.Password" />
+                </div>
+            </div>
+        </div>
+    </div>
+    #}#
+
+    #config=vm.get('Form.StoreCertificate.IosCertificate')#
+    #if(config.Enabled){#
+    <div data-bind="visible:#:baseQuery#.IosCertificate.isSelected">
+        <span class="Description">#:data.T('form:iOS.label')#</span>
+        <div class="StoreCertificateItem Field IosCertificate">
+            <div class="BuildTypeContainer">
+                <span class="Description">Build Type</span>
+                <label class="BuildOption">
+                    <input type="radio" name="iPhoneAndiPadBuildType" class="BuildOptionCheckBox" value="MDM" data-bind="checked:#:platformSelectorBaseQuery#.iPhoneAndiPadBuildType" /><span class="Title">MDM Build (Intune)</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="iPhoneAndiPadBuildType" class="BuildOptionCheckBox" value="Store" data-bind="checked:#:platformSelectorBaseQuery#.iPhoneAndiPadBuildType" /><span class="Title">Store Build</span>
+                </label>
+                <label class="BuildOption">
+                    <input type="radio" name="iPhoneAndiPadBuildType" class="BuildOptionCheckBox" value="Device" data-bind="checked:#:platformSelectorBaseQuery#.iPhoneAndiPadBuildType" /><span class="Title">Device Specific Build</span>
+                </label>
+            </div>
+            <span class="Description force-inline-block #if(config.required){#required#}#">#:data.T('form:Certificate.label')#</span>
+            <span class="k-icon CMA-Icon HelpIcon HoveredHelp">
+                <span class="HeplDescription" data-bind="text:#=baseQuery#.IosCertificate.helpText"></span>
+            </span>
+            <input type="file" class="CertificateUploader" data-role="filereader" accept="*" data-bind="config:#=baseQuery#.IosCertificate.config, content:#=baseQuery#.IosCertificate.Content, events:{contentLoaded:#=baseQuery#.IosCertificate.saveFileName}" />
+            <div class="Field">
+                <span class="Key">Password</span>
+                <input type="password" class="FieldInput" placeholder="Certificate Password" name="Password" data-bind="value:#=baseQuery#.IosCertificate.Password" autocomplete="donot"/> <!-- to turn off autocompletion of the password field, the autocomplete attribute has been set to a random string 'donot' per documentation on MDN - https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion -->
+            </div>
+            <div class="Field ProvisioningProfile">
+                <span class="Description force-inline-block #if(config.required){#required#}#">Provisioning Profile</span>
+                <span class="k-icon CMA-Icon HelpIcon HoveredHelp">
+                    <span class="HeplDescription" data-bind="text:#=baseQuery#.ProvisioningProfile.helpText"></span>
+                </span>
+                <input type="file" class="CertificateUploader" data-role="filereader" accept="*" data-bind="config:#=baseQuery#.ProvisioningProfile.config, content:#=baseQuery#.ProvisioningProfile.Content, fileExtension:#=baseQuery#.ProvisioningProfile.contentType, events:{contentLoaded:#=baseQuery#.ProvisioningProfile.saveFileName}" />
+            </div>
+
+            <!--<div class="Field">
+                <span class="Key required">Provisioning Profile UUID</span>
+                <input type="text" class="FieldInput" placeholder="Provisioning Profile UUID" name="Provisioning Profile UUID" data-bind="value:#=baseQuery#.ProvisioningProfile.ProvisioningProfileUUID, toggleAttr:{required:#=baseQuery#.IosCertificate.isSelected}" />
+            </div>-->
+            <!--<div class="Field">
+                <span class="Key required">App Bundle Identifier</span>
+                <input type="text" class="FieldInput" placeholder="App Bundle Identifier" name="App Bundle Identifier" data-bind="value:#=baseQuery#.ProvisioningProfile.AppBundleIdentifier, toggleAttr:{required:#=baseQuery#.IosCertificate.isSelected}" />
+            </div>-->
+        </div>
+    </div>
+    #}#
+</div>
+
+<div class="Buttons"></div>

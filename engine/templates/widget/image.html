@@ -1,0 +1,21 @@
+#
+		var Block = data.AP.Model.getBlock(data.BlockId);
+			SrcKey = Block.Widget.Data.Src,
+			SrcKeyEncoded = data.AP.Utils.encodeParam(SrcKey),css='';
+var cfg = Block.get('Widget.Config'), hasConfig = cfg? true :false;
+css = cfg? cfg.Class :'';
+
+
+	if(hasConfig && cfg.Imgs){
+    _.each(cfg.Imgs , function( img) {       
+            SrcKey = img.Src,
+			SrcKeyEncoded = data.AP.Utils.encodeParam(SrcKey);#
+
+     <img  class="#=css || ''#" data-bind="attr: { src: translateImagePath('#= SrcKeyEncoded #') }" />
+
+#});
+}else {#
+	<img id="#=data.BlockId#" class="#=css || ''#" data-bind="attr: { src: translateImagePath('#= SrcKeyEncoded #') }" />
+#
+}#
+

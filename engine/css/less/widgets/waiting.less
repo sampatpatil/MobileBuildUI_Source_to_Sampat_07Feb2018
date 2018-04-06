@@ -1,0 +1,26 @@
+
+
+#APWaiting {
+    .innerbox;
+    //z-index: 10004;
+    z-index: @max-z-index;
+    display: none;
+
+    .Overlay {
+        .innerbox;
+        background-color: black;
+        .opacity(50);
+    }
+
+    .Message {
+        position: absolute;
+        .Animation( 100px,20px,0 auto);
+
+        .Text {
+            color: @tooltip-text-color;
+            font-weight: bold;
+            padding-top: @Padding20;
+            .segoebold;
+        }
+    }
+}

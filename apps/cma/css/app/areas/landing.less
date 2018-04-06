@@ -1,0 +1,40 @@
+﻿@import "../variables.less";
+
+@metrolandingblocksstartleft: 0;
+@metrolandingblocksmargintop: 0px;
+@metrolandingblocksmarginbottom: 0px;
+@metrolandingblockwidth: 140px;
+@metrolandingblockheight: 140px;
+@metrolandingblockspace: 16px;
+
+.LandingContent {
+    min-height: 605px;
+    width: 100%;
+    overflow: hidden !important;
+    margin: 0 auto;
+
+    .MainImage {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .SubImage {
+        position: absolute;
+
+        &:nth-child(1n) {
+            left: 14%;
+            right: unset;
+        }
+
+        &:nth-child(2n) {
+            right: 14%;
+            left: unset;
+        }
+    }
+}
+
+@media only screen and (max-width : 1024px) {
+
+    .LandingContent {
+    }
+}

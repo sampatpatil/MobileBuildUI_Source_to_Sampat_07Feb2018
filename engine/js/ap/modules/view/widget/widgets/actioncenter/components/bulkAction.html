@@ -1,0 +1,38 @@
+<div className="item">
+   <div className="bulk-action">
+      <div className="content-wrapper">
+         <div className="topbar">
+            <span className="title">
+                                  		{this.state.title}
+                                   </span>
+            <span className="actions pull-right">
+							                <span className="k-transparent k-button k-button-icon" onClick={this.props.remove}>
+							                <span className="k-sprite k-icon EM-Icon EM-Close"></span> </span>
+            </span>
+         </div>
+
+
+         <div className="text">&nbsp;</div>
+         <div className="content">
+            <span className="icon24 bulkAction"> </span>
+            <span>{this.state.statusStr}</span> 
+         </div>
+         <div>
+            <div className="progressbar pull-left k-widget k-progressbar k-progressbar-horizontal" style={progressbarStyle}>
+               <span className="k-progress-status-wrap">
+						                    <span className="k-progress-status"></span> </span>
+               <div className="k-state-selected k-complete" style={progressStyle}>
+                  <span className="k-progress-status-wrap" style={{width: '100%'}}>
+						                        <span className="k-progress-status"></span> </span>
+               </div>
+            </div>
+            <span className="actionsBtn actions pull-left">
+							                <span style={resumeButtonStyle} onClick={this.resume} className="k-transparent k-button k-button-icon" data-action="resume" aria-disabled="false" tabIndex="0">
+							                <span className="k-sprite k-icon EM-Icon ResumIcon"></span> </span>
+            <span style={pauseButtonStyle} onClick={this.pause} className="k-transparent k-button k-button-icon" data-action="resume" aria-disabled="false" tabIndex="0">
+							                <span className="k-sprite k-icon EM-Icon PauseIcon"></span> </span>
+            </span>
+         </div>
+      </div>
+   </div>
+</div>

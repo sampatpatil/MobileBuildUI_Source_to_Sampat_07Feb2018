@@ -1,0 +1,24 @@
+﻿#
+var AP = data.AP, vm = data._q, options=vm.get('Form.AppMenu.Options'),
+    baseQuery='State.Query.'+data.QueryId+'.Form.AppMenu';
+#
+<span class="Headers">Menu Options</span>
+<div class="WizardContent custom-scrollable">
+    <div class="Description">Customize the Features in Your Mobile App</div>
+    <table class="ColumnHeaders"><tr><td style="width: 27%;"></td><td style="width: 350px;"></td><!--td class="ColumnHeader">Enable</td--></tr></table>
+    #$.each(options,function(idx,obj){#
+    <div class="form-row">
+        <label>#:data.T('form:AppMenu.'+obj.Name+'.label')#</label>
+        <input type="text" class="FieldInput" placeholder="#:data.T('form:AppMenu.'+obj.Name+'.label')#" data-rules="regexValidationForSpecialChars" data-bind="value:#=baseQuery#.Options[#:idx#].Value" name="#:obj.Name#" />
+        #if(obj.Name != 'MyApps' && obj.Name != 'MyTasks'){#
+        <fieldset>
+            <input id="#:obj.Name#" type="checkbox" class="input-switch" data-bind="checked:#=baseQuery#.Options[#:idx#].isEnabled" data-config-key="" data-config-group="">
+            <label for="#:obj.Name#"></label>
+            <span class="switch-bg"></span><span data-on="Yes" data-off="No" class="switch-labels"></span>
+        </fieldset>
+        #}#
+    </div>
+    #})#
+</div>
+
+<div class="Buttons"></div>

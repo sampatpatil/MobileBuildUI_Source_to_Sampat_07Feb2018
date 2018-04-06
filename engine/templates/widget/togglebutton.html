@@ -1,0 +1,31 @@
+#
+		var BlockId = data.BlockId,AP = data.AP,Block = AP.Model.getBlock(BlockId) || {},
+            Widget = Block.get('Widget'),
+            Bindings = Block.get('Widget.Bindings'),
+            Wclass = Block.get('Widget.Class'),
+			Class = Block.Class || 'ButtonWidget',
+			DOMElementType = Widget.DOM || 'button',
+			FieldTextKey = Widget.Text || 'defaults.fieldnotext',
+			FieldTextKeyEncoded = data.AP.Utils.encodeParam(FieldTextKey),
+            attrStr = '',bindings= Widget.Config.self ? '' : AP.Utils.generateBindingsAttr(Bindings); 
+if (Widget.Attr!=null) {
+var attrEx = Widget.Attr;
+for (var key in attrEx){
+if(key != 'uid' && attrEx.hasOwnProperty(key) && typeof(attrEx[key]) == 'string'){
+   if(key =='title') {
+attrStr += ' '+key + '="' + AP.View.Internationalize.translate(attrEx[key]) + '"';
+}
+else
+{
+attrStr += ' '+key + '="' + attrEx[key] + '"';
+}
+
+}
+}
+
+}
+	#
+	
+	<#= DOMElementType # class="#= Class # #=Wclass#" #= bindings #
+						 data-text-key="#= FieldTextKey #"
+						 data-bind="text: translate('#= FieldTextKeyEncoded || FieldTextKey #')" #= attrStr #/>

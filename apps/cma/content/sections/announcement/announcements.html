@@ -1,0 +1,28 @@
+﻿#
+var vm=data.AP.Config.loadQuery(data.QueryId).get('Announcements');
+#
+
+<table class="List">
+    <thead>
+        <tr>
+            <td>Title</td>
+            <td>Subtitle</td>
+            <!-- <td>Category</td> -->
+            <td>Platforms</td>
+            <td>Status</td>
+            <td>Message</td>
+        </tr>
+    </thead>
+    <tbody>
+        #$.each(vm.get('allNotifications').toJSON(),function(idx, item){#
+        <tr class="AnnouncementItem">
+            <td>#:item.Title#</td>
+            <td>#:item.SubTitle#</td>
+            <!-- <td>#:item.Category#</td> -->
+            <td>#:item.Platforms#</td>
+            <td>#:item.Status?'Published':'Draft'#</td>
+            <td>#:item.Content#</td>
+        </tr>
+        #})#
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+#
+var Block =  data.AP.Model.getBlock(data.BlockId),
+menuData = data.menuData,
+collapsible = menuData.collapsible == null ? true:menuData.collapsible;
+#
+<div class="Widget">
+    #if(collapsible){#
+    <a href="\\#" class="Button OpenClose">&nbsp;</a>
+    #}
+    if(menuData && menuData.items && menuData.items.length){#
+    <div class="menu">
+        <ul class="menu-items-container grand-container left-settings-menu">
+            #_.each(menuData.items,function(item){#
+            #= data.renderTemplate('widget/menus/css3menuitem', {  itemData:item })#
+            #})#
+
+        </ul>
+    </div>
+    #}#
+
+
+</div>

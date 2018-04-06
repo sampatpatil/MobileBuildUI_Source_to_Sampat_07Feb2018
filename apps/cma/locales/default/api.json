@@ -1,0 +1,11 @@
+﻿{
+    "messages": {
+        "loading": "Loading..."
+    },
+    "query": {
+        "success": "Successfully Processed",
+        "error": "Another response",
+        "badrequest": "Bad Request",
+        "norecords": "No Records Found"
+    }
+}

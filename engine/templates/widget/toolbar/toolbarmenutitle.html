@@ -1,0 +1,12 @@
+#
+   var FieldPath  = data.TitleKey, AP =data.AP, QueryID = data.QueryId || '', row = data.Data ;
+  #
+	<a class="MenuTitle">
+        <b><span class="Text" data-text-key="#= data.TitleKey #">#=AP.View.Internationalize.translate(data.TitleKey)# 
+        </span>:</b> <span data-text-key="#= Groupname #">#= row.Status #</span> |
+
+        # if(!!QueryID){
+             var vm = AP.Config.loadQuery(QueryID), Data = vm.Data || '', Groupname =Data.Name || '' ;#
+            <b><span data-text-key="#= Groupname #">#= Groupname #</span></b>
+        #}#
+    </a>

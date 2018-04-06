@@ -1,0 +1,77 @@
+﻿.ActionCenter {
+    display: none;
+    position: fixed;
+    right: 1px;
+    top: 58px;
+    height: 100%;
+    z-index: 1000000;
+    width: 400px;
+    padding: 0;
+    background-color: rgba(237,237,237,0.95);
+    color: #333;
+    -webkit-box-shadow: 1px 1px 7px #aaa;
+    -moz-shadow: 1px 1px 7px #aaa;
+    box-shadow: 1px 1px 7px #aaa;
+    -moz-box-shadow: 0 1px 3px #aaa;
+    -webkit-box-shadow: 0 1px 3px #aaa;
+    box-shadow: 0 1px 3px #aaa;
+
+    .global-actions {
+        height: 32px;
+        padding: 3px 6px;
+
+        button {
+            margin: 3px 5px 0 0;
+        }
+    }
+
+    .item-animation {
+        &.item-animation-enter {
+            opacity: 0.01;
+            transition: opacity .5s ease-in;
+
+            &.item-animation-enter-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .item {
+        background-color: #CFCFCF;
+        margin-bottom: 3px;
+
+        .bulk-action {
+            height: 85px;
+            border-left: solid 5px #0470B8;
+            padding: 2px 0px 0px 2px;
+
+            .content-wrapper {
+                padding-left: 7px;
+
+                .progressbar {
+                    border-radius: 1px;
+                    height: 2px;
+                    width: 96%;
+                    margin-top: 5px;
+
+                    .k-state-selected {
+                        background-color: #0470B8;
+                    }
+
+                    .k-progress-status {
+                        display: none;
+                    }
+                }
+
+                .actionsBtn {
+                    width: 8%;
+                    margin-top: -7px;
+                }
+
+                .text {
+                    min-height: 32px;
+                }
+            }
+        }
+    }
+}

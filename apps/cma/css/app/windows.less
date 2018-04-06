@@ -1,0 +1,76 @@
+﻿/* Modal Window */
+
+@import "variables.less";
+@import "utilities.less";
+
+div.k-window {
+    font-size: 80%;
+    //font-family: Arial,Verdana,sans-serif;
+    .k-window-titlebar {
+        background-color: @k-window-titlebar-bg-color;
+
+        .k-window-title {
+            color: #fff !important;
+        }
+    }
+}
+
+#CMAMain .k-window {
+    border-radius: 8px;
+    border: none !important;
+    min-width: 250px !important;
+    max-width: 800px !important;
+
+    .k-window-titlebar {
+        border-radius: 8px 8px 0 0;
+        height: 20px !important;
+
+        .k-window-title {
+            font-size: 16px;
+        }
+    }
+
+    .MessageWindow.k-window-content {
+        font-size: 12px !important;
+    }
+
+    .k-window-content {
+        border-radius: 0 0 8px 8px;
+        font-size: 10px !important;
+        color:#181818;
+
+
+        .form-row {
+            padding: 10px 0 10px 20px;
+
+            &.PlatformSelector{
+                display: inline-block;
+                width:30%;
+            }
+
+            label {
+                font-size: 12px;
+                width: 100% !important;
+                display: inline-block;
+                line-height: 22px;
+            }
+
+            fieldset {
+                font-size: 11px;
+            }
+
+            .check-box-yes-no;
+        }
+    }
+
+    .BuildRequestWindow {
+        .form-row > label {
+            width: 40%;
+        }
+
+        .Buttons {
+            text-align: right;
+            padding-right: 10px;
+        }
+    }
+}

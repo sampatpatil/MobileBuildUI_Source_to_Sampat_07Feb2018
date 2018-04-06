@@ -1,0 +1,13 @@
+#
+		var Width = data.Width || '',
+			Height = data.Height || '';
+        if(Width =='na'){ Width = '';}
+        else{ Width = 'Width_' + Width;}
+        if(Height =='na'){ Height = '';}
+        else{ Height = 'Height_' + Height;}
+	#
+	
+	<div id="#=data.BlockId#"
+        class="Module #=data.Class# #=Width# #=Height#">
+        <div class="k-loading-image"></div>
+    </div>

@@ -1,0 +1,17 @@
+﻿#var cfg = data.config,dataItems = data.items,AP = data.AP,tooltipField = '',maxLabel='',minLabel='',il= AP.View.Internationalize;
+if(cfg.slider){
+tooltipField = cfg.slider.tooltipField;
+cfg.slider.minLabel &&(minLabel = il.translate(cfg.slider.minLabel));
+cfg.slider.maxLabel &&(maxLabel = il.translate(cfg.slider.maxLabel));
+#
+
+    <input class="sliderex full-width inline-block" data-min-label="#=minLabel#" data-max-label="#=maxLabel#" />
+
+
+#}
+if(!dataItems)return;
+_.each(dataItems,function(d,idx){
+#
+<#=cfg.itemContainer# class="CarouselItem" data-slider-tooltip="#=tooltipField?d[tooltipField]||'':''#" data-id=#=d.uid#>#= AP.View.Templates.renderTemplate(cfg.itemTemplate,{AP:AP,item:d,index:idx,config:cfg}) #
+</#=cfg.itemContainer#>
+#})#

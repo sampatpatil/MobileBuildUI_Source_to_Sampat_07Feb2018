@@ -1,0 +1,512 @@
+@import "variables.less";
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.no-pull {
+    float: none;
+    clear: both;
+}
+
+.clear-pull {
+    clear: both;
+}
+
+.plain-list {
+    list-style: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.force-bold {
+    font-weight: bold !important;
+}
+
+.border-grey {
+    border: 1px solid #b7b7b7;
+}
+
+.hide {
+    display: none;
+}
+
+.force-hide {
+    display: none !important;
+}
+
+.show {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.force-inline {
+    display: inline !important;
+}
+
+.force-inline-block {
+    display: inline-block !important;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.inherit-height {
+    height: inherit;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.force-full-width {
+    width: 100% !important;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.half-height {
+    height: 50%;
+}
+
+.thirtypercent-width {
+    width: 30%;
+}
+
+.fortyfivepercent-width {
+    width: 45%;
+}
+
+.fortypercent-width {
+    width: 40%;
+}
+
+.sixtypercent-width {
+    width: 60%;
+}
+
+.seventypercent-width {
+    width: 60%;
+}
+
+.eightypercent-width {
+    width: 80%;
+}
+
+.ninetypercent-width {
+    width: 90%;
+}
+
+.ninetyfivepercent-width {
+    width: 95%;
+}
+
+
+.inherit-width {
+    width: inherit;
+}
+
+.auto-width {
+    width: auto;
+}
+
+.relative-horizontal-center {
+    position: relative;
+    margin: 0 25%;
+}
+
+.text-ellipsis {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.center {
+    .absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.absolute-center {
+    overflow: auto;
+    margin: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+
+.left-align-text {
+    text-align: left;
+}
+
+.center-align-text {
+    text-align: center;
+}
+
+.textcenter {
+    .absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+}
+
+.marginauto {
+    margin: 0 auto;
+}
+
+.k-loading-image {
+    background-image: url(@loading-image) !important;
+}
+
+.EM-Btn {
+    background-image: url(@sprites-path) !important;
+    background-repeat: no-repeat;
+}
+
+.EM-Icon {
+    background-image: url(@sprites-path) !important;
+
+    &.Icon18 {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+    .EM-Icon:hover {
+        text-decoration: underline;
+    }
+
+.textbox {
+    border: 1px solid @blueColorA;
+    padding: 5px;
+    //background-color: @colorN;
+}
+
+.DrillDownDetails {
+    margin-top: 65px;
+    background-color: @colorL;
+    border: 1px solid @colorM !important;
+}
+
+.DrillDownDetailsHover {
+    border-color: @KWidgetBorderColor !important;
+    background-color: @white;
+}
+
+.Mainborder1 {
+    border: 5px solid @splitbar-background-color;
+}
+
+.absoluteLetfBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.relative-middle {
+    float: right;
+    margin-top: 17px;
+}
+
+.hoverable, .hoverable:hover {
+    cursor: pointer;
+}
+
+.ToggleButton {
+    width: 41px;
+    height: 35px;
+    border: 1px solid #b7b7b7 !important;
+    background-color: #fff;
+    color: black;
+    padding: 0 !important;
+    margin: 1px;
+
+    &.k-button:focus {
+        background: #fff;
+        border-color: #fff;
+
+        &.Selected {
+            background-color: @ToggleButtonSelectedColor;
+        }
+    }
+
+    &.Selected {
+        color: #fff;
+        border: 1px dashed #fff !important;
+    }
+}
+
+.k-numeric-wrap .k-link.k-state-selected {
+    background-color: transparent;
+}
+
+span.k-tooltip {
+    padding-right: 6px !important;
+}
+
+.k-popup .k-list .k-item {
+    border-bottom: 1px dotted #ccc;
+}
+
+.PageTitle {
+    position: absolute;
+    top: -30px;
+    color: @commonfontcolor;
+    font: 700 20px Arial;
+}
+
+.PageTitleRMTProcess {
+    position: absolute;
+    top: -23px;
+    color: @commonfontcolor;
+    font: 700 20px Arial;
+}
+
+.text-overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.k-datetimepicker .k-picker-wrap .k-icon {
+    margin: 5px 2px 0 2px;
+}
+
+.numerictextBox {
+    margin: 0;
+    border: 0;
+    //border-bottom: 1px solid @numerictextboxBorderColor !important;
+    height: 23px;
+}
+
+.Draghandle {
+    left: -7px;
+    border: 1px solid @grayCircle !important;
+    background: @draghandleBgColor !important;
+   // .border-radius7;
+}
+
+
+a.nostyle {
+    text-decoration: none;
+    color: #666;
+}
+
+
+a.InnerList {
+    width: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+.notAllowed {
+    a {
+        cursor: not-allowed !important;
+    }
+
+    &a {
+        cursor: not-allowed !important;
+    }
+}
+
+.DateRange {
+    .title {
+        label {
+            width: auto;
+            margin-top: -18px;
+            margin-left: @Margin20;
+        }
+    }
+
+    .DateFilterHolder {
+        padding: 12px 0 0 @Padding10;
+        margin-top: 6px;
+        //border: 1px solid @KWidgetBorderColor;
+        background-color: @date-range-bg-color;
+        .pull-left;
+
+        .TodayLabel {
+            margin-bottom: 24px;
+        }
+
+        .innerBetweenHolder {
+            /*float: right !important;
+                                width: 82% !important;*/
+            input[type=text] {
+                width: 91% !important;
+                border: 0;
+            }
+
+            .k-state-disabled, .k-state-default {
+                .k-i-calendar {
+                    .pull-left;
+                    margin: @Margin9 0 0 @Margin3 !important;
+                    background-position: -32px -176px !important;
+                }
+            }
+
+            .k-state-hover {
+                .k-i-calendar {
+                    margin-top: @Margin9 !important;
+                    background-position: -48px -176px !important;
+                    .pull-left;
+                }
+            }
+        }
+        /*.InTheLastXDaysTxtBox {
+                                width: 40px !important;
+                                border: 0;
+                                margin:0;
+                                //display: inline;
+                            }*/
+        .k-numerictextbox {
+            width: 60px;
+            margin: 0;
+
+            input[type=text] {
+                margin: 0;
+                border: 0;
+                width: 92%;
+            }
+        }
+
+        .k-numeric-wrap .k-select {
+            padding: 0 2px 0 0;
+            width: 15px;
+
+            .k-link {
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+.Clear-Button {
+    background-color: #687073;
+    border-color: #687073 !important;
+
+    &:hover, &:active {
+        background-color: #687073;
+        border-color: #687073 !important;
+    }
+}
+
+.position-top10 {
+    top: @top10;
+}
+
+.margin-top10 {
+    margin-top: @Margin10;
+}
+
+.margin-top15 {
+    margin-top: @Margin15;
+}
+
+.margin-bottom15 {
+    margin-bottom: @Margin15;
+}
+
+.margin-right8 {
+    margin-right: @Margin8;
+}
+
+.padding-left5 {
+    padding-left: @Padding5;
+}
+
+.padding-left10 {
+    padding-left: @Padding10;
+}
+
+.padding-left15 {
+    padding-left: @Padding15;
+}
+
+.textbox-disabled {
+    background-color: #ddd !important;
+    color: #666 !important;
+}
+
+.MenuNotAllowed {
+    margin-left: 11px;
+    float: left;
+    cursor: not-allowed !important;
+    margin-top: 1px;
+}
+
+.TitleGradient {
+    background: #ebebeb;
+    border-bottom: 1px solid @borderColor;
+    background: -webkit-linear-gradient(top, #F6F6F6, #EAEAEA);
+    background: -moz-linear-gradient(top, #F6F6F6, #EAEAEA);
+    background: -ms-linear-gradient(top, #F6F6F6, #EAEAEA);
+    background: -o-linear-gradient(top, #F6F6F6, #EAEAEA);
+}
+
+/*Form components utilities*/
+.k-numeric-textbox {
+    .k-numerictextbox {
+        width: 80px;
+        float: left;
+
+        input[type=text] {
+            margin: 0;
+            width: 50px;
+            border: 0;
+            border-bottom: 1px solid #DAD9D9 !important;
+        }
+    }
+
+    .k-numeric-wrap .k-select {
+        padding: 1px 2px 0 0;
+        width: 17px;
+    }
+}
+
+.blue-color {
+    color: #5E75FF;
+}
+
+.green-color {
+    color: #008000;
+}
+
+.goldenrod-color {
+    color: #DAA520;
+}

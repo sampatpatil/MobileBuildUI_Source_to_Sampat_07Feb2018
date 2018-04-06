@@ -1,0 +1,57 @@
+﻿#
+    //var basePath='State.Query.'+data.QueryId+'.Data.',
+        //vm=data.AP.Config.loadQuery(data.QueryId).get('Data');
+    var basePath='State.Query.CMADataStore.NewBuildRequestData.',
+        vm=data.AP.Config.loadQuery('CMADataStore').get('NewBuildRequestData');
+        builds = [],
+        buildTypeLookup = {MDM:'MDM Build (Intune)', Store:'Store Build', Device:'Device Specific Build'};
+    //console.log(vm);
+    var path='State.Query.CMAUserSettings.Data.EmailList',
+        field=data.AP.Config.loadQuery('CMAUserSettings').Data.EmailList;
+    
+#
+<div style="margin-left:20px; font-size:12px;" data-bind="visible:#:basePath+'ShowInstruction'#">Select "Yes" for the Platforms listed below to include in the new build.</div>
+<div style="font-size:1.4em; font-weight:700; margin-left:20px;">#:vm.AppName#</div>
+#$.each(vm,function(key){
+    if(this.hasOwnProperty('isAvailable')){
+        builds.push(this.isAvailable);
+        vm.set('ShowInstruction', true);
+#
+<div class="form-row ListItem PlatformSelector" data-bind="visible:#:basePath+key+'.isAvailable'#">
+    <label><div><span class="cmaicons cmaicons-4x cmaicons-#:key# LogoColor#:key#" style="display:inline-block;"></span> <span style="display:inline-block; position:relative; top:-7px;">#:key#<br/>#:buildTypeLookup[this.buildType]#</span></div></label>
+    <fieldset  style="margin:0 auto;">
+        <input id="#:key#" type="checkbox" class="input-switch selectitem" data-config-key="" data-config-group="" data-bind="checked:#:basePath+key+'.selectedToBuild'#">
+        <label for="#:key#"></label>
+        <span class="switch-bg"></span>
+        <span data-on="Yes" data-off="No" class="switch-labels"></span>
+    </fieldset>
+</div>
+#};
+});#
+
+#if(builds.indexOf(true)>-1){#
+    <div class="DistrubutionList" style="margin-left:20px; width:90%; font-size:12px; margin-bottom:20px;">
+
+            <!-- <div class="ImportControlField">
+                <span class="Description">#=data.T('sections.settings.EmailList.title')#</span>
+                <input type="file"
+                       name="EmailListImport" data-role="filereader"
+                       placeholder="#= data.T('sections.settings.EmailList.placeholder') #"
+                       accept="#=field.config.type#"
+                       data-vm-path="#:path#"
+                       data-bind="config:#=path#.config,content:#=path#.Content, events:{contentLoaded:#=path#.contentLoaded}"
+                       title="#= data.T('sections.settings.EmailList.title') #" />
+        
+                <div class="ImportControlButtons">
+                    <span class="k-button" data-action="ClearEmailList">Clear Notification List</span>
+                </div>
+            </div> -->
+        
+            <div class="Description">Notification List (List of email addresses to send notification to, when the build is ready):</div>
+            <textarea style="width:100%; min-height:63px;" class="k-textbox EmailList" placeholder="Enter email addresses separated by comma. Example: test@test.com, notify@notify.com, mobilebuild@company.com .">#:vm.EmailList#</textarea>
+        </div>
+#}else{ vm.set('ShowInstruction', false);#
+    <div style="font-size:12px; margin:0 20px 20px 20px;">This app cannot be built from here currently. Please edit the app and choose 'Build' on the last step to request a build.</div>
+#}#
+
+<div class="Buttons"></div>

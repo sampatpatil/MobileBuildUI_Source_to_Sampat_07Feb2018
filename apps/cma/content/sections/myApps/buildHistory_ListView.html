@@ -1,0 +1,52 @@
+﻿<!-- #baseQueryPath='State.Query.'+data.QueryId;# -->
+
+<!-- <div class="Field">
+    <span class="FieldText">Build History</span>
+    <div class="BuildOptions" title="Select a build" placeholder="Select a build" data-role="dropdownlist" data-text-field="Name" data-value-field="Value"></div>
+</div> -->
+<!-- data-bind="value:#:baseQueryPath#.DefaultLocale" -->
+#count=0;#
+<div class="itemContainer">
+    #if(data.BuildHistory && data.BuildHistory.length && count<1){#
+    <div class="Field">
+        <span class="FieldText">Select a build</span>
+        <select class="BuildHistoryDropdown" title="Select Default Locale" placeholder="Select Default Locale" data-bind="source:#:data.AppVersion#" data-role="dropdownlist"> </select>
+    </div>
+    <div><strong>Build History - Work in progress</strong></div>
+    <div class="AppVersion"><span style="font-weight:700">App Version: </span>#:data.AppVersion#</div>
+    <span class="BuildDetailsContainer">
+        #$.each(data.BuildHistory, function(idx, buildData){
+            if(count<1){
+                count++;
+                var dateInMilliseconds = Number(buildData.Date.split('(')[1].split('+')[0]),
+                requestedDate = new Date(dateInMilliseconds).toLocaleDateString();
+            #
+        <span class="BuildDetails"> <!--BuildDetails start -->
+            <div class="BuildVersion"><span style="font-weight:700">Build Version: </span>#:buildData.Version#</div>
+            <div class="BuildVersion"><span style="font-weight:700">Requested by: </span>#:buildData.RequestedBy#</div>
+            <div class="BuildVersion"><span style="font-weight:700">Requested On: </span>#:requestedDate#</div>
+            <span class="ActionButtons">
+                #$.each(buildData.Builds, function(id, build){#
+                <div class="DownloadButtonContainer" style="margin: 15px 0px; padding: 5px; background: cornsilk;">
+                    <span class="IconHolder">
+                        <span class="DownloadIcon Small #:build.type#Icon" style="margin-bottom:-17px"></span>
+                    </span>
+                    <div style="display:inline-block">
+                        <div style="margin-left:5px; font-size:1.2em; font-weight:700">#:build.type#</div>
+                        <div style="margin-left:5px;">Available for download</div>
+                    </div>
+                    <div style="padding-left: 60px; padding-top: 5px;">
+                        <span class="CMA-Icon DownloadButtonIcon #:build.id#" data-command="Download" data-build-request-id="#:build.id#"></span>
+                        <span class="CMA-Icon EmailButtonIcon #:build.id#" data-command="ShareLink" data-platform="#:build.type#" data-build-request-id="#:build.id#"></span>
+                    </div>
+                </div>
+                #});#
+            </span>
+        </span> <!--BuildDetails close -->
+        #}
+    });
+    } else if(data.isEmpty && !data.BuildHistory){#
+        <span class="Header NoWidth">No build history found.</span>
+    #}#
+    </span>
+</div>

@@ -1,0 +1,25 @@
+#
+		var Block = data.AP.Model.getBlock(data.BlockId),
+                    DOM = Block.Widget.DOM,
+			        Links = Block.Widget.Data;
+	#
+	<nav id="#=data.BlockId#">
+        #for(var i =0;i < Links.length; i++){         
+        var attrStr='', link = Links[i], attrEx = link.Attr;
+         if (attrEx!=null) {         
+            for (var key in attrEx){
+                if(key != 'uid' && attrEx.hasOwnProperty(key) && typeof(attrEx[key]) == 'string'){
+            attrStr += ' '+key + '="' + attrEx[key] + '"';
+        }
+      }
+    }           
+     
+        if(link.text.isKey){#
+        <#= DOM # data-text-key="#=link.text.getEncoded()#" #=attrStr#>                
+        #}else{#
+        <#= DOM # #=attrStr#>
+        #=link.text.value#
+        #}#
+        </#= DOM #>
+        #}#
+    </nav>

@@ -1,0 +1,630 @@
+﻿/*Variables -import */
+@import "variables.less";
+@import "utilities.less";
+
+.IconSprite(@url,@posx,@posy,@width,@height,@repeat: no-repeat) {
+    background-image: url(@url);
+    background-position-x: @posx;
+    background-position-y: @posy;
+    background-position: @posx @posy;
+    width: @width;
+    height: @height;
+    background-repeat: @repeat;
+}
+
+body {
+    font-size: 13px;
+}
+
+#CMAMain {
+    overflow: hidden;
+    font-size: 100%;
+    //.segoenormal;
+    //.default-font();
+    font-family: Segoeui, Arial;
+    .innerboxblocks;
+    //color: #6b6b6b;
+    color: @commonbasefontcolor;
+    //overflow-y: auto;
+    .k-dropdown {
+        .k-state-focused {
+            .k-input {
+                color: @white;
+            }
+
+            .k-icon {
+                background-position: -16px -32px;
+            }
+        }
+    }
+
+    .Root {
+        &.Home {
+            .innerboxblocks;
+
+            .Body {
+                .innerbox;
+                //margin-top: @upperbarheight;
+                > .Blocks {
+                    .innerbox;
+                }
+
+                .Content {
+                    .innerboxblocks;
+                }
+            }
+        }
+
+        &.APBackground > img {
+            margin-top: 43px;
+            width: 100%;
+            .pull-left;
+            height: 100%;
+
+
+            &.MainBgImage {
+                position: fixed;
+                bottom: -72px;
+                z-index: -1;
+                width: auto;
+                right: 0;
+            }
+        }
+
+        .UpperBar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            height: @upperbarheight;
+            //border-bottom: 3px solid @borderColor;
+            .APSetCulture {
+                position: absolute;
+                top: 9px;
+                left: 81.6%;
+
+                .k-dropdown {
+                    width: 120px;
+
+                    .k-state-default {
+                        .k-input {
+                            text-align: center;
+                            color: #666;
+                        }
+                    }
+
+                    .k-state-hover, .k-state-active, .k-state-focused {
+                        .k-input {
+                            color: #fff;
+                        }
+                    }
+
+                    .k-select {
+                        .k-icon {
+                            /*background-position: -177px -256px !important;*/
+                        }
+                    }
+                }
+            }
+
+            .TitleHeader{
+                color:white;
+                font-size:1.6em;
+                position:relative;
+                top:10px;
+                left:40px;
+                display:inline-block;
+                text-transform:uppercase;
+            }
+
+            .Logo {
+                position: relative;
+                top: 13px;
+                left: 20px;
+                float:left;
+
+                img {
+                    max-width: 160px;
+                    max-height: 60px;
+                }
+            }
+
+            .RootLogo {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+            }
+
+            .BreadCrumbs {
+                margin: 1.2% auto;
+                height: 17px;
+                display: table;
+                color: @commonfontcolor;
+                font: bold 1.4em Museo500;
+            }
+
+            .CMA {
+                position: absolute;
+                top: 12px;
+                left: 75px;
+                list-style: none;
+                //font: bold 15px Museo500;
+                .setFont(Museo700,16px);
+                color: @LogoColor;
+            }
+
+            .Clock {
+                position: absolute;
+                top: 34px;
+                left: 75px;
+                font-size: @LogoByLineFontsize;
+                list-style: none;
+                color: @commonfontcolor;
+                font-family: Arial;
+            }
+
+            .List {
+                //display: none;
+                //position: absolute;
+                //right: 218px;
+                width: 40%;
+                height: auto;
+                float: right;
+
+                .Signin {
+                    /*background-color: #444 !important;*/
+                    .MenuText {
+                        color: @white !important;
+                    }
+                }
+
+                .k-menu {
+                    border: 0;
+                    float: right;
+                    background-color: transparent;
+
+                    .k-item {
+                        border: 0;
+                        width: auto !important;
+                        color: #fff;
+                        text-align: center;
+                        padding: 0;
+                        //cursor: pointer;
+
+                        .k-link {
+                            line-height: initial;
+                            cursor:default;
+
+                            .Fields {
+                                line-height: initial;
+
+                                a.Field.Title {
+                                    display: block;
+                                    height: 48px;
+                                    text-decoration: none;
+                                    &.Welcome{
+                                        background-image: url(../../resources/img/sprites/cmaicons.png);
+                                        background-position:-113px -21px;
+                                        color:white !important;
+                                    }
+
+                                    &.MyApps{
+                                        background-image: url(../../resources/img/sprites/cmaicons.png);
+                                        background-position:-103px -21px;
+                                        color:white !important;
+                                    }
+
+                                    &.MyApps:hover{
+                                        background-position:-103px -81px;
+                                        color:#60cae4 !important;
+                                    }
+
+                                    &.CreateNewApp{
+                                        background-image: url(../../resources/img/sprites/cmaicons.png);
+                                        background-position:-78px -141px;
+                                        color:white !important;
+                                    }
+
+                                    &.CreateNewApp:hover{
+                                        background-position:-78px -201px;
+                                        color:#8dc63f !important;
+                                    }
+
+                                    &.Archive{
+                                        background-image: url(../../resources/img/sprites/cmaicons.png);
+                                        background-position:-103px -261px;
+                                        color:white !important;
+                                    }
+
+                                    &.Archive:hover{
+                                        background-position:-103px -321px;
+                                        color:#f78f1e !important;
+                                    }
+
+                                    &.Announcement{
+                                        background-image: url(../../resources/img/sprites/cmaicons.png);
+                                        background-position:-75px -381px;
+                                        color:white !important;
+                                    }
+
+                                    &.Announcement:hover{
+                                        background-position:-75px -441px;
+                                        color:#eed517 !important;
+                                    }
+
+                                    .Fields {
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+
+                                        .MenuText {
+                                            display: block !important;
+                                            //color:#fff;
+                                            opacity: 1 !important;
+                                            position:relative;
+                                            top:36px;
+                                            margin: 0 auto;
+                                            text-indent:0.01px;  //fix to display webfonts (SVG icon fonts) vertically centered in IE -- Phani
+                                            /*height: 100%;
+                                            width: 100%;
+                                            line-height: 45px;*/
+                                            padding-bottom: 4px;
+                                            text-transform: uppercase;
+                                            
+                                            &.Color1{
+                                                //color:#85c5e0;
+                                                width:39px;
+                                                color:#60cae4;
+                                                //border:2px solid #60cae4;
+                                                //border-radius:100%;
+                                            }
+
+                                            &.Color2{
+                                                //color:#85e089;
+                                                width:39px;
+                                                color:#8dc63f;
+                                                //border:2px solid #8dc63f;
+                                                //border-radius:100%;
+                                            }
+
+                                            &.Color3{
+                                                //color:#e09864;
+                                                width:39px;
+                                                color:#f78f1e;
+                                                //border:2px solid #f78f1e;
+                                                //border-radius:100%;
+                                            }
+
+                                            &.Color4{
+                                                //color:#e09864;
+                                                width:39px;
+                                                color:#eed517;
+                                                //border:2px solid #eed517;
+                                                //border-radius:100%;
+                                            }
+
+                                            /*&.Color1:hover{
+                                                color:black;
+                                                background:#60cae4;
+                                            }
+
+                                            &.Color2:hover{
+                                                color:black;
+                                                background:#8dc63f;
+                                            }
+
+                                            &.Color3:hover{
+                                                color:black;
+                                                background:#f78f1e;
+                                            }
+
+                                            &.Color4:hover{
+                                                color:black;
+                                                background:#eed517;
+                                            }*/
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .k-state-hover {
+                        width: auto !important;
+                        background-image: none;
+                        opacity: 1 !important;
+                        //background-color: #444;
+                    }
+                    .k-state-hover:hover{
+                        background-color: transparent;
+                    }
+
+                    .k-state-focused{
+                        box-shadow: none;
+                        -webkit-box-shadow: none;
+                    }
+                }
+            }
+
+            .APProfileMenu {
+                height: @upperbarheight;
+                background-color: #57b1c9;
+                /*position: absolute;
+                top: 0;
+                right: 0;*/
+                cursor: pointer;
+                width: 20%;
+                float: right;
+
+                .LoginUserInfo {
+                    width: 100%;
+                    //min-width: 215px;
+                    .pull-left;
+                    height: @upperbarheight;
+                    //border-left: 1px solid @borderColor;
+                    //border-right: 1px solid @borderColor;
+                    //padding-top:10px;
+
+                    .UserDetails {
+                        margin-top: 14px;
+                        margin-left: 14px;
+                        margin-right: @Margin0;
+                        width: 70%;
+                        .pull-left;
+                        font: 13px Arial;
+                        color: #fff;
+
+                        .UserName {
+                            width: 99%;
+                            .pull-right;
+                            .bold;
+                            .text-ellipsis
+                        }
+
+                        .UserID {
+                            width: 99%;
+                            margin-top: @Margin17;
+                            clear: both;
+                            text-transform: lowercase;
+                            .text-ellipsis
+                        }
+                    }
+
+                    .ProfileIconHolder {
+                        display: none;
+                        width: @profileimagewidth;
+                        height: @profileimageheight;
+                        margin: @Margin10 @Margin10 0 @Margin10;
+                        .pull-left;
+
+                        .ProfileIcon {
+                            width: @profileimagewidth;
+                            height: @profileimageheight;
+                        }
+                    }
+                }
+
+                .LoginRight {
+                    float: right;
+                    min-width: 50px;
+                    text-align: center;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                .MenuItemsHolder {
+                    top: 0px;
+                    .settransition;
+                    right: 0;
+                    position: absolute;
+                    z-index: 0;
+                    //.boxshadow( 0px, 13px, 14px, 1px, #CCCCCC);
+                    width: 20%;
+                    background-color: #4b4b4b;
+                    color: @white;
+                    height: 0px;
+                    display: none;
+                    -moz-box-shadow: -1px 3px 6px #b3b8ba;
+                    -webkit-box-shadow: -1px 3px 6px #b3b8ba;
+                    box-shadow: -1px 3px 6px #b3b8ba;
+
+                    .MenuItems {
+                        list-style: none;
+                        height: 0px;
+
+                        .MenuItem {
+                            &:hover {
+                                cursor: pointer;
+                                background-color: #57b1c9;
+                                color: @white;
+                            }
+
+                            .shadow();
+                            padding: 8px;
+                            text-align: left;
+                        }
+                    }
+
+                    &.Opened {
+                        display: block;
+                        z-index: 10000;
+                        top: @upperbarheight;
+                        /*height: 0 + @profilemenuheight;*/
+                        height: ~"calc(100% + 40px)";
+                    }
+                }
+            }
+        }
+
+
+
+        .Body {
+            @import "areas/landing.less";
+            .innerbox;
+            margin-top: @upperbarheight;
+            margin-right: @bodyrightmargin;
+            margin-bottom: @footerheight - @bodyoverlapbottom;
+            margin-left: @bodyleftmargin;
+            z-index: 1;
+
+            > .Blocks {
+                .innerbox;
+            }
+
+            .BreadCrumbs {
+                .settransition;
+                //.segoebold;
+                color: @bright;
+                height: @breadcrumbsheight;
+                margin-left: @menuwidth - @bodyleftmargin + 20;
+            }
+
+            .Content {
+                background-color: transparent !important;
+                overflow: hidden;
+
+                .APBackground > img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .LandingContent {
+                    .LeftContent {
+                        width: 1125px;
+                        height: 465px;
+                        float: left;
+                    }
+                }
+
+
+                .Fields,
+                .Fields > .Title {
+                    display: block;
+                    .bold;
+                    //.segoebold;
+                }
+
+                .Fields > .Title {
+                    padding: @generalpadding * 1.7 @generalpadding * 2;
+                }
+
+                > .Blocks > .Block > .Fields > .Title {
+                    //.segoelight;
+                    font-size: 190%;
+                    color: @white;
+                    height: @sectiontitleheight;
+                    padding: 0;
+                }
+            }
+        }
+
+        .Footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: @footerheight;
+            z-index: 1;
+
+            > .Blocks {
+                .innerbox;
+            }
+
+            nav {
+                margin-left: 54px;
+
+                a {
+                    margin-right: 15px;
+                    color: @navi;
+                }
+            }
+
+            .Clock {
+                //.segoelight;
+                color: @bright;
+                float: left;
+                margin: 15px 0 0 15px;
+                color: @black;
+
+                .APClockTime {
+                    font-size: 130%;
+                }
+            }
+
+            .Logo {
+                float: right;
+                margin: 15px 18px 0 0;
+
+                img {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        @import "menus.less";
+    }
+
+   &.Standalone{
+       .AddNewApp, .DownloadAddedApp, .MyAppsContainer{
+        //margin-left:5%!important;
+        //width:98%!important
+       }
+
+       .Body.Landing {
+        top:60px;
+        bottom:19px
+       }
+        // .menu.collapsed{
+        //     width: 200px !important;
+            
+        //        .grand-container {
+        //             width: 200px !important;
+        //             >.menu-item {
+        //                 width: 200px !important;
+        //                  .text {
+        //                     display: block !important;
+        //                 }
+        //             }
+        //         } 
+            
+        // }
+
+   }
+
+    .nicescroll-rails {
+        div {
+            background-color: @scrollbarColor !important;
+        }
+    }
+}
+/*States -import */
+//@import "states.less";
+@import "icons.less";
+
+@media only screen and (max-width : 1024px) {
+    .MenuItemsHolder {
+        width: 129px !important;
+    }
+}
+
+.agile-portal.section-content {
+    .CMA-Container {
+        position: absolute !important;
+        top: 0px !important;
+        bottom: 30px !important;
+        right: 5px !important;
+        width: 100% !important;
+    }
+
+    &.minimizemode {
+        .agile-portal.leftmenubar.menu {
+            height: ~"calc(100% - 160px)" !important;
+        }
+    }
+
+    &.maximizemode {
+        .agile-portal.leftmenubar.menu {
+            height: ~"calc(100% - 90px)" !important;
+        }
+    }
+}

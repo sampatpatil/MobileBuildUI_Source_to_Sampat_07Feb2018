@@ -1,0 +1,32 @@
+	#
+		var AP = data.AP, Text = data.text || '',
+			Action = data.action || '',
+            ModuleAccessCode  = data.hasOwnProperty('accessCode') ? data.accessCode : ''
+            showText = data.showText,extraClass = data.extraClass||'',
+			IconClass = data.iconClass || '',
+            Enabled = data.enabled || false,
+            disabledClass =  Enabled?'':'k-state-disabled';
+if(showText == null) showText = true;
+var title =""; 
+if(Text)title=AP.View.Internationalize.translate(Text)||'';
+
+ var attrStr='', attrEx = data.attrEx;
+         if (attrEx!=null) {
+            for (var key in attrEx){
+                if(key != 'uid' && attrEx.hasOwnProperty(key) && (_.isString(attrEx[key]) ||_.isBoolean(attrEx[key]))){
+            attrStr += ' '+key + '="' + attrEx[key] + '"';
+        }
+      }
+    }  
+	#
+	
+	<a href="\\#"
+   # if(ModuleAccessCode !='' ) { #data-accesscode="#= ModuleAccessCode #" # } #
+   # if(data.id) { #id="#= data.id #" # } #
+   class="k-button k-button-icontext #=disabledClass# #= extraClass # #= Action #"
+   data-action="#= Action #" title="#=title#"
+   #=Enabled?'':'disabled ="true" '# #=attrStr#>
+    #if(data.iconRequired){#<span class="k-icon #= IconClass #"></span>#}#
+    #if(showText){#	<span class="k-toolbar-button-text"
+                             data-text-key="#= Text #">Text</span>#}#
+</a>

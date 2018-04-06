@@ -1,0 +1,43 @@
+﻿{
+    "APLogOut": {
+        "Text": "Logout"
+    },
+    "APMessageBar": {
+        "close": "Close"
+    },
+    "APZoomView": {
+        "defaultContent": "The image source is not set yet!"
+    },
+    "APGrid": {
+        "selectedrows": {
+            "notdeleted": "Selected rows can't be deleted"
+        },
+      "toolbar": {
+        "menu": {
+          "title": "Actions"
+        }
+      },
+       "widget": {
+      "pageable": {
+        "messages": {
+          "display": "{0} - {1} of {2} Items",
+          "empty": "No items to display",
+          "page": "Page",
+          "of": "of {0}",
+          "itemsPerPage": "items per page",
+          "first": "Go to the first page",
+          "previous": "Go to the previous page",
+          "next": "Go to the next page",
+          "last": "Go to the last page",
+          "refresh": "Refresh",
+          "morePages": "More pages"
+        }
+      },
+      "groupable": {
+        "messages": {
+          "empty": "Drag a column header and drop it here to group by that column"
+        }
+      }
+    }
+    }
+}

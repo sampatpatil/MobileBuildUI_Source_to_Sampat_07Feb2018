@@ -1,0 +1,17 @@
+﻿#
+var AP=data.AP,
+    translate=data.T,
+    addAppLabel=translate('sections.appList.toolbar.addNewApp.label'),
+    addAppTitle=translate('sections.appList.toolbar.addNewApp.title'),
+    searchButtonTitle=translate('sections.appList.toolbar.searchButton.title'),
+    searchBoxTitle=translate('sections.appList.toolbar.searchBox.title'),
+    searchBoxPlaceholder=translate('sections.appList.toolbar.searchBox.placeholder');
+
+AP.Config.loadQuery('CMADataStore');
+#
+<a href="\#" title="Add App" class="k-button k-button-icontext AddApp " data-action="AddApp">
+    <!--<span class="k-icon CMA-Icon AddIcon"></span>-->    
+    <span class="plus-sign">+</span>
+    <span class="k-toolbar-button-text" title="Create new app">Create new app</span>
+</a>
+<!--<span class="SearchBox"><input class="k-textbox" type="text" data-enter-key-action="SearchApp" placeholder="#=searchBoxPlaceholder#" title="#=searchBoxTitle#" data-bind="value:State.Query.CMADataStore.AppListToolBar.SearchText" /><span class="SearchButton k-icon CMA-Icon SearchIconDark" title="#=searchButtonTitle#" data-action="SearchApp"></span></span>-->

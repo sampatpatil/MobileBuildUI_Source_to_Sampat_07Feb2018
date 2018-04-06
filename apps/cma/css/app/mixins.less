@@ -1,0 +1,38 @@
+﻿/* Font mixins */
+.setFont(@family,@size,@weight) {
+    font-family: @family;
+    font-size: @size;
+    font-weight: @weight;
+}
+
+
+.border-radius (@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.text-ellipsis(@width) {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: @width;
+}
+
+.transition (@prop, @time, @ease) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+
+.ellipsis(@width) {
+    overflow: hidden;
+    white-space: nowrap;
+    width: @width;
+    text-overflow: ellipsis;
+}

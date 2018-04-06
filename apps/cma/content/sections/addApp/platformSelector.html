@@ -1,0 +1,30 @@
+﻿#var AP=data.AP, header=data.T('sections.addNewApp.platformSelector.title'),
+        decription=data.T('sections.addNewApp.platformSelector.description'),
+        android=data.T('sections.addNewApp.platformSelector.android.title'),
+        ios=data.T('sections.addNewApp.platformSelector.ios.title'),
+        windows=data.T('sections.addNewApp.platformSelector.windows.title'),
+        androidVersion=data.T('sections.addNewApp.platformSelector.android.versionText'),
+        iosVersion=data.T('sections.addNewApp.platformSelector.ios.versionText'),
+        windowsVersion=data.T('sections.addNewApp.platformSelector.windows.versionText'),
+        next=data.T('form:Buttons.Next'),
+        baseQuery='State.Query.'+data.QueryId+'.Form';
+#
+
+<span class="Headers" title="#:header#">#:header#</span>
+<span class="Description" title="#:header#">#:decription#</span>
+
+<div class="FieldContainer" data-bind="events:{click:#=baseQuery#.PlatformSelector.change}">
+    <span class="AltCheckbox" data-name="CreateAndroidApp" data-bind="css:{CheckedActive:#=baseQuery#.PlatformSelector.CreateAndroidApp}"></span><span class="cmaicons cmaicons-Android cmaicons-4x LogoColorAndroid" style="vertical-align:middle;"></span><span class="PlatformDetails"><span class="Platform display-block">#:android#</span><span class="Version display-block">#:androidVersion#</span></span>
+</div>
+
+<div class="FieldContainer" data-bind="events:{click:#=baseQuery#.PlatformSelector.change}">
+    <span class="AltCheckbox" data-name="CreateWindowsPhoneApp" data-bind="css:{CheckedActive:#=baseQuery#.PlatformSelector.CreateWindowsPhoneApp}"></span><span class="cmaicons cmaicons-Windows cmaicons-4x LogoColorWindows" style="vertical-align:middle;"></span><span class="PlatformDetails"><span class="Platform display-block">#:windows#</span><span class="Version display-block">#:windowsVersion#</span></span>
+</div>
+
+<div class="FieldContainer" data-bind="events:{click:#=baseQuery#.PlatformSelector.change}">
+    <span class="AltCheckbox" data-name="CreateiPhoneAndiPadApp" data-bind="css:{CheckedActive:#=baseQuery#.PlatformSelector.CreateiPhoneAndiPadApp}"></span><span class="cmaicons cmaicons-iOS cmaicons-4x LogoColoriOS" style="vertical-align:middle;"></span><span class="PlatformDetails"><span class="Platform display-block">#:ios#</span><span class="Version display-block">iOS 9.0 and above</span></span>
+</div>
+
+<div class="Buttons">
+
+</div>

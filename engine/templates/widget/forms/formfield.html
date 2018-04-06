@@ -1,0 +1,321 @@
+﻿
+	#var FieldPath = data.FieldPath || 'State.Query.' + data.QueryId + '.Form.SubForms[\'' + data.SubFormIndex + '\'].FieldSets[\'' + data.FieldSetIndex + '\'].Fields[\'' + data.FieldName + '\']',
+			FieldType = data.Field.type, action = data.Field.action ? data.Field.action : '',
+            FieldUpdateMode = data.Field.updateMode||'keyup',
+            ShowLabel = data.Field.showLabel == null? true : data.Field.showLabel,
+            FieldHelpText = data.Field.ishelptextrequried ? data.Field.ishelptextrequried : 'false',
+			FieldKey = data.FieldName,AP = data.AP,
+			FieldLabel = AP.View.Internationalize.translate('form:' + FieldKey + '.label'),
+            FieldLabelKey = 'form:' + FieldKey + '.label',
+			FieldHelp = AP.View.Internationalize.translate('form:' + FieldKey + '.help'),
+            FieldHelpKey = 'form:' + FieldKey + '.help',
+            FieldPlaceholderKey = 'form:' + FieldKey + '.placeholder',
+            FieldPlaceholder = AP.View.Internationalize.translate(FieldPlaceholderKey),
+            FieldRequired = data.Field.validation && data.Field.validation.required ? 'required' : '',
+            attrStr = AP.Utils.generateValidationConfig(data.Field),
+			FieldSize = data.Field.size || '', // Column number
+			FieldSizeClass = 'FieldSize_' + FieldSize,
+            LabelClass = data.Field.labelClass||'',eventBindings = '',EnabledBindingWComma = '',
+            MinValueBinding = 'minValue:'+FieldPath +'.Config.min',MinValueBindingWComma = ','+MinValueBinding,
+            VisibleBinding = 'visible:' +FieldPath +".Visible",VisibleBindingWComma=','+ VisibleBinding;
+
+            if(data.Field.Enabled != null){
+             var  EnabledBinding = 'enabled:'+FieldPath +'.Enabled';
+            EnabledBindingWComma = ','+EnabledBinding;
+            }
+            if(data.Field.Change != null){
+               eventBindings = "change:" +FieldPath +".Change" ;
+            }
+
+             if(data.Field.Visible == null){
+               VisibleBinding = VisibleBindingWComma = '' ;
+            }
+
+            if(data.Field.Select != null){
+               eventBindings = (eventBindings != '') ? eventBindings + "," : eventBindings;
+               eventBindings = eventBindings +"select:" +FieldPath +".Select";
+            }
+            if(eventBindings != ''){
+               var eventBindingValue ='events: { '+ eventBindings +' }'; EnabledBindingWComma = EnabledBindingWComma + ','+eventBindingValue;
+
+            }
+
+            if(data.Field.minValueBinding == null || data.Field.minValueBinding == false)MinValueBinding = MinValueBindingWComma = '';
+
+            var UID = kendo.guid();
+            
+	#
+	
+	# if(FieldType == 'hidden') { #
+		
+		<input type="#= FieldType #"
+			   id="#= data.FieldName #"
+			   name="#= data.FieldName #"
+			   value="#= data.Field.defaultValue #"/>
+			   
+	# } else if (FieldType == 'separator') { #
+	
+		<div class="Separator">	</div>
+			   
+	# } else { #
+	
+		<div class="Field #= FieldKey# #= FieldSizeClass #">
+		
+            #if(ShowLabel && FieldType != 'static'){#
+			<label for="#= UID #" class="#= FieldRequired # #=LabelClass#" data-text-key="#=FieldLabelKey#" title="#= FieldHelp #" />
+			#}
+             if(FieldHelpText == 'true'){
+			if(FieldHelp != '-') { #<div class="FieldHelp" data-text-key="#=FieldHelpKey#" >#= FieldHelp #</div># }
+            }#
+			
+			# switch(FieldType){
+				
+				default: #
+               #if(data.Field.Template){#                
+                #= data.AP.View.Templates.renderTemplate(data.Field.Template, {
+																	AP: data.AP,  
+																	QueryId: data.QueryId,																																		
+																	FieldName: data.FieldName,
+                                                                    FieldPath: FieldPath,
+                                                                    Field: data.AP.Model.ViewModel.get(FieldPath),
+                                                                    
+                                                                    FieldName: data.FieldName,    
+                                                                    FieldRequired: FieldRequired,
+                                                                    FieldLabelKey: FieldLabelKey,
+                                                                    FieldHelp: FieldHelp
+																}) #
+                #}else{#
+            <input id="#= UID #" type="text"
+                   data-value-update="#=FieldUpdateMode#"
+                   name="#= data.FieldName #"
+                   # if(FieldPlaceholder !='-' ) { #placeholder="#= FieldPlaceholder #" # } #
+                   #=attrStr #
+                   data-text-key="#=FieldPlaceholderKey#"
+                   data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+                   title="#= FieldHelp #" />
+                #}#
+				# break; #
+			# case 'label': # s
+            	<label for="#= UID #" class="#= FieldRequired # #=LabelClass#" data-text-key="#=data.Field.defaultValue#" title="#=data.Field.defaultValue#" />
+            # break; #
+				# case 'textarea': # 
+				<textarea id="#= UID #"
+                            data-value-update="#=FieldUpdateMode#"
+							name="#= data.FieldName #"
+							# if(FieldPlaceholder != '-') { #placeholder="#= FieldPlaceholder #"# } #
+							#= attrStr #
+                            data-text-key="#=FieldPlaceholderKey#"
+							data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+							title="#= FieldHelp #"/>
+				# break; #
+
+                # case 'email': #
+                <input  type="email"
+                        data-value-update="#=FieldUpdateMode#"
+						id="#= UID #"
+						name="#= data.FieldName #"
+						# if(FieldPlaceholder != '-') { #placeholder="#= FieldPlaceholder #"# } #
+						#= attrStr #
+                        data-text-key="#=FieldPlaceholderKey#"
+                        data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+						title="#= FieldHelp #"/>				
+				# break; #
+
+                # case 'editor': # 
+				<textarea id="#= UID #"
+							name="#= data.FieldName #"                        
+							# if(FieldPlaceholder != '-') { #placeholder="#= FieldPlaceholder #"# } #
+							#= attrStr #
+                            data-text-key="#=FieldPlaceholderKey#"
+                            data-role="editor"
+							data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+							title="#= FieldHelp #"/>
+				# break; #
+                # case 'codeEditor':#
+            <textarea id="#= UID #"
+                      name="#= data.FieldName #"
+                      # if(FieldPlaceholder !='-' ) { #placeholder="#= FieldPlaceholder #" # } #
+                      #=attrStr #
+                      data-role="codemirror"
+                      data-bind="value: #= FieldPath #.defaultValue, config:#=FieldPath#.config"
+                      title="#= FieldHelp #" />
+                # break; #
+
+            # case 'upload': # 
+            		<input id="#= UID #" type="file"
+						name="#= data.FieldName #" data-role="upload"
+						# if(FieldPlaceholder != '-') { #placeholder="#= FieldPlaceholder #"# } #
+						#= attrStr #
+                        data-text-key="#=FieldPlaceholderKey#"
+                        data-bind="#=EnabledBindingWComma#, dataex:#=FieldPath#.config"
+						title="#= FieldHelp #"/>
+            	# break; #
+            # case 'filereader': # 
+            	<input id="#= UID #" type="file"
+					name="#= data.FieldName #" data-role="filereader"
+					# if(FieldPlaceholder != '-') { #placeholder="#= FieldPlaceholder #"# } #
+					#= attrStr #
+                    accept="#=data.Field.config.type#"
+                    data-text-key="#=FieldPlaceholderKey#"
+                    data-bind="config:#=FieldPath#.config,content:#=FieldPath#.content #=EnabledBindingWComma#"
+					title="#= FieldHelp #"/>
+            # break; #
+            # case 'password': #
+            <input id="#= UID #" type="password"
+                   name="#= data.FieldName #"
+                   data-value-update="#=FieldUpdateMode#"
+                   # if(FieldPlaceholder !='-' ) { #placeholder="#= data.Field.defaultValue #" # } #
+                   #=attrStr #
+                   data-text-key="#=FieldPlaceholderKey#" data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+                   title="#= FieldHelp #" />
+				# break; #
+               # case 'numerictexbox': # 
+                <input id="#= UID #" type="number"  
+                    name="#= data.FieldName #" 
+                     data-role="numerictextbox"
+                    # if(data.Field.minValueBinding == null || data.Field.minValueBinding == false) { if( data.Field.Config && data.Field.Config.min) { #data-min="#= data.Field.Config.min #"# } else { #data-min="0"# } }#
+                    # if( data.Field.Config && data.Field.Config.max) { #data-max="#= data.Field.Config.max #"# } #
+                    # if( data.Field.Config && data.Field.Config.step) { #data-step="#= data.Field.Config.step #"# } #
+                    # if( data.Field.Config && data.Field.Config.format) { #data-format="#= data.Field.Config.format #"# } #
+                    # if(FieldPlaceholder != '-') { #placeholder="#= data.Field.defaultValue #"# } #
+                    #= attrStr #
+                    data-text-key="#=FieldPlaceholderKey#" data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma# #=MinValueBindingWComma#"
+					title="#= FieldHelp #"/>
+                    <span class="k-invalid-msg" data-for="#= data.FieldName #"></span>
+            # break; #
+
+             # case 'autocomplete': # 
+               <input id="#= UID #"
+                      data-id="#= data.QueryId #"
+				      name="#= data.FieldName #"
+                      data-role="autocomplete"  data-text-field="text" data-value-field="#= data.Field.ValueField #" 
+                      data-bind="dataex:#= FieldPath #.Config, source: #= FieldPath #.DropDownOptions, value: #= FieldPath #.defaultValue,searchText: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+					  # if(FieldPlaceholder != '-') { #placeholder="#= data.Field.defaultValue #"# } #
+					  #= attrStr #
+                      data-text-key="#=FieldPlaceholderKey#"						
+					  title="#= FieldHelp #" />
+              # break; #
+            # case 'multiselect': #
+            <input id="#= UID #"
+                   data-id="#= data.QueryId #"
+                   name="#= data.FieldName #"
+                   data-role="multiselect" multiple="multiple" data-text-field="#=data.Field.TextField||'text'#" data-value-field="#= data.Field.ValueField #"
+                   data-bind="dataex:#= FieldPath #.Config, source: #= FieldPath #.DropDownOptions, value: #= FieldPath #.defaultValue,searchText: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+                  # if(FieldPlaceholder !='-' ) { #placeholder="#= data.Field.defaultValue #" # } #
+                   #=attrStr #
+                   data-text-key="#=FieldPlaceholderKey#"
+                   title="#= FieldHelp #" />
+            # break; #
+
+              # case 'combobox':
+            var sourceEx = data.Field.DropDownOptions ? 'source: '+ FieldPath+".DropDownOptions, ":'';
+             #                      
+				<input id="#= UID #"
+                      data-id="#= data.QueryId #"
+				      name="#= data.FieldName #"
+                      data-role="combobox"  data-text-field="#=data.Field.TextField||'text'#" data-value-field="#= data.Field.ValueField #"  
+                      # if(FieldPlaceholder != '-') { #data-placeholder="#=FieldPlaceholder #"# } #
+                      # if( action != '') { #data-action="#= data.Field.action #"# } #
+                      data-bind="dataex:#= FieldPath #.Config, #= sourceEx # value: #= FieldPath #.defaultValue,searchText: #= FieldPath #.defaultValue#=EnabledBindingWComma#"					  
+					  #= attrStr #
+                      data-text-key="#=FieldPlaceholderKey#"						
+					  title="#= FieldHelp #" />
+                    #if(data.Field.DependentFields){                    
+                    #
+                        <div class="DependentFields">
+                            #for(var innerFieldKey in data.Field.DependentFields){#
+                                <div class="DependentField" data-bind="visible:#=FieldPath#.Is#=innerFieldKey#Active">
+            			            #=data.AP.View.Templates.renderTemplate('widget/forms/formfield', {
+																	            AP: data.AP,  
+																	            QueryId: data.Id,
+																	            SubFormIndex: data.SubFormIndex,
+																	            FieldSetIndex: data.FieldSetIndex,
+																	            FieldName: innerFieldKey, 
+                                                                                FieldPath: FieldPath + '.DependentFields.' + innerFieldKey,
+																	            Field: data.Field.DependentFields[innerFieldKey] 
+																            })#
+                                </div>
+                            #}#
+                        </div>
+                    #}#
+				# break; #          
+             # case 'dropdown':              
+             var role ='dropdownlist';#
+				<input id="#= UID #"
+                      data-id="#= data.QueryId #"
+				      name="#= data.FieldName #"
+                      data-role="#=role#"  data-text-field="#=data.Field.TextField||'text'#" data-value-field="#= data.Field.ValueField #" 
+                      # if( action != '') { #data-action="#= data.Field.action #"# } #
+                      data-bind="dataex:#= FieldPath #.Config, source: #= FieldPath #.DropDownOptions, value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"					  
+					  #= attrStr #
+                      data-text-key="#=FieldPlaceholderKey#"						
+					  title="#= FieldHelp #" />
+                    #if(data.Field.DependentFields){                    
+                    #
+                        <div class="DependentFields">
+                            #for(var innerFieldKey in data.Field.DependentFields){#
+                                <div class="DependentField" data-bind="visible:#=FieldPath#.Is#=innerFieldKey#Active">
+            			            #=data.AP.View.Templates.renderTemplate('widget/forms/formfield', {
+																	            AP: data.AP,  
+																	            QueryId: data.Id,
+																	            SubFormIndex: data.SubFormIndex,
+																	            FieldSetIndex: data.FieldSetIndex,
+																	            FieldName: innerFieldKey, 
+                                                                                FieldPath: FieldPath + '.DependentFields.' + innerFieldKey,
+																	            Field: data.Field.DependentFields[innerFieldKey] 
+																            })#
+                                </div>
+                            #}#
+                        </div>
+                    #}#
+				# break; #
+                # case 'datepicker': #             
+				<input id="#= UID #"
+                      data-id="#= data.QueryId #"				      
+                      data-role="datepickerex"
+                      data-bind="value: #= FieldPath #.defaultValue,dataex:#= FieldPath #.config#=EnabledBindingWComma#"
+					  # if(FieldPlaceholder != '-') { #placeholder="#= data.Field.defaultValue #"# } #
+					  #= attrStr #                      						
+					  title="#= FieldHelp #" />
+				# break; #
+
+              # case 'checkbox': #   
+              # case 'radio': #                 
+                <input type="#= FieldType #"
+                      id="#= UID #"
+                      data-id="#= data.QueryId #"
+				      name="#= data.FieldName #"                      
+                      data-bind="checked: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+					  #= attrStr #
+					  title="#= FieldHelp #" />                       
+                #break; #
+            # case 'radiogroup': #
+            <input type="radio"
+                   id="#= UID #"
+                   data-id="#= data.QueryId #"
+                   data-bind="attr: { value: #= FieldPath #.defaultValue , name : #= FieldPath #.groupName ,  checked:#= FieldPath #.checkedValue}#=EnabledBindingWComma# #=VisibleBindingWComma#"
+                   #=attrStr #
+                   title="#= FieldHelp #" />
+            #break; #
+
+            # case 'static':#
+            <p class="StaticText #=LabelClass#">#= data.Field.translate? AP.View.Internationalize.translate(data.Field.defaultValue):data.Field.defaultValue#</p>
+            #break;#
+            # case 'plain':#
+            <p class="PlainText #=LabelClass#" data-bind="html: #= FieldPath #.defaultValue"></p>
+            #break;#	
+            # case 'rating':#
+            <input class="rating rating10" id="#= UID #" type="text"
+                   data-value-update="#=FieldUpdateMode#"
+                   name="#= data.FieldName #"
+                   # if(FieldPlaceholder !='-' ) { #placeholder="#= FieldPlaceholder #" # } #
+                   #=attrStr #
+                   data-text-key="#=FieldPlaceholderKey#"
+                   data-bind="value: #= FieldPath #.defaultValue#=EnabledBindingWComma#"
+                   title="#= FieldHelp #" />
+            #break;#			
+			# } #
+			
+		</div>
+	
+	# } #

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+#
+var xmlData = data.xmlData,
+parseBase64String=function(bString){
+var strArray= bString.split('base64,');
+return strArray[strArray.length-1].trim();
+};
+#
+<AppData>
+
+  <MobileAppPlatform Windows="#=xmlData.PlatformSelector.CreateWindowsPhoneApp#" IOS="#=xmlData.PlatformSelector.CreateiPhoneAndiPadApp#" Android="#=xmlData.PlatformSelector.CreateAndroidApp#"></MobileAppPlatform>
+  
+  <MobileAppCommonSettings>
+
+    <MobileAppName><![CDATA[#=xmlData.ApplicationSettings.Name#]]></MobileAppName>
+    <MobileAppVersion><![CDATA[#=xmlData.ApplicationSettings.AppVersion#]]></MobileAppVersion>
+    <MobileAppDescription><![CDATA[#=xmlData.ApplicationSettings.Description#]]></MobileAppDescription>
+    <MobileAppBaseId><![CDATA[#=xmlData.ApplicationSettings.appBaseId#]]></MobileAppBaseId>
+    <DefaultLocale><![CDATA[#=xmlData.ApplicationSettings.DefaultLocale#]]></DefaultLocale>
+    <CompanyName><![CDATA[#=xmlData.ApplicationSettings.CompanyName#]]></CompanyName>
+    <CompanyWebsite><![CDATA[#=xmlData.ApplicationSettings.CompanyWebsite#]]></CompanyWebsite>
+    <CompanySupportEmail><![CDATA[#=xmlData.ApplicationSettings.CompanySupportEmail#]]></CompanySupportEmail>
+    <CompanyInfoEmail><![CDATA[#=xmlData.ApplicationSettings.CompanyInfoEmail#]]></CompanyInfoEmail>
+    <CopyRightInfo><![CDATA[#=xmlData.ApplicationSettings.CopyrightInfo#]]></CopyRightInfo>
+
+    <serverURLs>
+
+      <serverURL name="Development"><![CDATA[]]></serverURL>
+
+      <serverURL name="Staging"><![CDATA[]]></serverURL>
+
+      <serverURL name="Production"><![CDATA[#=xmlData.AuthenticationConfiguration.ServerConfiguration.ProductionServerInstanceUrl#]]></serverURL>
+
+    </serverURLs>
+
+    <AuthenticationProviders>
+
+      <AuthProvider Name="Salesforce" Selected="#=xmlData.AuthenticationConfiguration.SalesforceConfiguration.isSelected#" Default="#=xmlData.AuthenticationConfiguration.defaultConfig=='SalesforceConfiguration'#" ClientId="#=xmlData.AuthenticationConfiguration.SalesforceConfiguration.ConsumerKey#" ReturnURL="#=escape(xmlData.AuthenticationConfiguration.SalesforceConfiguration.ConsumerSecret)#" />
+
+      <AuthProvider Name="WAAD" Selected="#=xmlData.AuthenticationConfiguration.OfficeConfiguration.isSelected#" Default="#=xmlData.AuthenticationConfiguration.defaultConfig=='OfficeConfiguration'#" ClientI="#=xmlData.AuthenticationConfiguration.OfficeConfiguration.ClientId#" ReturnURL="#=escape(xmlData.AuthenticationConfiguration.OfficeConfiguration.ReturnURL)#" Resource="#=escape(xmlData.AuthenticationConfiguration.OfficeConfiguration.Resource)#" />
+
+      <AuthProvider Name="ActiveDirectory" Selected="#=xmlData.AuthenticationConfiguration.ActiveDirectoryConfiguration.isSelected#" Default="#=xmlData.AuthenticationConfiguration.defaultConfig=='ActiveDirectoryConfiguration'#" Domain="#=xmlData.AuthenticationConfiguration.ActiveDirectoryConfiguration.Domain#"/>
+
+      <AuthProvider Name="AgilePointID" Selected="#=xmlData.AuthenticationConfiguration.AgilePiontNXConfiguration.isSelected#" Default="#=xmlData.AuthenticationConfiguration.defaultConfig=='AgilePiontNXConfiguration'#" Domain="nxone"/>
+
+    </AuthenticationProviders>
+
+    <MobileAppMenu>
+      #xmlData.AppMenu.Options.forEach(function(option){#
+      <Menu Name="#=option.Name#" Enabled="#=option.isEnabled#" DisplayName="#=option.Value#" IsLocalized="false"/>
+      #})#
+    </MobileAppMenu>
+
+    <ApplicationFilters Enabled="#=xmlData.ApplicationFilter.isFilterEnabled()#">
+      #if(xmlData.ApplicationFilter.isFilterEnabled() && xmlData.ApplicationFilter.SelectedApps.length > 0){xmlData.ApplicationFilter.SelectedApps.forEach(function(appName){#
+      <Filter>#=appName#</Filter>
+      #});}#
+    </ApplicationFilters>
+
+  </MobileAppCommonSettings>
+
+  <AndroidAppSettings>
+
+    <MobileBuildType>#=xmlData.PlatformSelector.AndroidBuildType#</MobileBuildType>
+    
+    <PackageName>#=xmlData.StoreCertificate.AndroidCertificate.PackageName#</PackageName>
+
+    <ApplicationTheme ThemeName="#=xmlData.ApplicationThemes.previewImage#" AppBackgroundColor="#=xmlData.ApplicationThemes.backgroundColorCode#" MenuBackgroundColor="#=xmlData.ApplicationThemes.menuColorCode#" ButtonColor="#=xmlData.ApplicationThemes.buttonColorCode#"/>
+
+    <StoreCertificate UseCustomCert="#=xmlData.StoreCertificate.AndroidCertificate.UseCustomCert#">
+      <CertificateFile>#=xmlData.StoreCertificate.AndroidCertificate.Id#</CertificateFile>
+      <CertificateFileName>#=xmlData.StoreCertificate.AndroidCertificate.CertificateFileName#</CertificateFileName>
+      <storePassword><![CDATA[#=xmlData.StoreCertificate.AndroidCertificate.storePassword#]]></storePassword>
+      <keyAlias><![CDATA[#=xmlData.StoreCertificate.AndroidCertificate.keyAlias#]]></keyAlias>
+      <keyPassword><![CDATA[#=xmlData.StoreCertificate.AndroidCertificate.keyPassword#]]></keyPassword>
+    </StoreCertificate>
+
+    <MobileAppImages>
+
+      <xxhdpi>
+        <IconFile>#=xmlData.UploadImages.Android.XXHDPI.Icon.Id#</IconFile>
+        <Logo>#=xmlData.UploadImages.Android.XXHDPI.Logo.Id#</Logo>
+        <BackgroundImage>#=xmlData.UploadImages.Android.XXHDPI.Background.Id#</BackgroundImage>
+        <StoreLogo>#=xmlData.UploadImages.Android.XXHDPI.StoreLogo.Id#</StoreLogo>
+      </xxhdpi>
+
+      <xhdpi>
+        <IconFile>#=xmlData.UploadImages.Android.XHDPI.Icon.Id#</IconFile>
+        <Logo>#=xmlData.UploadImages.Android.XHDPI.Logo.Id#</Logo>
+        <BackgroundImage>#=xmlData.UploadImages.Android.XHDPI.Background.Id#</BackgroundImage>
+        <StoreLogo>#=xmlData.UploadImages.Android.XHDPI.StoreLogo.Id#</StoreLogo>
+      </xhdpi>
+
+      <hdpi>
+        <IconFile>#=xmlData.UploadImages.Android.HDPI.Icon.Id#</IconFile>
+        <Logo>#=xmlData.UploadImages.Android.HDPI.Logo.Id#</Logo>
+        <BackgroundImage>#=xmlData.UploadImages.Android.HDPI.Background.Id#</BackgroundImage>
+        <StoreLogo>#=xmlData.UploadImages.Android.HDPI.StoreLogo.Id#</StoreLogo>
+      </hdpi>
+
+      <land-hdpi>
+        <IconFile>#=xmlData.UploadImages.Android.Land_HDPI.Icon.Id#</IconFile>
+        <Logo>#=xmlData.UploadImages.Android.Land_HDPI.Logo.Id#</Logo>
+        <BackgroundImage>#=xmlData.UploadImages.Android.Land_HDPI.Background.Id#</BackgroundImage>
+        <StoreLogo>#=xmlData.UploadImages.Android.Land_HDPI.StoreLogo.Id#</StoreLogo>
+      </land-hdpi>
+
+      <land-xhdpi>
+        <IconFile>#=xmlData.UploadImages.Android.Land_XHDPI.Icon.Id#</IconFile>
+        <Logo>#=xmlData.UploadImages.Android.Land_XHDPI.Logo.Id#</Logo>
+        <BackgroundImage>#=xmlData.UploadImages.Android.Land_XHDPI.Background.Id#</BackgroundImage>
+        <StoreLogo>#=xmlData.UploadImages.Android.Land_XHDPI.StoreLogo.Id#</StoreLogo>
+      </land-xhdpi>
+
+    </MobileAppImages>
+
+  </AndroidAppSettings>
+
+  <IOSAppSettings>
+
+    <MobileBuildType>#=xmlData.PlatformSelector.iPhoneAndiPadBuildType#</MobileBuildType>
+    
+    <ApplicationTheme ThemeName="#=xmlData.ApplicationThemes.previewImage#" AppBackgroundColor="#=xmlData.ApplicationThemes.backgroundColorCode#" MenuBackgroundColor="#=xmlData.ApplicationThemes.menuColorCode#" ButtonColor="#=xmlData.ApplicationThemes.buttonColorCode#"/>
+
+    <StoreCertificate>
+
+      <CertificateFile>#=xmlData.StoreCertificate.IosCertificate.Id#</CertificateFile>
+      <CertificateFileName>#=xmlData.StoreCertificate.IosCertificate.CertificateFileName#</CertificateFileName>
+      <Password><![CDATA[#=xmlData.StoreCertificate.IosCertificate.Password#]]></Password>
+      <ProvisioningProfile>#=xmlData.StoreCertificate.ProvisioningProfile.Id#</ProvisioningProfile>
+      <ProvisioningProfileCertificateFileName>#=xmlData.StoreCertificate.ProvisioningProfile.CertificateFileName#</ProvisioningProfileCertificateFileName>
+    </StoreCertificate>
+
+    <MobileAppImages>
+
+      <RegularDisplay>
+        <IconFile>#=xmlData.UploadImages.iOS.Icon.Id#</IconFile>
+        <IconFile_iPad>#=xmlData.UploadImages.iOS.Icon_iPad.Id#</IconFile_iPad>
+        <Logo>#=xmlData.UploadImages.iOS.Logo.Id#</Logo>
+        <SplashScreenImage>#=xmlData.UploadImages.iOS.SplashScreen.Id#</SplashScreenImage>
+        <SplashScreen_iPad>#=xmlData.UploadImages.iOS.SplashScreen_iPad.Id#</SplashScreen_iPad>
+        <StoreLogo>#=xmlData.UploadImages.iOS.StoreLogo.Id#</StoreLogo>
+      </RegularDisplay>
+
+      <RetinaDisplay>
+        <IconFile>#=xmlData.UploadImages.iOS.Icon.Id#</IconFile>
+        <IconFile_iPad>#=xmlData.UploadImages.iOS.Icon_iPad.Id#</IconFile_iPad>
+        <Logo>#=xmlData.UploadImages.iOS.Logo.Id#</Logo>
+        <SplashScreenImage>#=xmlData.UploadImages.iOS.SplashScreen.Id#</SplashScreenImage>
+        <SplashScreen_iPad>#=xmlData.UploadImages.iOS.SplashScreen_iPad.Id#</SplashScreen_iPad>
+        <StoreLogo>#=xmlData.UploadImages.iOS.StoreLogo.Id#</StoreLogo>
+      </RetinaDisplay>
+
+    </MobileAppImages>
+
+  </IOSAppSettings>
+
+  <WindowsAppSettings>
+
+    <MobileBuildType>#=xmlData.PlatformSelector.WindowsPhoneBuildType#</MobileBuildType>
+    
+    <ApplicationTheme ThemeName="#=xmlData.ApplicationThemes.previewImage#" AppBackgroundColor="#=xmlData.ApplicationThemes.backgroundColorCode#" MenuBackgroundColor="#=xmlData.ApplicationThemes.menuColorCode#" ButtonColor="#=xmlData.ApplicationThemes.buttonColorCode#"/>
+
+    #var isPublisherFieldsRequired = xmlData.StoreCertificate.WindowsCertificate.isPublisherFieldsRequired();#
+    <PublisherId><![CDATA[#=isPublisherFieldsRequired ? xmlData.StoreCertificate.WindowsCertificate.PublisherId : ''#]]></PublisherId>
+    <PhonePublisherId><![CDATA[#=xmlData.StoreCertificate.WindowsCertificate.PhonePublisherId#]]></PhonePublisherId>
+    <PhoneProductId><![CDATA[#=xmlData.StoreCertificate.WindowsCertificate.PhoneProductId#]]></PhoneProductId>
+
+    <StoreCertificate>
+
+      <CertificateFile>#=xmlData.StoreCertificate.WindowsCertificate.Id#</CertificateFile>
+      <Password><![CDATA[#=xmlData.StoreCertificate.WindowsCertificate.Password#]]></Password>
+      <CertificateFileName>#=xmlData.StoreCertificate.WindowsCertificate.CertificateFileName#</CertificateFileName>
+
+    </StoreCertificate>
+
+    <MobileAppImages>
+
+      <IconFile>#=xmlData.UploadImages.Windows.Icon.Id#</IconFile>
+      <Logo>#=xmlData.UploadImages.Windows.Logo.Id#</Logo>
+      <SplashScreenImage>#=xmlData.UploadImages.Windows.SplashScreen.Id#</SplashScreenImage>
+      <BackgroundImage>#=xmlData.UploadImages.Windows.Background.Id#</BackgroundImage>
+
+    </MobileAppImages>
+
+  </WindowsAppSettings>
+
+</AppData>

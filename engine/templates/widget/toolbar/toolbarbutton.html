@@ -1,0 +1,56 @@
+# var AP= data.AP, TextKey = data.text,
+			TextKeyEncoded = data.AP.Utils.encodeParam(TextKey),
+			Action = data.action || '',
+            ModuleAccessCode  = data.hasOwnProperty('accessCode') ? data.accessCode : ''
+            IsWidget = data.IsWidget || false,
+            submit = data.submit || false,
+            showText =  data.showText,
+            Class = data.Class || '',extraClass = data.extraClass||'',
+            iconRequired = data.iconRequired == null?true:data.iconRequired,
+			IconClass = data.iconClass || '',
+            showTooltip = data.showTooltip == null?true:data.showTooltip;
+            Enabled = data.enabled || false;
+            if(data.showText == null) showText = true;
+ var attrStr='', attrEx = data.attr;
+         if (attrEx!=null) {         
+            for (var key in attrEx){
+                if(key != 'uid' && attrEx.hasOwnProperty(key) && (_.isString(attrEx[key]) ||_.isBoolean(attrEx[key]))){
+            attrStr += ' '+key + '="' + attrEx[key] + '"';
+        }
+      }
+    }   
+var title ="",extras =""; 
+if(TextKey)title=AP.View.Internationalize.translate(TextKey)||'';
+ title = 'title="'+title+'"';
+title = showTooltip?title:'';
+if(data.customModule){ extras= kendo.format('data-custom-module-id="{0}"', data.customModule.id);}
+if(IsWidget){#
+<div #=extras# # if(data.id) { #id="#= data.id #"# } # class="ButtonBlock">
+    #= data.AP.View.Templates.renderTemplate('block', data)#
+</div>
+#}
+else if(submit){#
+<button data-role="button"
+    #=extras# 
+    # if(ModuleAccessCode != '') { #data-accesscode="#= ModuleAccessCode #"# } #
+    # if(data.id) { #id="#=data.id#"# } # #=title# #if(iconRequired){ # data-sprite-css-class="#= 'k-icon ' + IconClass #" #}#
+    class="k-button k-button-icontext #= Enabled?'':'k-state-disabled' # #= Class # #= Action # #= extraClass #"
+    data-action="#= Action #" #= attrStr #          
+    #= Enabled?'':'disabled="true"'# #if(showText && TextKeyEncoded){# data-text-key="#= TextKey #" #}#>		
+</button>
+#}
+else{#
+<a href="\\#"
+   #=extras#
+   # if(data.id) { #id="#=data.id#" # } # #=title#
+   # if(ModuleAccessCode !='' ) { #data-accesscode="#= ModuleAccessCode #" # } #
+
+   # if(!_.isBoolean(Enabled)) { #data-bind="visible:#=Enabled#" #}#
+
+   class="k-button k-button-icontext #= Enabled?'':'k-state-disabled' # #= Class # #= Action # #= extraClass #"
+   data-action="#= Action #" #=attrStr #
+   #=Enabled?'':'disabled ="disabled" '#>
+    # if(iconRequired){ # 		<span class="k-icon #= IconClass #"></span># }#
+    <span class="k-toolbar-button-text" #=title# #if(showText && TextKeyEncoded){# data-text-key="#= TextKey #" #}#></span>
+</a>
+#}#

@@ -1,0 +1,12 @@
+
+	#
+		if(data.Fields || data.Create){
+			var Fields = data.Fields || (data.Create ? [{}] : []),FieldsClass=data.FieldsClass,FieldsDOM=data.FieldsDOM||'span';
+	#
+		<#=FieldsDOM# class="Fields #=FieldsClass||''#">
+			# _.each(Fields,function(field){ #
+			#= data.AP.View.Templates.renderTemplate('blockfield', { AP: data.AP, Field: field }) #		
+			# }) #	
+		</#=FieldsDOM#>
+	# } #
+		

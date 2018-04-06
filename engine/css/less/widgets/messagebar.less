@@ -1,0 +1,33 @@
+
+		
+	.APMessageBar {
+		
+		.innerbox;
+		margin: auto @generalpadding @generalpadding;
+		height: @barsheight - @generalpadding * 2;
+		
+		display: none; // initial state
+		
+		.Message {
+			
+			.innerbox;	
+			color: @messagesok;
+			text-align: left;
+			padding: 5px 8px;
+			font-weight: bold;
+		}
+		
+		.Errors {
+			
+			.innerbox;	
+			text-align: left;
+			padding: 5px 8px;
+			font-weight: bold;
+			color: @error-text-color;
+		}
+		
+		.Buttons {
+			.innerbox;
+			text-align: right;
+		}
+	}

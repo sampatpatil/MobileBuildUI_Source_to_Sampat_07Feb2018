@@ -1,0 +1,21 @@
+﻿#
+var baseQuery='State.Query.'+data.QueryId+'.Data';
+#
+<div class="Field">
+    <span class="FieldTitle">App Name:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.AppName"></span>
+</div>
+<div class="Field">
+    <span class="FieldTitle">Platform:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.Platform"></span>
+</div>
+<div class="Field">
+    <span class="FieldTitle">App Version:</span>
+    <span class="FieldValue" data-bind="text:#:baseQuery#.AppVersion"></span>
+</div>
+<div class="Field required">
+    <span class="FieldTitle">Recipients:</span>
+    <textarea class="k-textbox EmailList" placeholder="Enter email in CSV(Comma Separated Values) format" data-bind="value:#:baseQuery#.To" required name="Recipients"/>
+    <!--<input type="text" class="FieldInput custom-scrollable" data-role="multicombolist" data-value-field="Value" data-text-field="Value" data-bind="value:#:baseQuery#.To" />-->
+</div>
+<div class="Buttons"></div>

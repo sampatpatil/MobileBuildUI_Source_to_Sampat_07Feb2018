@@ -1,0 +1,5 @@
+﻿#
+var targetBlock = data.Block || data.AP.Model.getBlock(data.BlockId),widget = targetBlock.Widget;
+var BlockPath = 'Blocks.' + data.BlockId, slider = widget.Config.slider || {};
+#
+<input style="float: left" class="slider" data-role="slider" data-orientation="#=slider.orientation || 'horizontal'#" data-min="#=widget.ZoomLevel.config.zoom_min#" data-max="#=widget.ZoomLevel.config.zoom_max#" data-bind="value: #=BlockPath#.Widget.ZoomLevel.value,dataex:#=BlockPath#.Widget.Config.slider" />

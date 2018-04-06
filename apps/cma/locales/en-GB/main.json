@@ -1,0 +1,254 @@
+﻿{
+  "defaults": {
+    "fieldnotext": "No text",
+    "noresults": "No results found"
+  },
+  "app": { "logout": "Logout", "appTitle":"Mobile App Accelerator" },
+  "img": {
+    "login": { "banner": "banner/SignIn.png" },
+    "fondos": {
+      "screen01": "locales/default/backgrounds/screen_01.jpg",
+      "screenlan": "locales/default/backgrounds/screen_lan.jpg"
+    },
+    "logos": {
+      "EM": { "logo01": "locales/default/logos/EM_01.png" },
+      "AP": {
+        "logo01": "locales/default/logos/AP_01.png",
+        "logo02": "locales/default/logos/AP_03.png"
+      }
+    },
+    "banner": {
+      "banner1": "banner/marketbanner1.png",
+      "banner2": "banner/marketbanner2.png",
+      "banner3": "banner/marketbanner3.png",
+      "pd": "banner/pdB.jpg",
+      "small": {
+        "smallImg1": "banner/pdS1.jpg",
+        "smallImg2": "banner/pdS2.jpg",
+        "smallImg3": "banner/pdS3.jpg",
+        "smallImg4": "banner/pdS4.jpg"
+      }
+    }
+  },
+  "loginheader": { "title": "Sign In to Mobile App Accelerator" },
+  "homemetroblocks": {
+    "loginmenu": {
+      "buttons": {
+        "login": "Sign In",
+        "forgotPassword": "Forgot Password?"
+      }
+    },
+    "accessrequestmessage":"Contact your 'AgilePoint Account Manager' to request access."
+  },
+  "landing": { },
+  "breadcrumbs": { },
+  "alert": {
+    "title": "",
+    "demo": ""
+  },
+  "sections": {
+    "errorMsgLogin": { "text": "Invalid credentials" },
+    "invalidCredentials": { "text": "The domain or username or password provided is incorrect" },
+    "home": {
+      "title": "Lorem Ipsum",
+      "subtitle": "LOREM IPSUM",
+      "desc": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
+      "desc1": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
+      "dummy": "Lorem Ipsum is a dummy text",
+      "customerreview": "Customer Reviews",
+      "menu1": "Menu1",
+      "menu2": "Menu2",
+      "menu3": "Menu3",
+      "nocategoryr": "No Category",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "clear": "Clear",
+      "rateproduct": "Rate this Product"
+    },
+    "addNewApp": {
+      "title": "Add New Application",
+      "windowTitle": "Add New App",
+      "updatetitle": "Update your app",
+      "generalinfo": "General Information",
+      "packagedetails": "Package Details",
+      "thankyoutitle": "You just got this app for everyone in your organization",
+      "toaddthisapp": "To add this app to your site, you will need to have the latest version of AgilePoint App Builder. Get the newest version of AgilePoint App Builder.",
+      "clicksettings": "Upload the downloaded package, the application will be added to your App Builder.",
+      "find": "Go to Build Apps home page and click on Import icon as shown in the image below.",
+      "clickthetext": "Login to the app with your credentials",
+      "gotothe": "Go to the AgilePoint App Builder site where you want to install this app. ",
+      "updateconfirm": "Please select whether you want to upload a new version or edit the existing version.",
+      "approveconfirm": "Do you want to approve this package?",
+      "rejectconfirm": "Do you want to reject this package?",
+      "savesuccess": "Your package saved successfully.",
+      "listingtype": "listing type",
+      "overview": "Overview",
+      "imagedeleteconfirm": "Do you want to delete this image?",
+      "unpublishconfirm": "Do you want to unpublish your package?",
+      "trustapptitle": "Trust App",
+      "unpublishrequesttitle": "Unpublish this app",
+      "reportedtitle": "Reported Violations",
+      "reviewreportedviolation": "Review Reported Violation",
+      "reviewunpublishrequest": "Review Unpublish Request",
+      "messages": {
+        "filesUploadedSuccessfully": "Files Uploaded Successfully. App will be published after approval.",
+        "templateFailedToCreate": "Failed to parse xml. Template file or data may have been corrupted.",
+        "AuthenticationConfiguration": {
+          "noneSelected": "Please configure at least one authentication method.",
+          "incomplete": "Please fill all fields for all selected configurations.",
+          "invalidDefaultConfigSelected": "Please select a valid default configuration from enabled authentication type."
+        }
+      },
+      "customizeImages": { "title": "Upload Custom Images" },
+      "platformSelector": {
+        "title": "Platform",
+        "description": "Select the Platforms for Your Mobile App",
+        "android": {
+          "title": "Android",
+          "versionText": "Android 5.0 and above"
+        },
+        "ios": {
+          "title": "iPhone and iPad",
+          "versionText": "iOS 5.0 and above"
+        },
+        "windows": {
+          "title": "Windows Phone",
+          "versionText": "Windows 8.0 and above"
+        }
+      },
+      "authenticationConfiguration": {
+        "title": "Authentication",
+        "description": "Select Authentication Providers for Your Mobile App"
+      },
+      "applicationSettings": {
+        "title": "Basic Settings",
+        "description": "Basic Settings for Your Mobile App"
+      },
+      "uploadImages": {
+        "title": "Upload Images",
+        "description": "Add Custom Images"
+      },
+      "thankingText": "Application has been created successfully, you may now proceed to download.",
+      "downloadTitle": "Build Requests",
+      "navigationPanel": { "title": "Menu" }
+    },
+    "appDetails": {
+      "title": "Mobile App Details",
+      "appName": "Mobile App Name",
+      "description": "Description",
+      "createdDate": "Created Date",
+      "publishedDate": "Published Date",
+      "status": "Status",
+      "downloadTitle": "Download Now",
+      "companyName": "Company Name",
+      "companyWebsite": "Company Website",
+      "createNewApp": "Create new app"
+    },
+    "appList": {
+      "title": "My Apps",
+      "toolbar": {
+        "searchBox": {
+          "title": "Search by App name",
+          "placeholder": "Search by App name"
+        },
+        "addNewApp": {
+          "title": "Add App",
+          "label": "Add App"
+        },
+        "searchButton": { "title": "Search" }
+      }
+    },
+    "dashboard": {
+      "admindashboard": "Admin Dashboard",
+      "sellerdashboard": "Seller Dashboard",
+      "yourapps": "Manage",
+      "approveproducts": "Pending Approvals",
+      "reportedapps": "Reported",
+      "publishedapps": "Published",
+      "unpublishapps": "Unpublish Package",
+      "unpublishrequest": "Unpublish Requests",
+      "editpackage": "Edit Package"
+    },
+    "logout": "Logout",
+    "signout": "Sign Out",
+    "requirefields": " All required fields cannot be left blank",
+    "sessionExpired": "Session expired. Please login to continue.",
+    "sessionextender": {
+      "windows": {
+        "sessionmsg": "Session will expire in ",
+        "seconds": "seconds.",
+        "doyouwanttoextend": "Do you want to extend?",
+        "extend": "Extend",
+        "cancel": "Cancel",
+        "title": "Session Extender"
+      }
+    },
+    "requestForBuild": {
+      "title": "Request for new build",
+      "successMessage": "Your request for build is stored in queue, you will be notified once your build is ready."
+    },
+    "buildHistory": {
+      "title": "Build History",
+      "contentTitle": "Build History for"
+    },
+    "editApp": {
+      "title": "Edit Application",
+      "appBuildStatus": {
+        "notEnabled": "Not Enabled",
+        "notRequested": "Build Not Requested",
+        "status_0": "In-Queue",
+        "status_1": "In-Progress",
+        "status_2": "Creating Package",
+        "status_3": "Build Failed",
+        "status_4": "Available To Download",
+        "status_5": "Published to Store"
+      }
+    },
+    "settings": {
+      "title": "User Settings",
+      "ApplicationList": {
+        "title": "Import List of AgilePoint NX Applications",
+        "placeholder": "Select a file to import"
+      },
+      "EmailList": {
+        "title": "Import Notification List",
+        "placeholder": "Select a file to import"
+      }
+    },
+    "changePassword": {
+      "title": "Change Password",
+      "helpText": "Please contact Administrator to change your password."
+    },
+    "trash": {
+      "title": "Archive"
+    },
+    "shareLink": {
+      "title": "Share Link"
+    },
+    "announcement": {
+      "title":"Announcements", 
+      "announcementDetails": {
+        "windowTitle": "Announcement"
+      }
+    }
+  },
+ 
+  "validation": {
+    "msgs": {
+      "regexValidationForEmail": "Invalid Email",
+      "regexValidationForWebAddress": "Invalid URL",
+      "regexValidationForAndroidPackageName": "Invalid Package Name",
+      "regexValidationForSpecialChars": "Special characters <>&\" are not allowed",
+      "regexValidationForPublisherName": "Please enter a valid Publisher Id as in Windows certificate.",
+      "regexValidationForPhonePublisherId": "Please enter a valid Phone Publisher Id (GUID) as in developer account."
+    }
+  },
+  "accessrights": {
+    "pagenotaccessible": "You are not premitted to access this page.",
+    "denyAction": "You don't have required permission to perform this action."
+  },
+  "footer": {
+    "title": "© Copyright 2018 AgilePoint. All Rights Reserved."
+  }
+}

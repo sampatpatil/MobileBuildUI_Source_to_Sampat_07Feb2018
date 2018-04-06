@@ -1,0 +1,808 @@
+﻿.ViewAppDetailsPage {
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0 auto 0 auto !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    .BackButtonContainer {
+
+        .k-button {
+            padding-left: 0 !important;
+        }
+    }
+
+    .BuildHistoryWidget{
+        display:inline-block;
+        width:25%;
+        margin:25px;
+        vertical-align: top;
+        box-shadow: #a9a9a9 0 0 5px;
+    }
+
+    .BuildHistory{
+        /*width:22%;*/
+    }
+
+    .ViewAppDetails {
+        padding: 0;
+        height: ~"calc(100% - 40px)";
+        width: 65%;
+        display: inline-block;
+
+        .WidgetContent {
+            height: 100%;
+
+            .DownloadContainer {
+                display: inline-block;
+                width: 22%;
+                border: #57b1c9 1px solid;
+                border-radius: 3px;
+                padding-bottom: 20px;
+
+                .AwaitingUpload {
+                    text-align: center;
+
+                    .ThankingText {
+                        font-size: 14px;
+                        display: block;
+                        text-align: center;
+                        margin: 15px 0;
+                    }
+                }
+
+                .Header {
+                    text-align: center;
+                }
+
+                .DownloadItem {
+                    margin: 10px auto;
+                    width: 85%;
+                    color: lightgray;
+                    position: relative;
+                    cursor: default;
+
+                    &.Enabled {
+                        color: #030303;
+                    }
+
+                    .DownloadIcon {
+                        vertical-align: middle;
+                    }
+
+                    .TextContent {
+                        display: inline-block;
+                        margin-left: 5px;
+                        line-height: 1;
+
+                        .PlatformTitle {
+                            font-weight: 600;
+                            display: block;
+                            font-size: 16px;
+                        }
+
+                        .DownloadLink {
+                            display: block;
+                            font-size: 11px;
+                        }
+                    }
+
+                    .DownloadButtonIcon {
+                        position: absolute;
+                        right: 24px;
+                        top: 7px;
+                    }
+
+                    .EmailButtonIcon {
+                        position: absolute;
+                        right: -3px;
+                        top: 7px;
+                    }
+                }
+
+                .Buttons {
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+
+                .k-separator {
+                    height: 5px;
+                    margin: 5px 0;
+                    background-color: darkgray;
+                    box-shadow: darkgrey 0px -4px 10px;
+                    border-radius: 5px;
+                }
+
+                .ImportControlField {
+
+                    .Title {
+                        font-weight: 600;
+                        display: block;
+                        margin-top: 10px;
+                    }
+
+                    .Title, .k-widget.k-upload {
+                        display: none;
+                    }
+
+                    .k-widget.k-upload {
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            .Header {
+                font-size: 15px;
+                padding-bottom: 5px;
+                padding-top: 2px;
+                background-color: @borderColor;
+                color: white;
+                display: block;
+                position: relative;
+
+                .Refresh {
+                    position: absolute;
+                    right: 8px;
+                    top: 2px;
+                    cursor: pointer;
+                    height: 18px;
+                    width: 18px;
+                    background-position: -45px -200px;
+                    background-size: 240px;
+                }
+            }
+
+            .AppDetailsContainer {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                border: @borderColor 1px solid;
+                border-radius: 3px;
+                margin: 25px 2% 0 2%;
+                overflow: hidden;
+
+                .Header {
+                    padding-left: 20px;
+                }
+
+                .AppDetailsContent {
+                    padding-bottom: 10px;
+                    height: ~"calc(100% - 68px)";
+
+                    .MetaData {
+                        margin: 5px 20px 0px 22px;
+                        position: relative;
+
+                        .ItemKey {
+                            font-size: 13px;
+                            font-weight: 600;
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+
+                        .ItemValue {
+                            margin-left: 0px;
+                            font-size: 13px;
+                            display: inline-block;
+                            
+                            &.AppName{
+                                font-size:1.75em;
+                                font-weight:700;
+                            }
+
+                            &.AppDescription{
+
+                            }
+
+                            &.CompanyName{
+                                font-size:1.5em;
+                            }
+
+                            &.MultiLine {
+                                width: 88%;
+                                word-wrap: break-word;
+                                white-space: pre-wrap;
+                            }
+                        }
+
+                        .TrashButton {
+                            position: absolute;
+                            right: 10px;
+                        }
+
+                        .CMA-Icon.Delete {
+                            height: 20px;
+                            width: 20px;
+                            background-position: -75px -611px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .ActionsContainer{
+                        width:200px; 
+                        display:inline-flex; 
+                        text-align:center;
+                        height:53px;
+
+                        .ActionIcon{
+                            width:33.33%;
+                            cursor:pointer;
+                            background-repeat: no-repeat;
+                            border:1px solid gray;
+                            border-radius:5px;
+                            margin-left:2px;
+                            color:#156377;
+
+                            &.Edit{
+                                background-position: -233px 5px;
+                                background-color:#57c95d75;
+
+                                &:hover{
+                                    background-color:#57c95d;
+                                }
+                            }
+
+                            &.Build{
+                                background-position: -72px 5px;
+                                background-color:#c9ae5775;
+                                &:hover{
+                                    background-color:#c9ae57;
+                                }
+                            }
+
+                            &.Archive{
+                                background-position: -153px 6px;
+                                background-color:#c957ac75;
+                                &:hover{
+                                    background-color:#c957ac;
+                                }
+                            }
+                        }
+                    }
+
+                    .AppIconDisplayPosition {
+                        margin: 10px 0 0 45px !important;
+                        display: inline-block !important;
+                        float: left;
+                    }
+
+                    .AppIconsDetails {
+                        text-align: center;
+                        margin-top: 10px;
+
+                        .AppIconDetail {
+                            display: inline-block;
+                            margin: 5px 25px;
+
+                            .AppIcon {
+                                /*height: 40px;*/
+                                width: 50px;
+                                background-color: #006aae;
+
+                                &.WithBorder {
+                                    border: 2px solid;
+                                    border-color: #006aae;
+                                }
+                            }
+
+                            .IconTitle {
+                                display: block;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+
+                    .SubHeader {
+                        background: none;
+                        text-align: left;
+                        color: black;
+                        padding-left: 22px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                        display: block;
+                    }
+
+                    .SubHeader1 {
+                        background: none;
+                        text-align: left;
+                        color: black;
+                        padding-left: 50px;
+                        font-weight: 600;
+                        font-size: 13px;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        margin-bottom: 0;
+                        display: block;
+                    }
+
+                    .Item {
+                        margin: 3px 0 3px 140px;
+
+                        .ItemKey {
+                            font-weight: 600;
+                        }
+
+                        .ItemValue {
+                            padding-left: 10px;
+                            display: inline-block;
+                        }
+                    }
+
+                    .AuthenticationDetails, .AppIconConfiguration, .ThemeDetails, .PlatformDetails, .EnabledApplications, .AppMenu {
+                        margin-top: 15px;
+                    }
+
+                    .AuthenticationDetails {
+                        .ServerInstanceUrl {
+                            .SubHeader1 {
+                                display: inline-block;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    .PlatformDetails, .ThemeDetails {
+                        /*width: 48%;*/
+                        /*float: left;*/
+                    }
+
+                    .ThemeDetails {
+                        .ColorConfig {
+                            margin: 10px 50px 0;
+                            padding-left: 17px;
+
+                            .ColorPreview {
+                                height: 40px;
+                                width: 40px;
+                                display: inline-block;
+                                float: left;
+                                border-radius: 30px;
+                                margin: 3px 8px;
+                            }
+
+                            .ColorPreviewSmall {
+                                height: 20px;
+                                width: 20px;
+                                display: inline-block;
+                                float: left;
+                                border-radius: 30px;
+                                margin: 3px 28px 3px 5px;
+                            }
+
+                            .Text, .ColorCode {
+                                display: inline-block;
+                            }
+
+                            .Text {
+                                font-weight: bold;
+                            }
+
+                            .ColorCode {
+                            }
+                        }
+                    }
+
+                    .ImagePreviewContainer {
+                        display: block;
+                        float: left;
+                        margin-left:50px;
+
+                        .ImageSizeText {
+                            position: absolute;
+                            display: block;
+                            bottom: 20px;
+                            z-index: 0;
+                            font-size: 11px;
+                        }
+
+                        .ImagePreview {
+                            display: inline-block;
+                            min-height: 170px;
+                            /*min-width: 500px;*/
+                            float:left;
+
+                            .WindowsPreview, .AndroidPreview, .iOSPreview {
+                                display: inline-block;
+                                height: 155px;
+                                width: 160px;
+                                margin-left: 30px;
+                                background-image: url(../../../resources/img/sprites/preview.png);
+                            }
+
+                            .WindowsPreview {
+                                &.Portrait {
+                                    &.Icon {
+                                        background-position: -1096px -675px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -1096px -115px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1096px -493px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -1095px -294px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon {
+                                        background-position: -1258px -674px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -1259px -115px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1261px -492px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -1259px -294px;
+                                    }
+                                }
+                            }
+
+                            .AndroidPreview {
+                                &.Portrait {
+                                    &.Icon {
+                                        background-position: -134px -657px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -154px -97px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -137px -466px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -150px -268px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -119px -847px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon {
+                                        background-position: -350px -653px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -371px -125px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -368px -463px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -362px -263px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -336px -844px;
+                                    }
+                                }
+                            }
+
+                            .iOSPreview {
+                                &.Portrait {
+                                    &.Icon, &.Icon_iPad {
+                                        background-position: -1986px -692px;
+                                    }
+
+                                    &.Background {
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1988px -468px;
+                                    }
+
+                                    &.SplashScreen, &.SplashScreen_iPad {
+                                        background-position: -1992px -264px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -1974px -899px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon, &.Icon_iPad {
+                                        background-position: -2189px -685px;
+                                    }
+
+                                    &.Background {
+                                    }
+
+                                    &.Logo {
+                                        background-position: -2181px -469px;
+                                    }
+
+                                    &.SplashScreen, &.SplashScreen_iPad {
+                                        background-position: -2187px -264px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -2165px -892px;
+                                    }
+                                }
+                            }
+                        }
+                        .PlatformName{
+                            font-weight:700;
+                        }
+                    }
+
+                    .PlatformDetails {
+                        .Item {
+                            margin: 20px 0 20px 100px;
+                        }
+                    }
+                }
+
+                .Buttons {
+                    text-align: right;
+                    padding: 0 30px 20px 0;
+                }
+            }
+        }
+    }
+}
+
+.DownloadPage, .ViewAppDetailsPage {
+
+
+
+    .TextContentTitle {
+        font-weight: bold;
+        margin: 10px 0;
+        display: inline-block;
+    }
+
+    .k-multiselect.k-header {
+        border-color: #dadada;
+        width: 90%;
+        clear: both;
+        margin: auto;
+        max-height: 200px;
+
+        .k-input {
+            border: 0 !important;
+        }
+
+        .k-button {
+            padding: 1px 13px 2px !important;
+        }
+    }
+
+    .form-row {
+        float: left;
+
+        label {
+            float: left;
+            padding: 4px 10px 0 0;
+        }
+
+        fieldset {
+            float: left;
+        }
+
+        .check-box-yes-no;
+    }
+
+    .sendemail {
+        clear: both;
+        margin: 10px 0;
+    }
+}
+
+.DownloadAddedApp, .ViewAppDetailsPage {
+    .BackButtonContainer {
+        float: left;
+    }
+
+    .DistrubutionList {
+        text-align: center;
+
+        .k-multiselect {
+            .k-button {
+                background-color: #57b1c9;
+                border-color: #57b1c9;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: #57b1c9 !important;
+                }
+            }
+        }
+
+
+        .EmailList {
+            width: 90%;
+            display: block;
+            margin: 5px auto;
+            height: 90px;
+            resize: none;
+            text-align: left;
+        }
+    }
+
+    .DownloadPage {
+        padding: 10px;
+        height: calc(100% - 40px);
+        float: left;
+        width: 90%;
+    }
+
+    .DownloadContainer {
+        float: left;
+        margin: 25px 8px 0 8px !important;
+        background-color: #fff;
+        box-shadow: darkgrey 0px 0px 5px;
+    }
+
+    .AppDetailsContainer {
+        float: left !important;
+        background-color: transparent;
+        box-shadow: darkgrey 0px 0px 5px;
+    }
+}
+
+
+.BuildHistoryWidget{
+    border: #57b1c9 1px solid;
+    border-radius: 3px;
+
+    .Header{
+        font-size: 15px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+        padding-left:20px;
+        background-color: @borderColor;
+        color: white;
+        display: block;
+        position: relative;
+    }
+
+    .BuildHistoryBody{
+        padding: 5px 20px;
+    }
+}
+
+/* BuildHistoryWindow is not used anymore */
+/*.BuildHistoryWindow {
+    .BuildHistory {
+        .k-listview {
+            max-height: 400px;
+            border: none;
+            box-shadow: #757575 0 0 5px;
+
+            .itemContainer {
+                display: flex;
+                text-align: center;
+                box-shadow: 0px 1px lightgrey;
+
+                .AppVersion {
+                    margin: 0;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 23px;
+                    display: inline-block;
+                    float: left;
+                    width: 20%;
+                    padding: 5px 0;
+                }
+
+                .BuildDetailsContainer {
+                    width: 80%;
+                    display: inline-block;
+
+                    .BuildDetails {
+                        width: 100%;
+                        display: flex;
+                        box-shadow: -1px 1px lightgrey;
+
+                        .BuildVersion {
+                            margin: 0;
+                            font-size: 12px;
+                            font-weight: 600;
+                            line-height: 23px;
+                            display: inline-block;
+                            float: left;
+                            width: 25%;
+                            padding: 5px 0;
+                        }
+
+                        .ActionButtons {
+                            width: 75%;
+                            display: flex;
+                            float: left;
+                            text-align: left;
+
+                            .DownloadButtonContainer {
+                                width: 32.5%;
+                                text-align: center;
+                                display: inline-block;
+                                height: ~"calc(100% - 10px)";
+                                padding: 5px 0;
+                                line-height: 0px;
+                                box-shadow: -1px 0px lightgrey;
+
+                                .DownloadButton {
+                                    background-image: url(../../../resources/img/sprites/sprites.png) !important;
+                                    background-position: -157px -3px;
+                                    width: 23px;
+                                    height: 23px;
+                                    display: inline-block;
+                                    background-size: 228px;
+                                    cursor: pointer;
+                                }
+
+                                .Hide {
+                                    display: none;
+                                }
+
+                                .Disabled {
+                                    filter: grayscale(1);
+                                    cursor: default !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                .Header {
+                    font-size: 13px;
+                    font-weight: 600;
+                    display: inline-block;
+                    float: left;
+                    width: 60%;
+
+                    &.Version {
+                        width: 20%;
+                        padding: 3px 0 5px 0;
+                    }
+
+                    &.NoWidth {
+                        width: auto;
+                    }
+
+                    &.Actions {
+                        display: flex;
+
+                        .IconHolder {
+                            width: 32.5%;
+                            display: inline-block;
+                            color:#57b1c9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .TitleHeaderContainer {
+        height: 30px;
+
+        .TitleHeader {
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 3px;
+        }
+    }
+}*/

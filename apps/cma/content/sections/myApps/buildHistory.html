@@ -1,0 +1,81 @@
+﻿# 
+var count = 0, 
+    translate = data.T
+    buildOptions = []; 
+
+    $.each(data.result.buildHistory, function(id, buildItem){ 
+        $.each(buildItem.build, function(idx, buildData){ 
+            var dateInMilliseconds = Number(buildData.date.split('(')[1].split('+')[0]), 
+            requestedDate = new Date(dateInMilliseconds).toLocaleDateString();
+            buildOptions.push({Name: requestedDate + ' | v:' + buildItem.appVersion + ' | b:' + buildData.version, Value:count}); 
+            count++;
+        }); 
+    });
+#
+<div class="Header">Build History <span class="k-icon CMA-Icon Refresh" data-action="refreshBuildStatus" style="height:19px; cursor:pointer; float:right; margin-right:7px;" title="Refresh build status"></span></div>
+<div class="BuildHistoryBody">
+    #if(buildOptions.length === 0){#
+    <span>No build history found.</span>
+    #}else{#
+    <div class="Field">
+        <span class="FieldText" style="font-weight:700">Select a build</span>
+        <select class="BuildHistoryDropdown" title="Select a build" placeholder="Select a build" data-bind="" data-role="dropdownlist"
+            data-text-field="Name" data-value-field="Value">
+            #$.each(buildOptions, function(idb, buildOption){#
+            <option value="#:buildOption.Value#">#:buildOption.Name#</option>
+            #})#
+        </select>
+        <script>
+            $(".BuildHistoryDropdown").on("change", function (e) {
+                $(".BuildDetailsContainer .BuildDetails").css("display", "none");
+                $(".BuildDetailsContainer \\#BuildDetails" + $(this).val()).css("display", "block");
+            })
+        </script>
+    </div>
+    <div class="itemContainer">
+        # count = 0; 
+            $.each(data.result.buildHistory, function(id, buildItem){ 
+        #
+        <span class="BuildDetailsContainer">
+            #$.each(buildItem.build, function(idx, buildData){ 
+                var dateInMilliseconds = Number(buildData.date.split('(')[1].split('+')[0]),
+                requestedDate = new Date(dateInMilliseconds).toLocaleDateString();
+            #
+            <!--BuildDetails start -->
+            <span id="BuildDetails#:count#" class="BuildDetails" style="display:#:(count>0)?'none':'block'#; margin-top:10px;">
+                <div class="AppVersion">
+                    <span style="font-weight:700">App Version (v): </span>#:buildItem.appVersion#
+                </div>
+                <div class="BuildVersion">
+                    <span style="font-weight:700">Build Version (b): </span>#:buildData.version#</div>
+                <div class="BuildVersion">
+                    <span style="font-weight:700">Requested by: </span>#:buildData.requestedBy#</div>
+                <div class="BuildVersion">
+                    <span style="font-weight:700">Requested On: </span>#:requestedDate#</div>
+                <span class="ActionButtons">
+                    #$.each(buildData.apps, function(id, build){#
+                    <div class="DownloadButtonContainer" style="margin: 5px 0px; padding: 5px; background: white; border:1px solid gray; border-radius:5px; display:inline-block; min-width:200px;">
+                        <span class="IconHolder">
+                            <span class="cmaicons cmaicons-4x cmaicons-#:build.type# LogoColor#:build.type#" style="position:relative; top:10px;"></span>
+                        </span>
+                        <div style="display:inline-block">
+                            <div style="margin-left:5px; font-size:1.2em; font-weight:700">#:build.type#</div>
+                            <div style="margin-left:5px;">#:translate('sections.editApp.appBuildStatus.status_'+build.status)#</div>
+                        </div>
+                        <div style="padding: 5px 25px; color:rgb(16, 173, 245); font-size:2.5em;">
+                            <span class="cmaicons cmaicons-Download #:build.id# #:build.status>3?'':'Disabled'#" data-action="Download" data-platform="#:build.type#" data-build-request-id="#:build.id#" title="Download#:build.status>3?'':'(Disabled)'#" style="cursor:pointer"></span>
+                            <span class="cmaicons cmaicons-Mail #:build.id# #:build.status>3?'':'Disabled'#" data-action="ShareLink" data-platform="#:build.type#" data-build-request-id="#:build.id#" title="Share link#:build.status>3?'':'(Disabled)'#"  style="cursor:pointer"></span>
+                        </div>
+                    </div>
+                    #});#
+                </span>
+            </span>
+            <!--BuildDetails close -->
+            #count++;
+                });
+            #
+        </span>
+        # });#
+    </div>
+    # }#
+</div>

@@ -1,0 +1,128 @@
+﻿#
+var header=data.T('sections.addNewApp.authenticationConfiguration.title'),
+    decription=data.T('sections.addNewApp.authenticationConfiguration.description'),
+    baseQueryPath='State.Query.'+data.QueryId+'.Form.AuthenticationConfiguration',
+    clientSecretIdText=data.T('form:ClientSecretId.label'),
+    clientSecretIdHelp=data.T('form:ClientSecretId.help'),
+    clientSecretIdPlaceholder=data.T('form:ClientSecretId.placeholder'),
+    clientIdText=data.T('form:ClientId.label'),
+    clientIdHelp=data.T('form:ClientId.help'),
+    clientIdPlaceholder=data.T('form:ClientId.placeholder'),
+    domainText=data.T('form:Domain.label'),
+    domainHelp=data.T('form:Domain.help'),
+    domainPlaceholder=data.T('form:Domain.placeholder'),
+    devUrlText=data.T('form:DevelopmentServerInstanceUrl.label'),
+    devUrlHelp=data.T('form:DevelopmentServerInstanceUrl.help'),
+    devUrlPlaceholder=data.T('form:DevelopmentServerInstanceUrl.placeholder'),
+    stagingUrlText=data.T('form:StagingServerInstanceUrl.label'),
+    stagingUrlHelp=data.T('form:StagingServerInstanceUrl.help'),
+    stagingUrlPlaceholder=data.T('form:StagingServerInstanceUrl.placeholder'),
+    productionUrlText=data.T('form:ServerInstanceUrl.label'),
+    productionUrlHelp=data.T('form:ServerInstanceUrl.help'),
+    productionUrlPlaceholder=data.T('form:ServerInstanceUrl.placeholder'),
+    consumerKeyText=data.T('form:ConsumerKey.label'),
+    consumerKeyHelp=data.T('form:ConsumerKey.help'),
+    consumerKeyPlaceholder=data.T('form:ConsumerKey.placeholder'),
+    consumerSecretText=data.T('form:ConsumerSecret.label'),
+    consumerSecretHelp=data.T('form:ConsumerSecret.help'),
+    consumerSecretPlaceholder=data.T('form:ConsumerSecret.placeholder');
+#
+
+<span class="Headers" title="#:header#">#:header#</span>
+
+<div class="AccountConfigurationFormContent custom-scrollable">
+    <span class="Description" title="#:header#">#:decription#</span>
+
+    <div class="AccountsContainer">
+        <div class="Item">
+            <label class="default" data-bind="css:{SelectedRadio:#:baseQueryPath#.defaultConfig.includes('SalesforceConfiguration')}" title="Mark as default"><input type="radio" class="DefaultConfig" name="DefaultConfig" value="SalesforceConfiguration" data-bind="checked:#:baseQueryPath#.defaultConfig, enabled:#:baseQueryPath#.SalesforceConfiguration.isSelected, events:{change:#:baseQueryPath#.changeDefault}" /> Default</label>
+            <span class="AccountItem" data-bind="events:{click:#:baseQueryPath#.changeSelection}, css:{ActiveState:#:baseQueryPath#.SalesforceConfiguration.isSelected}" data-name="SalesforceConfiguration">
+                <span class="SelectionCheck" data-name="SalesforceConfiguration" data-bind="visible:#:baseQueryPath#.SalesforceConfiguration.isSelected"></span>
+                <span class="AccountIcon SalesForce"></span>
+                <span class="AccountName">Salesforce</span>
+
+            </span>
+        </div>
+        <div class="Item">
+            <label class="default" data-bind="css:{SelectedRadio:#:baseQueryPath#.defaultConfig.includes('OfficeConfiguration')}" title="Mark as default"><input type="radio" class="DefaultConfig" name="DefaultConfig" value="OfficeConfiguration" data-bind="checked:#:baseQueryPath#.defaultConfig, enabled:#:baseQueryPath#.OfficeConfiguration.isSelected, events:{change:#:baseQueryPath#.changeDefault}" /> Default</label>
+            <span class="AccountItem" data-bind="events:{click:#:baseQueryPath#.changeSelection}, css:{ActiveState:#:baseQueryPath#.OfficeConfiguration.isSelected}" data-name="OfficeConfiguration">
+                <span class="SelectionCheck" data-name="OfficeConfiguration" data-bind="visible:#:baseQueryPath#.OfficeConfiguration.isSelected"></span>
+                <span class="AccountIcon Office"></span>
+                <span class="AccountName">WAAD/Office 365</span>
+
+            </span>
+        </div>
+        <div class="Item">
+            <label class="default" data-bind="css:{SelectedRadio:#:baseQueryPath#.defaultConfig.includes('ActiveDirectoryConfiguration')}" title="Mark as default"><input type="radio" class="DefaultConfig" name="DefaultConfig" value="ActiveDirectoryConfiguration" data-bind="checked:#:baseQueryPath#.defaultConfig, enabled:#:baseQueryPath#.ActiveDirectoryConfiguration.isSelected, events:{change:#:baseQueryPath#.changeDefault}" /> Default</label>
+            <span class="AccountItem" data-bind="events:{click:#:baseQueryPath#.changeSelection}, css:{ActiveState:#:baseQueryPath#.ActiveDirectoryConfiguration.isSelected}" data-name="ActiveDirectoryConfiguration">
+                <span class="SelectionCheck" data-name="OfficeConfiguration" data-bind="visible:#:baseQueryPath#.ActiveDirectoryConfiguration.isSelected"></span>
+                <span class="AccountIcon ActiveDirectory"></span>
+                <span class="AccountName">Active Directory</span>
+
+            </span>
+        </div>
+        <div class="Item">
+            <label class="default" data-bind="css:{SelectedRadio:#:baseQueryPath#.defaultConfig.includes('AgilePiontNXConfiguration')}" title="Mark as default"><input type="radio" class="DefaultConfig" name="DefaultConfig" value="AgilePiontNXConfiguration" data-bind="checked:#:baseQueryPath#.defaultConfig, enabled:#:baseQueryPath#.AgilePiontNXConfiguration.isSelected, events:{change:#:baseQueryPath#.changeDefault}" /> Default</label>
+            <span class="AccountItem" data-bind="events:{click:#:baseQueryPath#.changeSelection}, css:{ActiveState:#:baseQueryPath#.AgilePiontNXConfiguration.isSelected}" data-name="AgilePiontNXConfiguration">
+                <span class="SelectionCheck" data-name="OfficeConfiguration" data-bind="visible:#:baseQueryPath#.AgilePiontNXConfiguration.isSelected"></span>
+                <span class="AccountIcon AgilePiontNX"></span>
+                <span class="AccountName">AgilePoint ID</span>
+
+            </span>
+        </div>
+    </div>
+
+    <div class="AccountConfigurations">
+        <div class="ServerConfiguration">
+            <!--<div class="Field">
+                <span class="FieldText">#:devUrlText#</span>
+                <input class="FieldInput" title="#:devUrlHelp#" placeholder="#:devUrlPlaceholder#" data-bind="value:#:baseQueryPath#.ServerConfiguration.DevelopmentServerInstanceUrl" type="text" name="DevelopmentServerInstanceUrl" />
+            </div>
+            <div class="Field">
+                <span class="FieldText">#:stagingUrlText#</span>
+                <input class="FieldInput" title="#:stagingUrlHelp#" placeholder="#:stagingUrlPlaceholder#" data-bind="value:#:baseQueryPath#.ServerConfiguration.StagingServerInstanceUrl" type="text" name="StagingServerInstanceUrl" />
+            </div>-->
+            <div class="Field">
+                <span class="FieldText">#:productionUrlText#</span>
+                <input class="FieldInput" title="#:productionUrlHelp#" placeholder="#:productionUrlPlaceholder#" data-bind="value:#:baseQueryPath#.ServerConfiguration.ProductionServerInstanceUrl" data-rules="regexValidationForServerUrl" type="text" name="ProductionServerInstanceUrl" />
+            </div>
+        </div>
+        <div class="SalesforceConfiguration" data-bind="visible:#:baseQueryPath#.SalesforceConfiguration.isSelected">
+            <span class="SectionName">Salesforce Configuration</span>
+            <div class="Field">
+                <span class="FieldText">#:consumerKeyText#</span>
+                <input class="FieldInput URL" title="#:consumerKeyHelp#" placeholder="#:consumerKeyPlaceholder#" data-bind="value:#:baseQueryPath#.SalesforceConfiguration.ConsumerKey,enabled:#:baseQueryPath#.SalesforceConfiguration.isSelected" type="text" name="Salesforce_ClientId" />
+            </div>
+            <div class="Field">
+                <span class="FieldText">#:consumerSecretText#</span>
+                <input class="FieldInput Domain" title="#:consumerSecretHelp#" placeholder="#:consumerSecretPlaceholder#" data-bind="value:#:baseQueryPath#.SalesforceConfiguration.ConsumerSecret,enabled:#:baseQueryPath#.SalesforceConfiguration.isSelected" type="text" name="Salesforce_ClientSecretId" />
+            </div>
+        </div>
+        <div class="OfficeConfiguration" data-bind="visible:#:baseQueryPath#.OfficeConfiguration.isSelected">
+            <span class="SectionName">WAAD/Office 365 Configuration</span>
+            <div class="Field">
+                <span class="FieldText">#:clientIdText#</span>
+                <input class="FieldInput URL" title="#:clientIdHelp#" placeholder="#:clientIdPlaceholder#" data-bind="value:#:baseQueryPath#.OfficeConfiguration.ClientId,enabled:#:baseQueryPath#.OfficeConfiguration.isSelected" type="text" name="Office_ClientId" />
+            </div>
+            <div class="Field">
+                <span class="FieldText">#:clientSecretIdText#</span>
+                <input class="FieldInput Username" title="#:clientSecretIdHelp#" placeholder="#:clientSecretIdPlaceholder#" data-bind="value:#:baseQueryPath#.OfficeConfiguration.ReturnURL,enabled:#:baseQueryPath#.OfficeConfiguration.isSelected" type="text" name="Office_ClientSecretId" />
+            </div>
+            <div class="Field">
+                <span class="FieldText">Resource</span>
+                <input class="FieldInput Username" title="Enter Resource" placeholder="Enter Resource" data-bind="value:#:baseQueryPath#.OfficeConfiguration.Resource,enabled:#:baseQueryPath#.OfficeConfiguration.isSelected" type="text" name="Office_Resource" />
+            </div>
+        </div>
+        <div class="ActiveDirectoryConfiguration" data-bind="visible:#:baseQueryPath#.ActiveDirectoryConfiguration.isSelected">
+            <span class="SectionName">Active Directory Configuration</span>
+            <div class="Field">
+                <span class="FieldText required">#:domainText#</span>
+                <input class="FieldInput" title="#:domainHelp#" placeholder="#:domainPlaceholder#" data-bind="value:#:baseQueryPath#.ActiveDirectoryConfiguration.Domain,enabled:#:baseQueryPath#.ActiveDirectoryConfiguration.isSelected" type="text" required />
+            </div>
+        </div>
+    </div>
+</div>
+
+<span class="MessageContent Errors" data-bind="text:#:baseQueryPath#.errorMessage"></span>
+
+<div class="Buttons"></div>

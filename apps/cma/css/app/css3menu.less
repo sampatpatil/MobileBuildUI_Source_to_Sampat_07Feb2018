@@ -1,0 +1,116 @@
+﻿@menu-animation-duration: 0.35s;
+@expanded-width: 200px;
+@collapsed-width: 60px;
+
+@import "animations.less";
+
+.animate-width {
+    -moz-transition: width ease-in-out @menu-animation-duration;
+    -o-transition: width ease-in-out @menu-animation-duration;
+    -webkit-transition: width ease-in-out @menu-animation-duration;
+    transition: width ease-in-out @menu-animation-duration;
+}
+
+.animate-all {
+    -moz-transition: all ease-in-out @menu-animation-duration;
+    -o-transition: all ease-in-out @menu-animation-duration;
+    -webkit-transition: all ease-in-out @menu-animation-duration;
+    transition: all ease-in-out @menu-animation-duration;
+}
+
+.animation-bg-color {
+    -moz-transition: background-color ease-in-out @menu-animation-duration;
+    -o-transition: background-color ease-in-out @menu-animation-duration;
+    -webkit-transition: background-color ease-in-out @menu-animation-duration;
+    transition: background-color ease-in-out @menu-animation-duration;
+}
+
+
+.slide-fade-in-to-right {
+    -moz-animation: slide-fade-in-to-right @menu-animation-duration forwards 0.5s 1;
+    -o-animation: slide-fade-in-to-right @menu-animation-duration forwards 0.5s 1;
+    -webkit-animation: slide-fade-in-to-right @menu-animation-duration forwards 0.5s 1;
+    animation: slide-fade-in-to-right @menu-animation-duration forwards 0.5s 1;
+}
+
+.fade-in {
+    -moz-animation: fade-in @menu-animation-duration forwards 0.5s 1;
+    -o-animation: fade-in @menu-animation-duration forwards 0.5s 1;
+    -webkit-animation: fade-in @menu-animation-duration forwards 0.5s 1;
+    animation: fade-in @menu-animation-duration forwards 0.5s 1;
+}
+
+.menu {
+    &:extend(.animate-width);
+
+    .menu-item {
+        &:extend(.animate-all);
+        display: block;
+
+        .link {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+
+        &.menu-item-active {
+            .sub-menu {
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
+
+    .menu-icon {
+        display: inline-block;
+        float: left;
+    }
+
+    .sub-menu {
+        //&:extend(.slide-fade-in-to-right);
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        opacity: 0;
+        display: none;
+    }
+
+    &.collapsed {
+        width: @collapsed-width;
+
+        .grand-container {
+            width: @collapsed-width;
+
+            > .menu-item {
+                &.menu-item-active {
+                    width: @expanded-width;
+
+                    .text {
+                        //&:extend(.slide-fade-in-to-right);
+                        display: inline-block;
+                    }
+                }
+
+                .text {
+                    display: none;
+                }
+
+                width: @collapsed-width;
+            }
+        }
+    }
+
+    &.expanded {
+        width: @expanded-width;
+
+        .menu-item {
+            width: @expanded-width;
+
+            .text {
+                -ms-word-break: keep-all;
+                word-break: keep-all;
+                text-wrap: none;
+            }
+        }
+    }
+}

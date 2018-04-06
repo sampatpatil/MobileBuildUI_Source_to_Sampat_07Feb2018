@@ -1,0 +1,130 @@
+
+.APWidget.APGrid {
+
+    .Widget {
+        .innerbox;
+        margin: @generalpadding;
+
+        > .k-grid-content {
+            .innerbox;
+            margin: @kendogridheader + 4 0 @kendogridpaginator + 9 0;
+
+
+            >table > tbody {
+
+
+                >tr {
+                    >td {
+                        .k-button {
+                            min-width: 32px;
+                        }
+                    }
+
+                    .show-only-on-hover, .show-inline-on-hover {
+                        //display: none;
+                        display: inline-block;
+                    }
+
+                    &:hover {
+                        .show-only-on-hover {
+                            display: block;
+                        }
+
+                        .show-inline-on-hover {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .k-grid-toolbar {
+            margin: 0;
+            padding: @generalpadding;
+            cursor: default;
+        }
+
+        > .k-toolbar {
+            height: @barsheight - @generalpadding * 2;
+            text-align: right;
+
+            > .k-menu {
+                position: absolute;
+                right: @generalpadding;
+                height: @barsheight - @generalpadding * 2.5;
+                display: none; // hidden by default
+                .k-group, .k-item, .k-popup {
+                    border: none !important;
+                }
+
+                a.k-button {
+                    margin: 0 0 -1px 0;
+                    text-align: left;
+                }
+
+                .k-group .k-item > .k-link {
+                    padding: @generalpadding @generalpadding * 2;
+                }
+
+                .MenuTitle {
+                    height: @barsheight - @generalpadding * 2;
+
+                    .Text {
+                        display: inline-block;
+                        padding: @generalpadding / 2 @generalpadding * 2 0;
+                    }
+                }
+            }
+
+            .k-button {
+                margin: 0 0 0 @generalpadding;
+            }
+        }
+
+        > .k-header {
+            height: @kendogridheader;
+        }
+
+        > .k-grid-pager {
+            .innerbox;
+            height: @kendogridpaginator;
+            top: auto;
+        }
+    }
+
+    &.HasFields {
+
+        .Widget {
+            margin-top: @titlesheight + @generalpadding;
+        }
+    }
+
+    &.HasToolBar {
+
+        > .Widget {
+
+            > .k-grid-content {
+                margin-top: @kendogridheader + @barsheight + 3;
+            }
+        }
+    }
+
+    &.HasMessageBar {
+
+        .Widget {
+            margin-bottom: @barsheight;
+        }
+    }
+
+    &.InTabStrip {
+        margin-top: @barsheight - @generalpadding - 1;
+
+        > .Fields {
+            display: none !important;
+        }
+
+        .Widget {
+            margin-top: @generalpadding;
+        }
+    }
+}

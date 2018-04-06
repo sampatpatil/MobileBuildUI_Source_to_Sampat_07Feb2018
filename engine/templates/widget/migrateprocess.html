@@ -1,0 +1,54 @@
+
+	<div class="Mappings">
+		<div class="Title" data-text-key="#= data.Lists.Title #"></div>
+		<div class="Menus">
+			# _.each(data.Lists.Menus, function(Menu){ #
+				<ul class="Menu" data-query="#= Menu.query || ''#">
+					<li>
+						<span class="Title"
+							  data-query="#= Menu.query #"
+							  data-text-key="#= Menu.text #"></span>
+						<ul></ul>
+					</li>
+				</ul>
+			# }) #
+		</div>
+	</div>
+	<div class="Display">
+		<div class="Left"><div class="Content" data-file="#= data.Content.Left.File #"></div></div>
+		<div class="Right"><div class="Content" data-file="#= data.Content.Right.File #"></div></div>
+	</div>
+	<div class="MenuGroups">
+		# _.each(data.ToolBarGroups, function(Group){ #
+			<div class="Group #= Group.Class || '' #">
+				# _.each(Group.Actions, function(Action){ 
+				
+					switch(Action.type){
+					
+						case 'menu': #
+						
+						<ul class="Menu" data-query="#= Action.query || ''#">
+							<li>
+								<span class="Title"
+									  data-text-key="#= Action.text #"></span>
+								<ul></ul>
+							</li>
+						</ul>
+						
+						# break;
+						
+						default: #
+						
+						<a href="\\#"
+						   class="k-button k-button-icontext k-state-disabled"
+						   data-action="#= Action.action #"
+	   					   disabled="true">
+								<span class="k-icon #= Action.iconClass #"></span>
+								<span class="k-toolbar-button-text"
+									  data-text-key="#= Action.text #"></span>
+						   </a>
+						   
+						# break; } }) #	
+			</div>
+		# }) #	
+	</div>

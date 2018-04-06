@@ -1,0 +1,9 @@
+﻿<span class="cmaicons cmaicons-Announcement cmaicons-2x Announcement ToolbarItem" data-action="ViewAnnouncements">
+    <span class="NewItemsNotifier" data-bind="visible:State.Query.CMADataStore.Announcements.newItems,text:State.Query.CMADataStore.Announcements.newItems"></span>
+</span>
+<span class="AnnouncementsList" data-bind="visible:State.Query.CMADataStore.Announcements.visible">
+    <span class="Header">Announcements</span><span class="closeButton" data-action="HideAnnouncements" title="Close"></span>
+    <span class="Announcements custom-scrollable" data-template="AnnouncementsItem" data-bind="source:State.Query.CMADataStore.Announcements.list">
+    </span>
+</span>
+<div class="InvisibleModal" data-bind="visible:State.Query.CMADataStore.Announcements.visible,events:{click:State.Query.CMADataStore.Announcements.modalInteracted}"></div>

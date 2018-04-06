@@ -1,0 +1,41 @@
+#
+		var Field = data.Field || {},
+			Class = Field.Class || 'Title',
+			DOMElementType = Field.DOM || 'span',
+			FieldTextKey = Field.Text||'',
+            BindPath = Field.BindPath || null,AP = data.AP,
+			FieldTextKeyEncoded = AP.Utils.encodeParam(FieldTextKey),
+            attrStr = '';
+if (data.Field.Attr!=null) {
+var attrEx = data.Field.Attr;
+for (var key in attrEx){
+    if(key != 'uid' && attrEx.hasOwnProperty(key) && typeof(attrEx[key]) == 'string')
+        {
+        if(key =='placeholder')
+                {
+                    attrEx[key] = AP.View.Internationalize.translate(attrEx[key]);
+                }
+            attrStr += ' '+key + '="' + attrEx[key] + '"';
+        }
+ }
+}
+if(DOMElementType == 'input' && Field.Type == 'radio' || Field.Type == 'checkbox'){
+var guid = kendo.guid();
+#
+<input id="#=guid#" type="#=Field.Type#" #=attrStr # />
+<label for="#=guid#" data-text-key="#= FieldTextKey #">
+    #= FieldTextKeyEncoded #
+</label>
+#}
+else if(data.Field.Template){#
+#= AP.View.Templates.renderTemplate(data.Field.Template,{AP:AP,Field:data.Field})#
+#}
+else{#
+<#=DOMElementType# class="Field #= Class #" 
+   #if(BindPath){# data-bind="text: #=BindPath#" #}else if(Field.Bindings){# #=AP.Utils.generateBindingsAttr(Field.Bindings)# #}else if(!Field.Fields && FieldTextKey){# data-text-key="#= FieldTextKey #" data-bind="text: translate('#= FieldTextKeyEncoded #')" #}#
+   #=attrStr #>
+    #if(Field.Fields){#
+    #= data.AP.View.Templates.renderTemplate('blockfields', { FieldsClass: Field.FieldsClass, FieldsDOM:Field.FieldsDOM,  Fields: Field.Fields, Create: false }) #
+    #}#
+</#=DOMElementType#>
+#}#

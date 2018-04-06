@@ -1,0 +1,129 @@
+
+		
+	.APMigrateProcess {
+		
+		.Mappings {
+		
+			background-color: #eee;	
+			float: right;
+			padding: @generalpadding @generalpadding @generalpadding @generalpadding * 2;
+			z-index: 2;
+			
+			.Title, .Menus {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.Title { margin-right: @generalpadding * 2 ; }
+			
+			.Menu { 
+				
+				display: inline-block;
+				vertical-align: middle;
+				
+				.k-link { padding: 3px 15px 6px; }
+				
+				ul li {
+					
+					display: table-row;
+					border: solid @widget-border-color;
+					border-width: 0 0 1px 0;
+					
+					div {
+						display: table-cell;
+						border: solid @widget-border-color;
+						border-width: 0 1px 0 0;	
+						padding: 5px 10px;
+					}
+				}
+			}
+		}
+		
+		.Display {
+			
+			.innerbox;
+			margin: @barsheight + @generalpadding * 3
+					@generalpadding
+					@barsheight + @generalpadding * 3
+					@generalpadding;
+			z-index: 0;
+					
+			.Left, .Right {
+				
+				.innerbox;
+				width: 50%;
+				
+				.Content {
+				
+					.innerbox;
+					border: 1px solid @active-border-color;
+					overflow: hidden;
+				}
+			}
+					
+			.Left {
+				
+				margin-right: auto;
+				
+				.Content { margin-right: @generalpadding; }
+			}
+			
+			.Right {
+				
+				margin-left: auto;
+				padding-left: 1px;
+				
+				.Content { margin-left: @generalpadding; }
+			}
+		}
+		
+		.MenuGroups {
+			
+			.innerbox;
+			margin: auto
+					0
+					0
+					0;
+			height: @barsheight;
+			padding: 0 @generalpadding @generalpadding * 2 ;
+			text-align: right;			
+			z-index: 2;
+			
+			.Group {
+				
+				display: inline-block;
+				vertical-align: middle;
+				padding: @generalpadding;
+				white-space: nowrap;
+				
+				> * {
+					display: inline-block;
+					vertical-align: middle;
+				}
+				
+				&.Normal { background-color: #eee; }
+			
+				.Menu { 
+					
+					display: inline-block;
+					vertical-align: middle;
+					
+					.k-link { padding: 3px 15px 6px; }
+					
+					ul li {
+						
+						display: table-row;
+						border: solid @widget-border-color;
+						border-width: 0 0 1px 0;
+						
+						div {
+							display: table-cell;
+							border: solid @widget-border-color;
+							border-width: 0 1px 0 0;	
+							padding: 5px 10px;
+						}
+					}
+				}
+			}
+		}
+	}

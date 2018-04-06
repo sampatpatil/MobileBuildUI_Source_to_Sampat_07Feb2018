@@ -1,0 +1,698 @@
+﻿.container-box {
+    background-color: @ContainerBoxBg;
+    //padding: @Padding5;
+}
+
+.EmailContent {
+    .k-state-selected, .k-state-selected:link {
+        background-color: @k-editor-k-state-selectedBg !important;
+        border-color: @k-editor-k-state-selectedBorder !important;
+    }
+
+    .k-state-hover, .k-state-hover:hover {
+        background-color: @k-editor-k-state-hoveBg !important;
+        border-color: @k-editor-k-state-hoveBorder !important;
+        background-image: none;
+    }
+}
+
+.k-button {
+    background-color: #8e9918;
+    border-color: #8e9918;
+    font-size: 12px;
+    padding: 2px 18px 4px !important;
+    border-radius: 3px;
+
+    &:hover, &:focus, &:active {
+        background-color: #d0d4a1 !important;
+        background-image: none !important;
+        border-color: #8e9918 !important;
+        box-shadow: none !important;
+    }
+}
+
+input[type=text], input[type=password], input[type=email], textarea, .k-input, select {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #B7B7B7 !important;
+    font-size: 12px;
+
+    &:focus {
+        border-color: @k-input-focus-border-color !important;
+        outline: 0;
+    }
+}
+
+.k-dropdown-wrap, .k-numeric-wrap, .k-multiselect, .k-picker-wrap {
+    &.k-state-hover {
+        border-color: @themeBorderColor !important;
+        outline: 0 !important;
+        background-color: @k-dropdown-wrap-bg-color-hover !important;
+        background-image: none !important;
+    }
+
+    &.k-state-focused {
+        border-color: @themeBorderColor !important;
+        outline: 0 !important;
+        background-color: @k-dropdown-wrap-bg-color-hover !important;
+        background-image: none !important;
+    }
+}
+
+textarea {
+    font-family: Arial,Verdana,sans-serif;
+}
+
+.k-dropdown-wrap {
+    border-color: #cdCDCD !important;
+    outline: 0 !important;
+    background-image: none !important;
+
+    &.k-state-hover {
+        border-color: #56b0c9 !important;
+        background-color: #56b0c9 !important;
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+.padding10 {
+    padding: @Padding10;
+}
+
+.paddingTop10 {
+    padding-top: @Padding10;
+}
+
+.paddingLeft10 {
+    padding-left: @Padding10;
+}
+
+.paddingRight10 {
+    padding-right: @Padding10;
+}
+
+.paddingRight15 {
+    padding-right: @Padding15;
+}
+
+.paddingBotm10 {
+    padding-bottom: @Padding10;
+}
+
+.paddingTopBot5 {
+    padding-top: @Padding5;
+    padding-bottom: @Padding5;
+}
+
+.marginLeft10 {
+    margin-left: 10px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.h2 {
+    font: 2.5em/55px "Segoe UI Light",SegoeUILight,Arial,sans-serif;
+}
+//.UserSelect {
+.text-unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.k-WindowTitlebar {
+    .k-window-titlebar {
+        background-image: none !important;
+        background-color: #0470b8 !important;
+    }
+
+    .k-window-title {
+        overflow: hidden;
+        cursor: default;
+        font-family: Arial;
+        font-size: 15px;
+        color: #fff;
+        font-weight: 400;
+        .text-ellipsis;
+    }
+}
+
+div.k-treeview {
+    overflow: visible;
+}
+
+
+
+
+
+.k-pager-wrap {
+    background-color: @k-pager-wrap-bg-color;
+    border-radius: 0px;
+
+    .k-link {
+        text-align: center;
+        border-radius: 0;
+        background-color: @k-pager-k-ling-bg-color;
+        border-radius: 0px;
+        border-color: @k-pager-k-ling-border-color;
+
+        &:hover {
+            //background: @k-pager-k-ling-bg-color;
+        }
+    }
+
+    .k-pager-numbers .k-state-selected {
+        background-color: @k-pager-numbers-selected-bg-color;
+        border-color: @k-pager-numbers-selected-border-color;
+        color: @white-text-color;
+        .border-radius(0);
+    }
+
+    .k-pager-info {
+        line-height: 28px;
+    }
+}
+
+/*START - Page level design*/
+.CMAPage {
+    width: 94%;
+    min-height: 95%;
+    //.pull-left;
+    .shadow();
+    background-color: @white;
+
+    .BackButtonContainer {
+        display: none !important;
+        padding: 5px 0 0 5px;
+
+        a.BackButton {
+            top: 2px;
+            left: 3px;
+            position: absolute;
+        }
+    }
+
+    .Fields {
+        > h1 {
+            background-color: @PageToobarBgColor;
+            font-size: 1.17em;
+            width: auto !important;
+            min-height: 25px;
+            color: @white;
+            .text-overflow-ellipsis;
+            .bold;
+            padding: 10px 0 5px 45px !important;
+        }
+    }
+}
+/* END */
+
+.k-transparent {
+    background-color: transparent;
+    border-color: transparent;
+
+    &.k-button, &.k-button:hover, &.k-button.k-state-disabled, &.k-state-disabled {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        background-image: none;
+    }
+
+    &:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+}
+
+
+/*nivo Slider*/
+.nivoSlider {
+    z-index: -1;
+}
+
+.nivo-controlNav {
+    text-align: center;
+    padding: 0;
+    margin-top: -29px;
+    z-index: 1;
+
+    a {
+        color: transparent;
+        padding: 0 13px;
+
+        &:active {
+            color: transparent;
+        }
+    }
+}
+
+input[type=text], textarea {
+    color: #333;
+    font-family: Arial,Verdana,sans-serif;
+    border: 1px solid #B7B7B7 !important;
+}
+
+.k-upload {
+    /*border: 1px solid #B7B7B7 !important;*/
+    .k-upload-button {
+        font-size: 12px !important;
+    }
+}
+
+.k-tooltip {
+    font-size: 10px !important;
+}
+
+#CMAMain {
+    .AppIconHolder {
+        height: 35px;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        background-color: rgba(87, 177, 201, 0.314);
+        line-height: 30px;
+
+        .AppIcon {
+            max-height: 35px;
+            max-width: 35px;
+            vertical-align: middle;
+        }
+
+        .AppIconWrapper{
+            margin-left: 5px !important;
+            background:#fff;
+            border-radius:5px;
+            padding:3px;
+            width:35px;
+            height:35px;
+            float:left;
+        }
+    }
+
+    .BackButtonContainer {
+        display: none !important;
+        padding: 5px 0 0 5px;
+
+        .k-button {
+            padding-left: 0 !important;
+        }
+    }
+
+    .Field {
+        .FieldText {
+            display: block;
+            font-size: 14px;
+        }
+
+        .FieldInput {
+            width: 420px;
+        }
+    }
+
+    .k-tooltip {
+        font-size: 11px !important;
+        position: absolute !important;
+    }
+}
+
+.Field .required::after {
+    content: '*';
+    color: red;
+    font-weight: 100;
+    margin-left: 2px;
+}
+
+.nicescroll-rails {
+    opacity: 1 !important;
+}
+
+.DialogWindow.MessageWindow {
+    .ErrorTitle {
+        font-weight: 600;
+        font-size:14px;
+        color:#181818;
+    }
+
+    .ErrorItem {
+        margin: 5px;
+        font-weight:400;
+        font-size:14px;
+        color:#181818;
+    }
+}
+
+.ConfirmWindow {
+    .content {
+        font-size: 14px;
+    }
+
+    .buttons {
+        margin-top: 5px;
+
+        .k-button {
+            margin-right: 5px;
+        }
+    }
+}
+
+.k-window {
+    .k-window-titlebar {
+        .k-window-action {
+            .k-icon.k-i-close {
+                background-position: -48px -16px !important;
+            }
+        }
+    }
+}
+
+.HoveredHelp {
+    position: relative;
+    overflow: visible;
+
+    .HeplDescription {
+        display: none;
+        position: absolute;
+        top: 20px;
+        font-size: 12px;
+        width: 450px;
+        line-height: 17px;
+        height: auto;
+        padding: 3px;
+        background-color: bisque;
+        border: 1px solid #f3bf83;
+        border-radius: 5px;
+        left: 0;
+        padding-left: 5px;
+        text-align: left;
+        z-index: 5;
+    }
+
+    &.FromRight .HeplDescription {
+        left: auto;
+        right: 0;
+    }
+
+    &:hover {
+        .HeplDescription {
+            display: inline-block;
+        }
+    }
+}
+
+.HoveredItem {
+    position: relative;
+    overflow: visible;
+
+    .ItemDescription {
+        display: none;
+        position: absolute;
+        top: 0px;
+        font-size: 12px;
+        width: 450px;
+        line-height: 17px;
+        height: auto;
+        padding: 3px;
+        background-color: bisque;
+        border: 1px solid #f3bf83;
+        border-radius: 5px;
+        left: 22px;
+        padding-left: 5px;
+        text-align: left;
+        z-index: 5;
+    }
+
+    &.FromRight .ItemDescription {
+        left: auto;
+        right: 0;
+    }
+
+    &:hover {
+        .ItemDescription {
+            display: inline-block;
+        }
+    }
+}
+
+.Toolbar.APTemplatedWidget {
+    position: relative;
+
+    .Announcement {
+        /*background-image: url(../../resources/img/sprites/sprites.png);
+        background-position: -138px -1008px;*/
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        right: 25px;
+        top: 4px;
+        background-color: rgb(255, 115, 0);
+        cursor: pointer;
+        z-index: 999;
+        color:white;
+        padding: 0 7px 7px 0;
+        border-radius:30px;
+
+        .NewItemsNotifier {
+            font-family: Segoeui;
+            position: absolute;
+            top: -4px;
+            right: -10px;
+            background-color: red;
+            color: #fff;
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            border-radius: 20px;
+            line-height: 14px;
+            text-align: center;
+            font-size: 10px;
+        }
+    }
+
+    .AnnouncementsList {
+        display: block;
+        position: absolute;
+        width: 250px;
+        box-shadow: 0px 0px 5px darkgrey;
+        top: 41px;
+        right: 20px;
+        z-index: 998;
+        background-color: #fff;
+
+        .Header {
+            background-color: #57b1c9;
+            color: #ffffff;
+            margin: 0;
+            padding: 5px;
+            font-size: 15px;
+            display: block;
+            cursor: default;
+            font-weight:700;
+        }
+
+        .closeButton{
+            background-image: url(../../../../engine/css/kendo/Metro/sprite.png);
+            background-position: -48px -16px!important;
+            position:absolute;
+            top:7px;
+            right:10px;
+            width:16px; 
+            height:16px;
+            cursor: pointer;
+            box-shadow: 0px 0px 2px white;
+        }
+
+        .Announcements {
+            display: block;
+            min-height: 50px;
+            max-height: 500px;
+
+            .AnnouncementItem {
+                display: block;
+                cursor: pointer;
+                padding: 5px;
+                background-color: #e5e5e5;
+                border-bottom: #c3c3c3 1px solid;
+
+                .ItemHeader {
+                    font-size: 13px;
+                    font-weight: 600;
+                    margin-bottom: 3px;
+                    display: block;
+                    color: #57b1c9;
+                }
+
+                .ItemDescription {
+                    color: #4c4c4c;
+                }
+
+                &.New {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &:before {
+            border: 10px solid transparent;
+            border-bottom-color: #57b1c9;
+            content: '';
+            display: block;
+            height: 0;
+            right: 8px;
+            position: absolute;
+            width: 0;
+            top: -20px;
+        }
+    }
+
+    .InvisibleModal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
+    }
+}
+
+.ShareLinkWindow {
+    .ShareLink {
+        .Field {
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding: 0 5px;
+            display: flex;
+            position: relative;
+
+            .FieldTitle {
+                font-weight: 600;
+                display: inline-block;
+                width: 100px;
+            }
+
+            .FieldInput {
+                margin-top: 5px;
+                width: 500px !important;
+
+                .k-multiselect-wrap {
+                    height: 100px;
+                }
+
+                input {
+                    border: none !important;
+                }
+
+                .k-button {
+                    background-color: #56b0c9;
+                    border-color: #56b0c9;
+                    border-radius: 15px;
+
+                    &:hover {
+                        background-color: #56b0c9 !important;
+                        border-color: #56b0c9 !important;
+                    }
+                }
+            }
+
+            .EmailList {
+                height: 100px;
+                width: 500px;
+                resize: none;
+            }
+
+            .k-widget.k-tooltip {
+                bottom: 0;
+                left: 100px;
+            }
+        }
+
+        .Buttons {
+            text-align: right;
+            padding-right: 5px;
+        }
+    }
+}
+
+.AnnouncementDetailsWindow {
+    .Field {
+        margin-bottom: 5px;
+        margin-left: 10px;
+
+        .FieldTitle {
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 5px;
+            width: 80px;
+            display: inline-block;
+        }
+
+        .FieldValue {
+            font-size: 13px;
+        }
+    }
+}
+
+.Footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    text-align: center;
+    padding: 1px 0;
+    background-color: #f0f0f0;
+
+    .FooterText {
+        font-size: 12px;
+        color:#5c6770;
+    }
+}
+
+
+.windowInfoIcon{    
+    font-size: 21px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display:  inline-block;
+    float: left;
+    text-align: center;
+    border-radius: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor: default;
+
+    &.Error{
+        background:red;
+    }
+
+    &.Warning{
+        background: #57b1c9;
+    }
+
+    &.Info{
+        background: #3c9432;
+    }
+}
+
+
+
+/* Only IE10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .k-checkbox-cell {
+        text-overflow: inherit !important;
+        -ms-text-overflow: inherit !important;
+    }
+}

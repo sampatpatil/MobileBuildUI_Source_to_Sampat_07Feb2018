@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Properties>
+  <Property>
+    <Name>defaultMaster</Name>
+    <Value>root</Value>
+  </Property>
+  <Property>
+    <Name>DOMViewContainerId</Name>
+    <Value>.CMA-Container</Value>
+  </Property>
+  <Property>
+    <Name>defaultLanding</Name>
+    <Value>sections/Welcome</Value>
+  </Property>
+  <Property>
+    <Name>homePage</Name>
+    <Value>menu/signin</Value>
+  </Property>
+  <Property Type="Boolean">
+    <Name>DEBUG</Name>
+    <Value>true</Value>
+  </Property>
+  <Property>
+    <Name>Prefix</Name>
+    <Value>CMA</Value>
+  </Property>
+  <Property>
+    <Name>Name</Name>
+    <Value>Customize Mobile Apps</Value>
+  </Property>
+  <Property>
+    <Name>RootPath</Name>
+    <Value>apps/cma/</Value>
+  </Property>
+  <Property Type="Boolean">
+    <Name>asyncRender</Name>
+    <Value>false</Value>
+  </Property>
+  
+  <Property>
+    <Name>APIUrl</Name>
+	<Value>http://localhost:13494/MobileService/mobileAppService.svc/</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>GridPageSize</Name>
+    <Value>10</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>Session.timeout</Name>
+    <Value>60</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>Session.warningTimeoutWindow</Name>
+    <Value>2</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>Session.staySignedInFor</Name>
+    <Value>14</Value>
+  </Property>
+  <Property>
+    <Name>appname</Name>
+    <Value>CMA</Value>
+  </Property>
+  <Property Type="Boolean">
+    <Name>SaveState</Name>
+    <Value>false</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>VersionIncrementalStep</Name>
+    <Value>0.01</Value>
+  </Property>
+  <Property>
+    <Name>WindowRenderTarget</Name>
+    <Value>#CMAMain</Value>
+  </Property>
+  <Property>
+    <Name>RootTarget</Name>
+    <Value>CMAMain</Value>
+  </Property>
+  <Property Type="Number">
+    <Name>ApplicationBuildTime</Name>
+    <Value>1</Value>
+  </Property>
+  <Property Type="Boolean">
+    <Name>isStandalone</Name>
+    <Value>true</Value>
+  </Property>
+  <Property>
+    <Name>authHeaderProvider</Name>
+    <Value>local</Value>
+  </Property>
+  <Property Type="Boolean">
+    <Name>isImageSizeValidationRequired</Name>
+    <Value>false</Value>
+  </Property>
+  <Property>
+    <Name>shareLinkEmailTemplateId</Name>
+    <Value>CustomMobileAppDownload</Value>
+  </Property>
+  <Property>
+    <Name>copyRightInfo</Name>
+    <Value>© Copyright 2018 AgilePoint. All Rights Reserved.</Value>
+  </Property>
+</Properties>

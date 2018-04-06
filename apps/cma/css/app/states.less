@@ -1,0 +1,107 @@
+﻿@import "menuvariables.less";
+/* States */
+#CMAMain {
+    &.mainmenuclosed {
+        .Root {
+            .MainMenu {
+                width: ((@menuwidth * .31)-1);
+
+                .MenuText {
+                    //opacity: 0;
+                    display: none;
+                    width: (@menuwidth * .70) !important;
+                }
+
+                .Blocks {
+                    ul.k-menu-vertical .k-item {
+                        width: (@menuwidth / 2) * 0.64;
+
+                        &:hover {
+                            //width: @menuwidth + 5 !important;
+                            .MenuText {
+                                //opacity: 1 !important;
+                                width: auto;
+                                //display: inline-block !important;
+                            }
+                        }
+
+                        &.ActiveSection {
+                             width: (@menuwidth / 2) * 0.64;
+                        }
+
+                        .Blocks {
+                            left: @menuwidth;
+                            top: 0px;
+
+                            .k-item {
+                                width: @menuwidth + 40 !important;
+
+                                .Fields .Title, .Fields .MenuIcon {
+                                    display: block;
+                                }
+                            }
+                        }
+                        /*&:hover, .k-state-highlighted, .k-state-selected {
+                    .Count {
+                        background-color: transparent;
+                        color: @mainmenuTextColor;
+                    }
+                }*/
+                    }
+
+                    .MyTasks, .IssueTracking {
+                        background-color: transparent;
+                    }
+                }
+
+                .ButtonTitle {
+                    display: none;
+                }
+
+                .Count {
+                    font-size: 11px;
+                    right: 0px;
+                    top: 0px;
+                    //color: @CountColorClosed;
+                    min-width: 14px;
+                    padding: 0 @Padding3;
+                }
+
+                a.Button.OpenClose {
+                    background-position: -40px 0;
+                }
+
+                .ForceDisplay {
+                    a.Field.Title {
+                        display: block !important;
+                    }
+                }
+            }
+
+            .LoginMenu {
+                //left: @menuwidth + 116;
+                a.Button.OpenClose {
+                    background-position: 0 0;
+                }
+            }
+
+            .Body {
+                &.Landing .MyAppsContainer, .AddNewApp {
+                    left: (@menuwidth - 126);
+                    width: 98%!important;
+                }
+
+                .BreadCrumbs {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width : 1024px) {
+    a.Button.OpenClose {
+        .hide;
+    }
+}

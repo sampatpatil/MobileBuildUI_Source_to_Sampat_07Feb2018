@@ -1,0 +1,31 @@
+#
+		// Render generic HTML Block (here data is the block object)
+		 
+		var AP = data.AP,ParentBlockId = data.ParentId,
+			ParentBlock = AP.Model.getBlock(ParentBlockId) || {},
+			ParentType = ParentBlock.Type,
+			Type = data.get('Type') || '', 
+			Class = data.get('Class') || '',
+			Widget = data.get('Widget'),
+			WidgetType = Widget ? Widget.get('Type') : '',
+			ClassStr = 'Block ' + Type + ' ' + Class + ' ' + WidgetType + ' ' + (data.ExClass || ''),
+            DOM = data.DOM,
+            extraClass =  data.get('ExtraClass'),
+			ClassStr = data.AP.Utils.normalizeSpaces(ClassStr);
+            DOMElementType = DOM;
+            extraClass && (ClassStr += ' ' + extraClass);
+
+    if(!DOM){
+		switch(ParentType) {				
+			case 'List': 	DOMElementType = 'li'; 		break;
+			default: 		DOMElementType = 'div'; 	break;
+		}
+    }
+	#
+	
+	<#= DOMElementType # #=AP.Utils.generateBindingsAttr(data.Bindings)# #=AP.Utils.serializeToHTMLAtrr(data.Attr)# id="#= data.Id #"
+						 data-id="#= data.Id #"
+						 class="#= ClassStr #">
+	#= data.AP.View.Templates.renderTemplate('blockfields', { AP: data.AP,FieldsDOM:data.FieldsDOM, Fields: data.Fields, Create: false }) #
+    #= (data.ContentTemplate && data.AP.View.Templates.renderTemplate(data.ContentTemplate,$.extend(true,data, { Create: false })))||'' #
+	</#= DOMElementType #>

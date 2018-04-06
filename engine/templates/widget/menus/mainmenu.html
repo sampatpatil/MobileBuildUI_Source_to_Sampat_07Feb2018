@@ -1,0 +1,22 @@
+#var Block =  data.AP.Model.getBlock(data.BlockId),Title = Block.get('Widget.Title') || '',collapsible = Block.get('Widget.Config.collapsible'),ButtonTitle = Block.get('Widget.Config.ButtonTitle') || '';
+collapsible = collapsible == null ? true:collapsible;
+debugger;
+#
+<div class="Widget">
+        #if(collapsible){#
+        <!--<span class="ButtonTitle">#=ButtonTitle#</span>-->
+        <a href="\\#" class="Button OpenClose">&nbsp;</a>
+        #}#
+        <h3 class="MenuTitle" data-text-key="#=Title#"></h3>
+    
+</div>
+
+<!--<div class="Widget">
+        #if(collapsible){#
+        <!--<span class="ButtonTitle">#=ButtonTitle#</span>-->
+        <!--<a href="\\#" class="Button OpenClose">&nbsp;</a>-->
+ <!--   <a href="\\#" class="k-icon CloseLoginMenu" title="Close Window">&nbsp;</a>
+        #}#-->
+        <!--<h3 class="MenuTitle" data-text-key="#=Title#"></h3>-->
+    
+<!--</div>-->

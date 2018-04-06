@@ -1,0 +1,314 @@
+﻿{
+  "UserName": {
+    "label": "User Name",
+    "help": "Enter User Name",
+    "placeholder": "User Name"
+  },
+  "DomainUserName": {
+    "label": "Ex: Domain\\UserName"
+  },
+  "ServerName": {
+    "label": "Server Name",
+    "help": "Server Name",
+    "placeholder": "Server Name"
+  },
+  "User": {
+    "label": "User:",
+    "help": "User",
+    "placeholder": "User"
+  },
+  "UserCB": {
+    "label": "User:",
+    "help": "Select User",
+    "placeholder": "Select User"
+  },
+  "Password": {
+    "label": "Password",
+    "help": "Enter Password",
+    "placeholder": "Password"
+  },
+  "Domain": {
+    "label": "Domain",
+    "help": "Enter Domain Name",
+    "placeholder": "Enter Domain Name"
+  },
+  "StaySignedIn": {
+    "label": "Keep me signed in",
+    "help": "Stay signed in",
+    "placeholder": "Stay signed in"
+  },
+  "RememberMe": {
+    "label": "Remember Me",
+    "help": "Remember Me"
+  },
+  "Comment": {
+    "label": "Comment",
+    "help": "Enter Comment",
+    "placeholder": "Enter Comment"
+  },
+  "AppTitle": {
+    "label": "App Title",
+    "help": "Enter Title",
+    "placeholder": "Enter Title"
+  },
+  "Category": {
+    "label": "Category",
+    "help": "Select Category",
+    "placeholder": "Select Category"
+  },
+  "AppLogo": {
+    "label": "App Logo",
+    "help": "Upload App Logo",
+    "placeholder": "Upload App Logo"
+  },
+  "AppOverview": {
+    "label": "Overview",
+    "help": "Enter Overview",
+    "placeholder": "Enter Overview"
+  },
+  "SupportedCountries": {
+    "label": "Supported Countries",
+    "help": "Select Supported Countries",
+    "placeholder": "Select Supported Countries"
+  },
+  "SupportedLocale": {
+    "label": "Supported Languages",
+    "help": "Select Supported Languages",
+    "placeholder": "Select Supported Languages"
+  },
+  "SupportDocumentLink": {
+    "label": "Support Document Link",
+    "help": "Enter Support Document Link",
+    "placeholder": "Enter Support Document Link"
+  },
+  "LicenceAgreement": {
+    "label": "End User Licence Agreement (optional)",
+    "help": "End User Licence Agreement",
+    "placeholder": "End User Licence Agreement"
+  },
+  "ScreenShots": {
+    "label": "Screenshots",
+    "help": "Screenshots",
+    "placeholder": "Screenshots"
+  },
+  "PrimaryImage": {
+    "label": "Primary",
+    "help": "Primary Screenshot",
+    "placeholder": "Primary"
+  },
+  "OptionalImage1": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage2": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage3": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "OptionalImage4": {
+    "label": "Optional",
+    "help": "Optional",
+    "placeholder": "Optional"
+  },
+  "SupportingFile": {
+    "label": "Supporting File (optional)",
+    "help": "Supporting File",
+    "placeholder": "Supporting File"
+  },
+  "PublishStatus": {
+    "label": "Publish Status",
+    "help": "Publish Status",
+    "placeholder": "Publish Status"
+  },
+  "Warning": { "help": "Warning" },
+  "Buttons": {
+    "Next": "Next",
+    "Previous": "Previous",
+    "Finish": "Finish",
+    "Back": "Back",
+    "Cancel": "Cancel",
+    "Create": "Create",
+    "Save": "Save",
+    "Submit": "Submit",
+    "Publish": "Publish",
+    "Build": "Build",
+    "SaveAsDraft": "Save as Draft",
+    "Share": "Share",
+    "StartBuild":"Start Build"
+  },
+  "Sections": { "AddNewApp": { "Title": "Add New App" } },
+  "AppName": {
+    "label": "App Name",
+    "help": "Enter App Name",
+    "placeholder": "Enter App Name"
+  },
+  "AppDescription": {
+    "label": "Mobile App Description",
+    "help": "Enter Mobile App Description",
+    "placeholder": "Enter Mobile App Description"
+  },
+  "Icon": {
+    "label": "Application Icon",
+    "help": "Select Application Icon"
+  },
+  "Icon_iPad": {
+    "label": "Application Icon (iPad)",
+    "help": "Select Application Icon for iPad"
+  },
+  "Logo": {
+    "label": "Logo",
+    "help": "Select Logo"
+  },
+  "SplashScreen": {
+    "label": "Splash Screen",
+    "help": "Select Splash Screen"
+  },
+  "SplashScreen_iPad": {
+    "label": "Splash Screen (iPad)",
+    "help": "Select Splash Screen for iPad"
+  },
+  "StoreLogo": {
+    "label": "Store Logo",
+    "help": "Select Store Logo"
+  },
+  "Background": {
+    "label": "Background",
+    "help": "Select Background Image"
+  },
+  "SiteUrl": {
+    "label": "Server Url",
+    "help": "Enter Server URL",
+    "placeholder": "Enter Server URL"
+  },
+  "ServerInstanceUrl": {
+    "label": "Server Instance URL (REST)",
+    "help": "Enter Server Instance URL (REST)",
+    "placeholder": "https://serverinstanceurl/agilepointserver"
+  },
+  "Name": {
+    "label": "Mobile App Name",
+    "help": "Enter Mobile App Name",
+    "placeholder": "Enter Mobile App Name",
+    "decription": "App name to be displayed on mobile device"
+  },
+  "CompanyName": {
+    "label": " Company Name",
+    "help": "Enter Company Name",
+    "placeholder": "Enter Company Name"
+  },
+  "SelectImageOfSize": {
+    "label": "Select Image of Size "
+  },
+  "RemoveSelectedImage": {
+    "help": "Use Default Image"
+  },
+  "Download": {
+    "label": "Click here to download"
+  },
+  "Android": {
+    "label": "Android"
+  },
+  "Apple": {
+    "label": "iPhone and iPad"
+  },
+  "Windows": {
+    "label": "Windows Phone"
+  },
+  "iOS": {
+    "label": "iOS"
+  },
+  "ClientId": {
+    "label": "Client Id",
+    "help": "Enter Client Id",
+    "placeholder": "Enter Client Id"
+  },
+  "ClientSecretId": {
+    "label": "Return URL",
+    "help": "Enter Return URL",
+    "placeholder": "Enter Return URL"
+  },
+  "URL": {
+    "label": "Company Website",
+    "help": "Enter Company Website",
+    "placeholder": "Enter Company Website"
+  },
+  "StagingServerInstanceUrl": {
+    "label": "Staging Server Instance Url",
+    "help": "Enter Staging Server Instance Url",
+    "placeholder": "Enter Staging Server Instance Url"
+  },
+  "ProductionServerInstanceUrl": {
+    "label": "Production Server Instance Url",
+    "help": "Enter Production Server Instance Url",
+    "placeholder": "Enter Production Server Instance Url"
+  },
+  "DevelopmentServerInstanceUrl": {
+    "label": "Development Server Instance Url",
+    "help": "Enter Development Server Instance Url",
+    "placeholder": "Enter Development Server Instance Url"
+  },
+  "ConsumerKey": {
+    "label": "Consumer Key",
+    "help": "Enter Consumer Key",
+    "placeholder": "Enter Consumer Key"
+  },
+  "ConsumerSecret": {
+    "label": "Consumer Secret",
+    "help": "Enter Consumer Secret",
+    "placeholder": "Enter Consumer Secret"
+  },
+  "IosCertificate": {
+    "label": "iOS Certificate"
+  },
+  "WindowsCertificate": {
+    "label": "Windows Certificate"
+  },
+  "AndroidCertificate": {
+    "label": "Android Certificate"
+  },
+  "Certificate": {
+    "label": "Certificate"
+  },
+  "AndroidSizeTitle": {
+    "HDPI": "HDPI - Portrait",
+    "XXHDPI": "XXHDPI - Portrait",
+    "XHDPI": "XHDPI - Portrait",
+    "Land_XHDPI": "XHDPI - Landscape",
+    "Land_HDPI": "HDPI - Landscape"
+  },
+  "AppMenu": {
+    "MyApps": {
+      "label": "My Apps"
+    },
+    "MyTasks": {
+      "label": "My Tasks"
+    },
+    "TeamTasks": {
+      "label": "Team Tasks"
+    },
+    "ProcessesIStarted": {
+      "label": "Processes I Started"
+    },
+    "ProcessesIWorked": {
+      "label": "Processes I've Worked"
+    },
+    "Delegations": {
+      "label": "Delegations"
+    },
+    "Settings": {
+      "label": "Settings"
+    },
+    "Help": {
+      "label": "Help"
+    },
+    "About": {
+      "label": "About"
+    }
+  }
+}

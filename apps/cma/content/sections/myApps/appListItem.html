@@ -1,0 +1,52 @@
+﻿#
+var createNewAppText = $.i18n.t('sections.appDetails.createNewApp'),
+    fallbackLogo= APPS[0].Config.loadQuery('CMADataStore').get('DefaultImages.Android.HDPI.Logo');
+#
+
+#if(data.AppDisplayName){#
+<div class="itemContainer pull-left box">
+    <div class="card-front">
+            <span class="AppVersionHolder" title="v#:data.AppVersion#">v#:data.AppVersion#</span>
+            <div class="AppIconHolder">
+                <div class="AppIconWrapper"><img class="AppIcon" src="#:data.AppLogoURL#" onerror="var $target = $(this); $target.prop('src', $target.data('fallback-logo')||'')" data-fallback-logo="#:fallbackLogo#" /></div>
+                <span style="float:right; position:relative; top:25px;">
+                    #if(data.Android){#
+                    <span class="cmaicons cmaicons-Android cmaicons-2x LogoColorAndroid" style="text-shadow:0px 0px 1px black"></span>
+                    #}#
+                    #if(data.iOS){#
+                    <span class="cmaicons cmaicons-iOS cmaicons-2x LogoColoriOS"></span>
+                    #}#
+                    #if(data.Windows){#
+                    <span class="cmaicons cmaicons-Windows cmaicons-2x LogoColorWindows"></span>
+                    #}#
+                    #if(!data.Windows && !data.iOS && !data.Android){#
+                    <span style="position:relative; top:-5px; left:-5px; font-weight:700;">Draft</span>
+                    #}#
+                </span>
+            </div>
+            <div style="padding:5px;">
+                <div class="AppNameNewTile" style="font-size:1.5em; overflow:hidden; text-overflow:ellipsis; font-weight:700; white-space:nowrap" title="#:data.AppDisplayName#" >#:data.AppDisplayName#</div>
+                <div class="Description" style="white-space: pre-line">#:data.AppDescription#</div>
+            </div>
+            <div class="AppActionsContainer"><span class="AppActionHolder cmaicons cmaicons-BuildApp cmaicons-4x" data-command="SetFilter" title="Build"></span><span class="AppActionHolder cmaicons cmaicons-ViewEdit cmaicons-4x"  data-command="ViewApp" title="View/Edit" style="border-right:1px solid rgb(204, 204, 204); border-left:1px solid rgb(204, 204, 204);"></span><span class="AppActionHolder cmaicons cmaicons-Archive cmaicons-4x" data-command="MoveToTrash" title="Archive"></span></div>
+    </div>
+    <!-- <div class="card-back">
+        <div class="AppName">#:data.AppDisplayName#</div>
+        <div class="Description">#:data.AppDescription#</div>
+        <span class="k-icon CMA-Icon Delete" data-command="MoveToTrash" title="Move to Archive"></span>
+    </div> -->
+</div>
+#}else if(data.Name == "AddNewApp"){#
+    <!-- <div style="font-size:1.4em; margin:12px 7px;"><p style="font-size:1.25em">Welcome to AgilePoint Mobile Build Dashboard.</p><p>To get started with creating a mobile app, click on the menu option: "Create New App" or the tile below.</p></div> -->
+<div title="#:createNewAppText#" class="itemContainer k-button k-button-icontext AddApp box pull-left" data-command="ViewApp">
+    <span class="plus-sign">+</span>
+    <span class="k-toolbar-button-text">#:createNewAppText#</span>
+</div>
+#}
+else{#
+<div style="font-size:1.4em; margin:12px 7px;"><p style="font-size:1.25em">Welcome to AgilePoint Mobile Build Dashboard.</p><p>To get started with creating a mobile app, click on the menu option: "Create New App" or the tile below.</p></div>
+<div title="#:createNewAppText#" class="k-button k-button-icontext AddApp box pull-left" data-command="ViewApp">
+    <span class="plus-sign">+</span>
+    <span class="k-toolbar-button-text">#:createNewAppText#</span>
+</div>
+#}#

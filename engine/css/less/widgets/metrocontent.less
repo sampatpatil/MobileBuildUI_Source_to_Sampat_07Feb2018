@@ -1,0 +1,140 @@
+
+@metroblocksstartleft: 0;
+@metroblocksmargintop: 0px;
+@metroblocksmarginbottom: 0px;
+@metroblockwidth: 205px;
+@metroblockheight: 205px;
+@metroblockspace: 16px;
+
+.APMetroContent {
+    //margin-left: -@bodyleftmargin !important;
+    //margin-right: -@bodyrightmargin !important;
+    overflow: hidden;
+
+    > .Fields {
+
+        .Title {
+            margin-left: @bodyleftmargin;
+            margin-right: @bodyrightmargin;
+        }
+    }
+
+    .Blocks {
+        //position: absolute;
+        margin-left: @metroblocksstartleft;
+        margin-top: @metroblocksmargintop;
+        margin-bottom: @metroblocksmarginbottom;
+
+        .APMetroContentBlock {
+            /*width: @metroblockwidth;
+            height: @metroblockheight;*/
+            float: left;
+            overflow: hidden;
+            font-family: Segoe UI;
+            font-weight: lighter;
+            background: #fff; // for positioning. Override in app css
+            color: white;
+
+            &.Width_2 {
+                width: @metroblockwidth * 2 + @metroblockspace;
+            }
+
+            &.Width_3 {
+                width: @metroblockwidth * 3 + @metroblockspace * 2;
+            }
+
+            &.Width_4 {
+                width: @metroblockwidth * 4 + @metroblockspace * 3;
+            }
+
+            &.Height_2 {
+                height: @metroblockheight * 2 + @metroblockspace;
+            }
+
+            &.Height_3 {
+                height: @metroblockheight * 3 + @metroblockspace * 2;
+            }
+
+            &.Height_4 {
+                height: @metroblockheight * 4 + @metroblockspace * 3;
+            }
+
+            .Title {
+                padding: @metroblockspace / 2 @metroblockspace;
+                font-size: 110%;
+                font-weight: bold;
+                margin-left: 30px;
+                overflow: hidden;
+            }
+
+            .Description {
+                padding: @metroblockspace;
+                font-size: 110%;
+            }
+
+            .roundedcorner {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                .rounded-bottom-corners(10px);
+                background-color: black;
+            }
+
+            .bottomstripe {
+                position: absolute;
+                bottom: 0px;
+                height: 3px;
+                width: 100%;
+                background-color: black;
+            }
+
+
+            &.Block11n {
+                background-color: transparent;
+                font-size: 160%;
+                color: black;
+            }
+
+            /*&.Block11a {
+                background-image: url(../../resources/backgrounds/Block11a.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            &.Block12a {
+                background-image: url(../../resources/backgrounds/Block12a.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            &.Block12b {
+                background-image: url(../../resources/backgrounds/Block12b.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            &.Block12c {
+                background-image: url(../../resources/backgrounds/Block12c.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            &.Block21a {
+                background-image: url(../../resources/backgrounds/Block21a.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }*/
+
+            .MetroWidgetBlock {
+                background-color: #1a82f7;
+                .background-gradient-colors(left,#002160,#1677a2);
+            }
+
+            .MetroWidgetTopBar {
+                .background-gradient-colors(left, #214f8b, #3294bb );
+                text-align: right;
+                padding: 8px;
+            }
+        }
+    }
+}

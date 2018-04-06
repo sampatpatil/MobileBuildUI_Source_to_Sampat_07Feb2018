@@ -1,0 +1,46 @@
+﻿#
+var path='State.Query.CMAUserSettings.Data.EmailList',
+    field=data.AP.Config.loadQuery('CMAUserSettings').Data.EmailList;
+#
+
+<div class="Headers">Build App</div>
+<div class="DistrubutionList">
+
+    <div class="ImportControlField">
+        <span class="Description">#=data.T('sections.settings.EmailList.title')#</span>
+        <input type="file"
+               name="EmailListImport" data-role="filereader"
+               placeholder="#= data.T('sections.settings.EmailList.placeholder') #"
+               accept="#=field.config.type#"
+               data-vm-path="#:path#"
+               data-bind="config:#=path#.config,content:#=path#.Content, events:{contentLoaded:#=path#.contentLoaded}"
+               title="#= data.T('sections.settings.EmailList.title') #" />
+    </div>
+
+    <div class="Description" style="width:calc(100% - 200px);">
+        <span>Enter or import a list of email addresses to get notification when the build is ready</span>
+        <div class="ImportControlButtons" style="float:right; font-weight:normal;">
+            <!--<span class="k-button" data-action="SelectFileForImportEmailList">Import List</span>-->
+            <span class="k-button" data-action="ClearEmailList">Clear Notification List</span>
+        </div>
+    </div>
+    
+    <!--<input type="text" class="FieldInput custom-scrollable" data-role="multicombolist" data-value-field="Value" data-text-field="Value" />-->
+
+    <textarea class="k-textbox EmailList" placeholder="Enter email addresses in CSV (Comma Separated Values) format" data-bind="value:State.Query.CMAUserSettings.Data.EmailList.value" />
+
+    <!--<div class="form-row">
+        <label>Auto Deploy</label>
+        <fieldset>
+            <input id="switch3" type="checkbox" class="input-switch" data-config-key="" data-config-group="">
+            <label for="switch3"></label>
+            <span class="switch-bg"></span><span data-on="Yes" data-off="No" class="switch-labels"></span>
+        </fieldset>
+    </div>-->
+
+    <!--<div class="k-button sendemail" data-action="saveDistributionList">Save Notification List</div>-->
+
+    <!--<div class="k-separator"></div>-->
+</div>
+
+<div class="Buttons"></div>

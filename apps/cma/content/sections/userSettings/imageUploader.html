@@ -1,0 +1,191 @@
+﻿# var AP = data.AP, vm = data._q.Data.UploadImages, basePath='State.Query.'+data.QueryId+'.Data.UploadImages', header=data.T('sections.addNewApp.uploadImages.title'),
+imageSizeText=data.T('form:SelectImageOfSize.label'), removeImageTitle=data.T('form:RemoveSelectedImage.help'); decription=data.T('sections.addNewApp.uploadImages.description'),
+androidImagekeys=['Logo','Icon','Background']; #
+
+<div class="UploaderFormContent">
+    <div class="header"> #:data.T('form:GlobalSetting.GlobalSettingMenu.UploadImages')#</div>
+
+    <div class="ImageUploaderTabStrip" data-role="tabstrip">
+        <ul>
+            <!-- <li data-name="Android" data-bind="css:{Available:#=basePath#.Android.isSelected},visible:#=basePath#.Android.isSelected">Android</li>
+            <li data-name="iOS" data-bind="css:{Available:#=basePath#.iOS.isSelected},visible:#=basePath#.iOS.isSelected">iOS</li>
+            <li data-name="Windows" data-bind="css:{Available:#=basePath#.Windows.isSelected},visible:#=basePath#.Windows.isSelected">Windows Phone</li> -->
+            <li data-name="Android" class="k-state-active">Android</li>
+            <li data-name="iOS">iOS</li>
+            <li data-name="Windows">Windows Phone</li>
+        </ul>
+        <div class="FormContainer custom-scrollable" data-for="Android">
+            <button class="btnSave btnResetAll" data-action="resetActiveImages"> #:data.T('form:GlobalSetting.GlobalSettingMenu.ResetAll')# </button>
+
+            # _.each(androidImagekeys, function(key) { var isItemRendered=false, FieldPlaceholder=data.T('form:'+key+'.label'), FieldHelp=data.T('form:'+key+'.help');
+            #
+            <div class="ImageUploaders">
+                <span class="Description">#= FieldPlaceholder #</span>
+                <div class="ImageUploaderSection">
+                    # _.each(vm.Android,function(field,folderName){ if(field.hasOwnProperty(key)&&field[key].Enabled) {# # var path=basePath+'.Android.'+folderName+'.'+key,
+                    imageBindingPath=path+'.Content', titleText=data.T('form:AndroidSizeTitle.'+folderName); isItemRendered=true;
+                    #
+
+                    <div class="ImageUploader" title="#= FieldHelp #">
+                        <span class="RemoveSelectedFile" title="#:removeImageTitle#" data-skip-validate="true" data-action="removeSelectedImage"
+                            data-image-for="#:folderName+'.'+key#"></span>
+                        <span class="ImagePreviewContainerInner">
+                            <img class="PreviewImage#:key=='Logo'?' WithBorder':''#" data-bind="attr:{src:#:imageBindingPath#}, visible:#:imageBindingPath#"
+                            />
+                        </span>
+                        <input type="file" name="#= field[key].FieldName || key#" data-role="filereader" placeholder="#= FieldPlaceholder #" accept="#=field[key].config.type#"
+                            data-vm-path="#:path#" data-bind="config:#=path#.config,content:#=path#.Content, events:{contentLoaded:#:basePath#.validate}"
+                            title="#= FieldHelp #" />
+
+                        <div class="Info">
+                            <span class="TitleText">#:titleText#</span>
+                            <span class="ImageSizeText">#:field[key].imageSize#</span>
+                        </div>
+                    </div>
+                    # } });#
+                </div>
+                #if(isItemRendered){#
+                <div class="ImagePreviewContainer">
+                    <div class="ImagePreview">
+                        <span class="AndroidPreview Portrait #:key#">
+                        </span>
+                        <span class="AndroidPreview Landscape #:key#">
+                        </span>
+                    </div>
+                </div>
+                #}#
+            </div>
+            #});#
+        </div>
+        <div class="FormContainer custom-scrollable" data-for="iOS">
+            <button class="btnSave btnResetAll" data-action="resetActiveImages"> #:data.T('form:GlobalSetting.GlobalSettingMenu.ResetAll')# </button>
+
+            # _.each(vm.iOS, function(field, key) { if(field.hasOwnProperty('defaultValue')&&field.Enabled) {# # var path=basePath+'.iOS.'+key,
+            FieldPlaceholder=data.T('form:'+key+'.label'), FieldHelp=data.T('form:'+key+'.help'), imageBindingPath=path+'.Content';
+            #
+            <div class="ImageUploaders">
+                <div class="ImageUploader" title="#= FieldHelp #">
+                    <span class="RemoveSelectedFile" title="#:removeImageTitle#" data-skip-validate="true" data-action="removeSelectedImage"
+                        data-image-for="#:key#"></span>
+                    <span class="ImagePreviewContainerInner">
+                        <img class="PreviewImage#:key=='Logo'?' WithBorder':''#" data-bind="attr:{src:#:imageBindingPath#}, visible:#:imageBindingPath#"
+                        />
+                    </span>
+                    <input type="file" name="#= field.FieldName || key#" data-role="filereader" placeholder="#= FieldPlaceholder #" accept="#=field.config.type#"
+                        data-vm-path="#:path#" data-bind="config:#=path#.config,content:#=path#.Content, events:{contentLoaded:#:basePath#.validate}"
+                        title="#= FieldHelp #" />
+                </div>
+
+                <div class="ImagePreviewContainer">
+                    <div class="ImagePreview">
+                        <span class="iOSPreview Portrait #:key#">
+                        </span>
+                        <span class="iOSPreview Landscape #:key#">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="Info">
+                    <span class="TitleText">#:FieldPlaceholder#</span>
+                    <span class="ImageSizeText">(#:field.imageSize#)</span>
+                </div>
+            </div>
+            # } });#
+        </div>
+        <div class="FormContainer custom-scrollable" data-for="Windows">
+            <button class="btnSave btnResetAll" data-action="resetActiveImages"> #:data.T('form:GlobalSetting.GlobalSettingMenu.ResetAll')# </button>
+
+            # _.each(vm.Windows, function(field, key) { if(field.hasOwnProperty('defaultValue')&&field.Enabled) {# # var path=basePath+'.Windows.'+key,
+            FieldPlaceholder=data.T('form:'+key+'.label'), FieldHelp=data.T('form:'+key+'.help'), imageBindingPath=path+'.Content';
+            #
+            <div class="ImageUploaders">
+                <div class="ImageUploader" title="#= FieldHelp #">
+                    <span class="RemoveSelectedFile" title="#:removeImageTitle#" data-skip-validate="true" data-action="removeSelectedImage"
+                        data-image-for="#:key#"></span>
+                    <span class="ImagePreviewContainerInner">
+                        <img class="PreviewImage#:key=='Logo'?' WithBorder_notused':''#" data-bind="attr:{src:#:imageBindingPath#}, visible:#:imageBindingPath#"
+                        />
+                    </span>
+                    <input type="file" name="#= field.FieldName || key#" data-role="filereader" placeholder="#= FieldPlaceholder #" accept="#=field.config.type#"
+                        data-vm-path="#:path#" data-bind="config:#=path#.config,content:#=path#.Content, events:{contentLoaded:#:basePath#.validate}"
+                        title="#= FieldHelp #" />
+                </div>
+
+                <div class="ImagePreviewContainer">
+                    <div class="ImagePreview">
+                        <span class="WindowsPreview Portrait #:key#">
+                        </span>
+                        <span class="WindowsPreview Landscape #:key#">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="Info">
+                    <span class="TitleText">#:FieldPlaceholder#</span>
+                    <span class="ImageSizeText">(#:field.imageSize#)</span>
+                </div>
+            </div>
+            # } });#
+
+        </div>
+
+    </div>
+    <div class="ControlFieldNoBorder" style="width: 556px; margin: 20px auto; position: relative; padding: 10px;">
+        <button class="btnSave" data-action="saveUploadImages"> #:data.T('form:GlobalSetting.GlobalSettingMenu.Save')# </button>
+        <button class="btnSave" data-action="resetUploadImages"> #:data.T('form:GlobalSetting.GlobalSettingMenu.Reset')# </button>
+
+    </div>
+</div>
+
+
+<div class="Buttons"></div>
+<style type="text/css">
+    .header {
+        position: relative;
+        padding: 8px 0 8px 10px;
+        background: rgb(236, 236, 236);
+        color: rgb(4, 112, 184);
+        line-height: 18px;
+        margin: 0;
+        width: 99.2%;
+        font-family: Arial !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        font-family: Arial, Verdana, sans-serif;
+        font-size: 13px;
+    }
+
+    .FormContainer {
+        margin: 0 auto 0;
+        width: calc(100% - 10px);
+        text-align: center;
+        border: none;
+        max-height: 400px;
+        overflow: hidden;
+        outline: none;
+        height: auto;
+        opacity: 1;
+        display: block;
+        padding: 5px;
+        position: static;
+        box-shadow: none;
+        background-image: none;
+        font-size: 100%;
+        font-family: Segoeui, Arial;
+        border-color: none !important;
+        width: calc(100% - 10px) !important;
+        margin-left: 0 !important;
+        border: none !important;
+    }
+
+    .k-content {
+        margin: 0 0px 0;
+        border-color: none;
+    }
+
+    .btnResetAll {
+        margin-right: 10px !important;
+        float: right !important;
+        height: 16px !important;
+    }
+</style>

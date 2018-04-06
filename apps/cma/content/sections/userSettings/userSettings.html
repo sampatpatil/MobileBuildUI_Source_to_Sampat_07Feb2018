@@ -1,0 +1,115 @@
+﻿#
+var basePath = 'State.Query.' + data.QueryId + '.Data',
+    translate=data.T,
+    vm = data.AP.Config.loadQuery(data.QueryId).Data;
+    companyInfo = vm.CompanyInfo;
+    //console.log(translate);
+#
+<div class="CustomMenues">
+    <div class="active settingCustomMenu mCompanyDetails">#:translate('form:GlobalSetting.GlobalSettingMenu.CompanyDetails')#</div>
+    <div class="settingCustomMenu mAuthentication">#:translate('form:GlobalSetting.GlobalSettingMenu.Authentication')#</div>
+    <div class="settingCustomMenu mApplicationFilters">#:translate('form:GlobalSetting.GlobalSettingMenu.ApplicationList')#</div>
+    <div class="settingCustomMenu mUploadImage">#:translate('form:GlobalSetting.GlobalSettingMenu.UploadImage')#</div>
+    <div class="settingCustomMenu mNotification">#:translate('form:GlobalSetting.GlobalSettingMenu.NotificationList')#</div> </br>
+</div>
+<div class="SettingsContainer" style="min-height: 335px">
+    <div class="header">#:translate('form:GlobalSetting.GlobalSettingMenu.BasicSettings')#</div> 
+    #$.each(companyInfo, function(key,field) { 
+            if(field.hasOwnProperty("Content")) {#
+            <div class="ControlFieldNoBorder" style="width: 80%; margin: 20px auto; position: relative; padding: 10px;">
+                <span class="Title" style="width:20%; float: left">#:translate('form:GlobalSetting.CompanyDetails.'+key)#</span>
+                <!-- <span class="Title" style="width:20%; float: left">#:translate.key#:</span> -->
+                <input type="text"
+                    name="#:key#" 
+                    placeholder="Enter #:translate('form:GlobalSetting.CompanyDetails.'+key)#"
+                    title="#:translate('form:GlobalSetting.CompanyDetails.'+key)#"  
+                    data-bind="value:#:basePath+'.CompanyInfo.'+key+'.Content'#"
+                    style="min-width:556px" />
+            </div>
+        #}
+    });#
+    <div class="ControlFieldNoBorder" style="width: 80%; margin: 20px auto; position: relative; padding: 10px;">
+    <button class="btnSave" data-action="saveUserSettings"> #:translate('form:GlobalSetting.GlobalSettingMenu.Save')# </button>
+    <button class="btnReset" data-action="resetUserSettings"> #:translate('form:GlobalSetting.GlobalSettingMenu.Reset')# </button>
+    
+    </div>
+</div>
+
+<script type="text/javascript"> 
+     
+    $('.settingCustomMenu').click(function(e) { 
+        $('.settingCustomMenu').removeClass("active");
+        $(this).addClass("active");
+    });
+    
+    $('.mCompanyDetails').click(function() { Enable("SettingsContainer"); });
+    $('.mAuthentication').click(function() { Enable("AuthenticationFormType"); });
+    $('.mApplicationFilters').click(function() { Enable("ApplicationFilterFormType"); });
+    $('.mUploadImage').click(function() { Enable("UploadImageFormType"); });
+    $('.mNotification').click(function() { Enable("NotificationListFormType"); });
+
+    function Enable(contrlField) {
+        $(".SettingsContainer").hide();
+        $(".ApplicationFilterFormType").hide();
+        $(".AuthenticationFormType").hide();
+        $(".UploadImageFormType").hide();
+        $(".NotificationListFormType").hide();
+        $("."+contrlField).show();
+        
+    }
+</script>
+
+<style type="text/css">
+    .SettingsContainer, .WizardContent, .NotificationListFormType, .UploadImageFormType    {
+        position: relative;
+        border: 2px solid rgb(236, 236, 236);
+        margin-top: 21px;
+        
+        width: 80%;
+        font-size: 13px;
+        width: 95%;
+    }
+    .settingCustomMenu {
+        border: 1px solid rgb(4, 112, 184);
+        color: rgb(4, 112, 184);
+        border-bottom: none;
+        border-bottom: none;
+        min-width: 100px;
+        text-align: center;
+        margin-right: 2px;
+
+    }
+    .CustomMenues {
+        margin-top: 20px;
+    }
+    .header {
+        position: relative;
+        padding: 8px 0 8px 10px;
+        background: rgb(236, 236, 236);
+        color: rgb(4, 112, 184);
+        line-height: 18px;
+        margin: 0;
+        width: 99.2%;
+        font-family: Arial !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        font-family: Arial, Verdana, sans-serif;
+        font-size: 13px;
+    }
+    .ControlFieldNoBorder {
+        margin: 10px !important;
+    }
+    .btnSave, .btnReset {
+        background-color: rgb(142, 153, 24);
+        color: rgb(255, 255, 255);
+        height: 25px;
+        min-width: 80px;
+        padding: 4px 0;
+        display: inline-block;
+        border: 0 none;
+        text-align: center;
+        cursor: pointer;
+        font-family: Arial, Verdana, sans-serif;
+    }
+
+</style>

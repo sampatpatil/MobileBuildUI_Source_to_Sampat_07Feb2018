@@ -1,0 +1,8 @@
+﻿# var AP = data.AP,BlockId = data.Id,Config = AP.Model.getBlock(BlockId).get('Widget.Config'),QueryId = Config.get('QueryId'),fieldPath = 'State.Query.'+QueryId + '.'+Config.PropPath,
+sessionMsg = AP.View.Internationalize.translate('main:sections.sessionextender.windows.sessionmsg'), seconds = AP.View.Internationalize.translate('main:sections.sessionextender.windows.seconds'),
+doyouwanttoextend = AP.View.Internationalize.translate('main:sections.sessionextender.windows.doyouwanttoextend'), WarningHelp = data.AP.View.Internationalize.translate('form:Warning.help');
+#
+<div class="Block APWidget APTimer SessionExtenderTimer" id="#=BlockId#" data-id="#=BlockId#">
+    <span class="EM-Icon WarningIcon" title="#=WarningHelp#"></span>
+    <p>#=sessionMsg# <span data-bind="html:#=fieldPath#.Remaining"></span> #=seconds#. #=doyouwanttoextend#</p>
+</div>

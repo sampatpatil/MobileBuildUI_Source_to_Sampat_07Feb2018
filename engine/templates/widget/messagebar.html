@@ -1,0 +1,22 @@
+
+
+	#
+		var Block = data.AP.Model.getBlock(data.BlockId),
+			HideButtonTextKey = Block.Widget.Config.messagebar.hidebuttontext;
+	#
+	
+	<div class="APWidget APMessageBar">
+	
+		<div class="Message"></div>	
+		
+		<div class="Buttons">
+			
+			<a href="\\#"
+			   class="k-button k-button-icontext"
+			   data-action="hide">
+				<span class="k-icon k-delete"></span>
+				<span class="k-toolbar-button-text"
+					  data-text-key="#= HideButtonTextKey #">Text</span>
+			</a>
+		</div>
+	</div>

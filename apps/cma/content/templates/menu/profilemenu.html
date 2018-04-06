@@ -1,0 +1,24 @@
+﻿# var userData = data.AP.Config.Data.UserData,Block=data.AP.Model.getBlock(data.BlockId),Config=Block.get('Widget.Config');#
+  <div class="LoginUserInfo">
+      <div class="ProfileIconHolder">
+          <img class="ProfileIcon" src="apps/cma/resources/img/avatar.jpg" />
+      </div>
+      <div class="UserDetails">
+          <div class="UserName">#=userData.FullName#</div>
+          <div class="UserID">#=userData.Username#</div>
+      </div>
+  </div>
+    <div class="LoginRight ActionCenter-Toggler">
+        <span class="k-icon EM-Icon EditIcon"></span>
+    </div>
+#if(Config.MenuItems && Config.MenuItems.length > 0){#
+    <div class="MenuItemsHolder">
+        <ul class="MenuItems">
+            #for(var i=0;i < Config.MenuItems.length;i++){
+                var menuItem =Config.MenuItems[i],menuItemClass = menuItem.Class||'MenuItem';
+                #
+                <li class="#=menuItemClass#" data-action="#=menuItem.Action#">#=data.AP.View.Internationalize.translate(menuItem.Text)#</li>
+            #}#
+        </ul>
+    </div>
+#}#

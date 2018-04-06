@@ -1,0 +1,43 @@
+<form class="Form">
+    # 
+    var q = data._q|| data;
+    if(q){
+    var form = q.Form;
+     if(form){
+      _.each(form.SubForms, function(SubForm, SubFormIndex){
+		
+			_.each(SubForm.FieldSets, function(FieldSet, FieldSetIndex){ #	
+				
+				<fieldset>
+                    # var FieldSetTitleKey = FieldSet.Title,
+                          FieldSetIconKey = FieldSet.IconClass||'';
+					  if(FieldSetTitleKey) { 
+						  var FieldSetTitle = data.AP.View.Internationalize.translate(FieldSetTitleKey); #
+					<legend>
+                        <div class="#= FieldSetIconKey #"></div>
+                        #= FieldSetTitle #</legend>
+                    # } #
+				
+					# for(var Field in (FieldSet.Fields.toJSON?FieldSet.Fields.toJSON():FieldSet.Fields)){ #
+						#= data.AP.View.Templates.renderTemplate('widget/forms/formfield', {
+																	AP: q.AP,  
+																	QueryId: q.Id,
+																	SubFormIndex: SubFormIndex,
+																	FieldSetIndex: FieldSetIndex,
+																	FieldName: Field, 
+																	Field: FieldSet.Fields[Field] 
+																}) #
+					# } #
+                </fieldset>
+    # 	});
+		 })
+    }}#
+		<div class="Messages"></div>
+    <div class="Buttons">
+        #if(data._btns){
+        for(var i=0;i < data._btns.length; i++){
+        #
+        #= data.AP.View.Templates.renderTemplate('widget/toolbar/toolbarbutton',  data._btns[i])#
+        #}}#
+    </div>
+</form>

@@ -1,0 +1,14 @@
+#
+		// Block childs
+		 
+		var BlockType = data.Type,
+			DOMElementType;
+
+		switch(BlockType) {
+				
+			case 'List': 	DOMElementType = 'ul'; 		break;
+			default: 		DOMElementType = 'div'; 	break;
+		};
+	#
+	
+	<#= DOMElementType # #=data.AP.Utils.generateBindingsAttr(data.BlocksBindings)# class="Blocks #= data.ExBlocksClass || '' #"/>

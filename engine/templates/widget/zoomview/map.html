@@ -1,0 +1,12 @@
+﻿#
+var mapId = data.MapId,areas = data.areas,shape='rect';
+if(areas){#
+<map name="#=mapId#">
+    #_.each(areas,function(area){#
+    #var attrEx = area.data,attrStr = '';
+     for (var key in attrEx) {if(typeof(attrEx[key]) == 'string')attrStr += ' data-'+key + '="' + attrEx[key] + '"';}
+        #
+    <area href="#=area.href#" #=attrStr# shape="#=area.shape||shape#" coords="#=area.coords#" />
+    #})#        
+</map>
+#}#

@@ -1,0 +1,22 @@
+#
+		var BlockId = data.BlockId,AP = data.AP,Block = AP.Model.getBlock(BlockId) || {},
+            Widget = Block.get('Widget'),
+			Class = Block.Class || 'ButtonWidget',
+			DOMElementType = Widget.DOM || 'span',
+			FieldTextKey = Widget.Text || 'defaults.fieldnotext',
+			FieldTextKeyEncoded = data.AP.Utils.encodeParam(FieldTextKey),
+            attrStr = '';
+	#
+	
+	<#= DOMElementType # class="#= Class #"
+						 data-text-key="#= FieldTextKey #"
+						 data-bind="text: translate('#= FieldTextKeyEncoded #')"
+# if (Widget.Attr!=null) {
+var attrEx = Widget.Attr;
+for (var key in attrEx){
+if(key != 'uid' && attrEx.hasOwnProperty(key) && typeof(attrEx[key]) == 'string'){
+attrStr += ' '+key + '="' + attrEx[key] + '"';
+}
+}
+
+}# #= attrStr #/>

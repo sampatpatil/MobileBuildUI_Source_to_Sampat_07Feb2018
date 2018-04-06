@@ -1,0 +1,100 @@
+@font-face {
+    font-family: cmaicons;
+    src: url("./cmaicons.eot");
+    src: url("./cmaicons.eot?#iefix") format("embedded-opentype"), url("./cmaicons.woff2") format("woff2"), url("./cmaicons.woff") format("woff"), url("./cmaicons.ttf") format("truetype"), url("./cmaicons.svg#cmaicons") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+
+.cmaicons {
+    display: inline-block;
+    transform: translate(0, 0);
+    text-rendering: auto;
+    font: normal normal 400 14px/1 cmaicons;
+    font-size: inherit;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cmaicons-lg {
+    vertical-align: -15%;
+    line-height: 0.75em;
+    font-size: 1.33333333em;
+}
+
+.cmaicons-2x {
+    font-size: 2em;
+}
+
+.cmaicons-3x {
+    font-size: 3em;
+}
+
+.cmaicons-4x {
+    font-size: 4em;
+}
+
+.cmaicons-5x {
+    font-size: 5em;
+}
+
+.cmaicons-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.cmaicons-Android::before {
+    content: "\ea01";
+}
+
+.cmaicons-Announcement::before {
+    content: "\ea02";
+}
+
+.cmaicons-Archive::before {
+    content: "\ea04";
+}
+
+.cmaicons-BuildApp::before {
+    content: "\ea03";
+}
+
+.cmaicons-BuildApp2::before {
+    content: "\ea05";
+}
+
+.cmaicons-CreateNewApp::before {
+    content: "\ea06";
+}
+
+.cmaicons-DownloadBlue::before {
+    content: "\ea08";
+}
+
+.cmaicons-Edit::before {
+    content: "\ea07";
+}
+
+.cmaicons-MailBlue::before {
+    content: "\ea09";
+}
+
+.cmaicons-MyApps::before {
+    content: "\ea0a";
+}
+
+.cmaicons-Unarchive::before {
+    content: "\ea0c";
+}
+
+.cmaicons-ViewEdit::before {
+    content: "\ea0b";
+}
+
+.cmaicons-Windows::before {
+    content: "\ea0d";
+}
+
+.cmaicons-iOS::before {
+    content: "\ea0e";
+}

@@ -1,0 +1,31 @@
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\csc.exe
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\System.Collections.Immutable.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\System.Reflection.Metadata.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\vbc.exe
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\VBCSCompiler.exe
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\roslyn\VBCSCompiler.exe.config
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll.config
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\CustomizeMobileApps.pdb
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.dll
+D:\Hosted Applications\Agile Point\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.pdb
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll.config
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\bin\CustomizeMobileApps.pdb
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.dll
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.pdb
+D:\Hosted Applications\AgilePoint\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.csprojResolveAssemblyReference.cache
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll.config
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\bin\CustomizeMobileApps.dll
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\bin\CustomizeMobileApps.pdb
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.dll
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.pdb
+D:\TFS\Src\NXCore\NX Portal\modules\CustomizeMobileApps\obj\Portal\CustomizeMobileApps.csprojResolveAssemblyReference.cache

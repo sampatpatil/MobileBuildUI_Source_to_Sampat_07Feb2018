@@ -1,0 +1,103 @@
+﻿.shadow(@value: 0px 1px 3px #aaa) {
+    -moz-box-shadow: @value;
+    -webkit-box-shadow: @value;
+    box-shadow: @value;
+}
+
+.shadow-menu(@value: 0px 0px 1px #ccc) {
+    -moz-box-shadow: @value;
+    -webkit-box-shadow: @value;
+    box-shadow: @value;
+}
+
+.ellipsis(@width) {
+    overflow: hidden;
+    white-space: nowrap;
+    width: @width;
+    text-overflow: ellipsis;
+}
+
+.multiline-text-ellipsis {
+    display: block;
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-line-clamp: @lines-to-show;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+}
+
+#absoluteBox (@left, @top, @right, @bottom) {
+    .absolute;
+    left: @left;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+}
+
+.absolute-box {
+    #absoluteBox
+    (0,0,0,0);
+}
+
+#border-radius(@value) {
+    border-radius: @value;
+    -moz-border-radius: @value;
+    -webkit-border-radius: @value;
+}
+
+.border-radius2 {
+    #border-radius
+    (2px);
+}
+
+.border-radius3 {
+    #border-radius
+    (3px);
+}
+
+.border-radius4 {
+    #border-radius
+    (4px);
+}
+
+.border-radius7 {
+    #border-radius
+    (7px) !important;
+}
+
+.blur {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.transform-transition {
+    -moz-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+.zoomout {
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.grid-description() {
+    padding: 5px;
+    color: @gridDescription-text-color;
+    border-bottom: 1px solid @gridDescription-border-color;
+    background-color: @gridDescription-bg-color;
+    min-height: 25px;
+    line-height: 20px;
+}

@@ -1,0 +1,34 @@
+﻿<div class="bulk-action">
+    <div class="content-wrapper">
+        <div class="topbar">
+            <span class="title" data-bind="html: title"></span>
+            <span class="actions pull-right">
+                <a href="\\#" class="k-transparent" data-sprite-css-class="k-icon EM-Icon EM-Close" data-role="button" data-action="close" />
+            </span>
+        </div>
+
+
+        <div class="text">&nbsp;</div>
+        <div class="content">
+            <span class="icon24 bulkAction"></span>
+            <span data-bind="html: statusStr"></span>
+        </div>
+        <div>
+            <div class="progressbar pull-left k-widget k-progressbar k-progressbar-horizontal" style="width: 90%"
+                data-bind="visible: progress, value: progress">
+                <span class="k-progress-status-wrap">
+                    <span class="k-progress-status">100</span>
+
+                </span>
+                <div class="k-state-selected k-complete" style="display: block; width: 100%;">
+                    <span class="k-progress-status-wrap" style="width: 100%;">
+                        <span class="k-progress-status">100</span></span>
+                </div>
+            </div>
+            <span class="actionsBtn actions pull-left">
+                <a data-bind="visible: resumable, enabled: resumable, events: { click: resume }" href="\\#" class="k-transparent" data-sprite-css-class="k-icon EM-Icon ResumIcon" data-role="button" data-action="resume" />
+                <a data-bind="visible: pausable, enabled: pausable, events: { click: pause }" href="\\#" class="k-transparent" data-sprite-css-class="k-icon EM-Icon PauseIcon" data-role="button" data-action="pause" />
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+﻿
+.FlyOutTitle {
+    background-color: @FlyOutTitleBgColor;
+    width: 100%;
+    color: @FlyOutTitleTextColor;
+    height: 28px;
+    padding: 0px @Padding10 @Padding10 @Padding10;
+
+    a.BackBtnIcon {
+        //.FlyBackIcon;
+        .pull-left;
+    }
+
+    h2 {
+        .pull-left;
+        padding-top: @Padding7;
+        font: 700 1.6em Museo700;
+    }
+}
+
+.FilterForm {
+    padding-left: 0px !important;
+
+    .Field {
+        margin-bottom: 12px;
+        width: 349px;
+
+        &.FieldSize_4 label {
+            padding-left: 17px;
+        }
+
+        label {
+            color: @WelcomeFontcolor;
+            font-family: Arial,Verdana,sans-serif;
+            font-size: 100%;
+            display: block;
+        }
+
+        input[type=checkbox] {
+            .pull-left;
+        }
+    }
+
+    .ProcessesName, .FullName, .UserName, .Manager, .Department, .EmailAddress {
+        input[type=text], input[type=email] {
+            width: 337px !important;
+        }
+    }
+
+    .k-combobox, .k-dropdown {
+        width: 348px !important;
+    }
+
+    .k-dropdown {
+        width: 348px !important;
+    }
+
+    .Running, .Suspended, .Cancelled, .Completed, .All, .New, .Assigned, .Overdue, .Deferred, .Created, .Failed, .Sent {
+        width: 103px !important;
+
+        input[type=checkbox] {
+            .pull-left;
+            margin-top: -14px;
+        }
+
+         /* Only IE10 */
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                input[type=checkbox] {
+                    margin-top: -18px !important;
+                }
+
+                label {
+                    padding-left: 21px !important;
+                }
+            }
+    }
+
+    .InnerField {
+        .pull-left;
+        width: 97%;
+        padding: @Padding10 0 0 @Padding8;
+    }
+
+    .Clear-Button {
+        position: relative;
+        .pull-right;
+        margin-right: 100px;
+        margin-top: -41px;
+    }
+
+    .TaskDates {
+        width: 94% !important;
+    }
+
+    .TaskStatus {
+        margin-top: @Margin10;
+        ;
+    }
+
+    .DateStarted, .DateCreated, .DateAssigned, .DateCompleted, .NextDeliveryDate {
+        width: auto !important;
+    }
+
+    .DateRange;
+
+    .DateRange {
+        .title {
+            label {
+                margin-top: 0;
+            }
+        }
+
+        input[type=checkbox] {
+            margin-top: 0;
+        }
+
+        .DateFilterHolder {
+            width: 90%;
+
+            .k-numerictextbox input[type=text] {
+                width: 92% !important;
+            }
+
+            .innerBetweenHolder {
+                input[type=text] {
+                    width: 96.8%!important;
+                }
+            }
+
+            .k-datepicker {
+                width: 323px;
+            }
+        }
+    }
+}
+
+.FilterFormRTM {
+
+    ul.Buttons {
+        .pull-right;
+        width: 50%;
+        margin-top: -5px !important;
+
+        li {
+            list-style-type: none;
+            display: inline;
+            margin-right: 13px;
+        }
+        /*li:last-child {
+                .k-button {
+                    background-color: @CancelButtonBG;
+                    border-color: @CancelButtonBG;
+
+                    &:active, &:hover, &:focus {
+                        border-color: @CancelButtonBG !important;
+                        outline-color: @CancelButtonBG !important;
+                    }
+                }
+            }*/
+    }
+
+    
+}

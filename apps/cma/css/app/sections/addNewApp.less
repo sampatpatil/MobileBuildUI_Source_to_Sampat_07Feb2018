@@ -1,0 +1,1343 @@
+﻿@borderColor: #57b1c9;
+
+.AddNewApp {
+    // height: 100% !important;
+    // width: 100% !important;
+    // margin: 0 auto 0 auto !important;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // margin-left: 2% !important;
+
+    .FieldInput {
+        width: 556px !important;
+    }
+
+    .BackButtonContainer {
+        float: none !important;
+        padding: 5px 0 0 0;
+
+        .k-button {
+            padding-left: 0 !important;
+        }
+    }
+
+    .Invisible {
+        visibility: hidden;
+    }
+
+    .AltCheckbox {
+        display: inline-block;
+        height: 13px;
+        width: 13px;
+        border-radius: 10px;
+        background-color: white;
+        border: #b6b6b6 1px solid;
+        overflow: visible;
+        vertical-align: middle;
+
+        &.CheckedActive {
+            background-image: url(../../../resources/img/check-tick-icon-14141.png);
+            background-size: contain;
+        }
+    }
+
+    textarea.FieldInput {
+        height: 90px;
+    }
+
+    .k-button[disabled] {
+        border-color: #a9a9a9;
+        background-color: #dadada;
+
+        .k-toolbar-button-text {
+            color: #8e8c8c;
+        }
+
+        &:hover {
+            background-color: #dadada !important;
+            border-color: #a9a9a9 !important;
+        }
+    }
+
+
+
+    .MainHeaders {
+        position: absolute;
+        top: 14px;
+        font-size: 16px;
+        display: block;
+        left: 77px;
+        font-weight: bold;
+    }
+
+    .AddNewAppSteps {
+        width: 95%;
+        margin: 20px 0;
+        border: #57b1c9 1px solid;
+        border-radius: 3px;
+        float: left;
+        padding-bottom: 10px;
+        position: relative;
+        height: ~"calc(100% - 140px)";
+        overflow: hidden;
+        background-color: transparent;
+        box-shadow: darkgrey 0px 0px 5px;
+
+        .Headers {
+            font-size: 15px;
+            padding-bottom: 5px;
+            padding-top: 2px;
+            background-color: @borderColor;
+            color: white;
+            padding-left: 20px;
+            display: block;
+        }
+
+        .Buttons {
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+        }
+
+        .Description {
+            font-size: 14px;
+            margin-top: 10px;
+            display: block;
+            margin-left: 22px;
+            font-weight: bold;
+        }
+
+        .WizardContent {
+            height: ~"calc(100% - 73px)";
+            position: relative;
+            overflow: hidden !important;
+        }
+
+        .PlatformSelector {
+
+            .FieldContainer {
+                margin: 15px 0 10px 22px;
+                width: 230px;
+                cursor: pointer;
+
+                .PlatformIcon {
+                    vertical-align: middle;
+                }
+
+                .PlatformDetails {
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-left: 15px;
+
+                    .Platform {
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+
+                    .Version {
+                        font-size: 13px;
+                    }
+                }
+
+                .largeCheckbox {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+
+        .AuthenticationConfiguration {
+
+            .AuthenticationConfigurationForm {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                .AccountConfigurationFormContent {
+                    height: ~"calc(100% - 76px)";
+                }
+            }
+
+            .AccountsContainer {
+                margin-left: 20px;
+                margin-top: 5px;
+                padding-left: 4px;
+                height: 100px;
+
+                .Item {
+                    float: left;
+                    width: 25%;
+                    height: 110px;
+
+                    .default {
+                        float: right;
+                        margin: 0 16px 5px 0;
+                        background: white;
+                        padding: 2px 5px;
+                        border-radius: 6px;
+                        color: black;
+                        border:1px solid #57b1c9;
+
+                        &.SelectedRadio{
+                            background: #aae7ff;
+                        }
+                    }
+                }
+
+                .AccountItem {
+                    border: @borderColor 1px solid;
+                    display: inline-block;
+                    cursor: pointer;
+                    margin-right: 5px;
+                    padding: 7px;
+                    border-radius: 3px;
+                    position: relative;
+                    float: left;
+                    width: 86%;
+
+                    .SelectionCheck {
+                        position: absolute;
+                        height: 13px;
+                        width: 13px;
+                        background-image: url(../../../resources/img/check-tick-icon-14141.png);
+                        background-size: contain;
+                        left: 4px;
+                        top: 0;
+                    }
+
+                    .AccountIcon {
+                        background-image: url(../../../resources/img/sprites/authenticationIcons.png);
+                        display: inline-block;
+                        height: 55px;
+                        width: 55px;
+                        background-size: 77px;
+                        vertical-align: middle;
+
+                        &.SharePoint {
+                            background-position: -10px -8px;
+                        }
+
+                        &.SalesForce {
+                            background-position: -7px -196px;
+                        }
+
+                        &.Office {
+                            background-position: -7px -131px;
+                        }
+
+                        &.ActiveDirectory {
+                            background-position: -8px -262px;
+                        }
+
+                        &.AgilePiontNX {
+                            background-position: -8px -64px;
+                        }
+                    }
+
+                    .AccountName {
+                        font-size: 13px;
+                        font-weight: 600;
+                        vertical-align: bottom;
+                        line-height: 54px;
+                    }
+
+                    &.ActiveState {
+                        background-color: #aae7ff;
+                    }
+                }
+            }
+
+            .SectionName {
+                padding: 10px 0 0 22px;
+                font-weight: bold;
+                display: inline-block;
+            }
+
+            .AccountConfigurations {
+                position: relative;
+
+                .Field {
+                    margin: 10px 0 0 24px;
+                    width: 615px;
+                }
+            }
+        }
+
+        .ApplicationFilter {
+            min-height: 500PX;
+
+            .APForm.APWidget {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .form-row {
+                padding: 10px 0 10px 22px;
+
+                label {
+                    padding: 5px 0 0 20px;
+                    display: inline-block;
+                }
+
+                .check-box-yes-no;
+
+                fieldset {
+                    float: left;
+                }
+            }
+
+            .ImportControlField {
+                position: relative;
+                width: 85%;
+
+                .Title {
+                    margin: 5px 0 10px 22px;
+                    font-weight: 600;
+                    display: block;
+                }
+
+                .k-widget.k-upload {
+                    width: ~"calc(100% - 200px)";
+                    margin-left: 22px;
+                    display: inline-block;
+                }
+
+                > .ImportControlButtons {
+                    position: absolute;
+                    left: 450px;
+                    top: 0px;
+                }
+            }
+
+            .ApplicationFilterList {
+                margin: 8px 0 10px 50px;
+                position: relative;
+                width: 470px;
+                background-color: white;
+                box-shadow: #8e8c8c 0 0px 1px;
+                background-color: #e9e9e9;
+                /*.k-widget.k-listview {
+                    height: 265px;
+                    overflow: auto;
+                    border: none;
+                    background-color: white;
+                    margin: 5px 0 0 0;
+                }*/
+                .ApplicationFilterListContainer {
+                    height: 265px;
+                }
+
+                .ListItem {
+                    height: 25px;
+                    margin-top: 1px;
+                    width: 100%;
+                    background-color: #fff;
+                    box-shadow: 0 0 1px #c3c3c3;
+                    position: relative;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    cursor: default;
+                    padding: 10px 0;
+
+                    .ApplicationName {
+                        line-height: 25px;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+
+                    .AppTitle {
+                        display: inline-block;
+                        width: 350px;
+                        text-align: left;
+                        margin-left: 20px;
+                        color: #787878;
+                        font-size: 13px;
+                        line-height: 25px;
+                    }
+
+                    .CheckBoxContainer {
+                        width: 95px;
+                        display: inline-block;
+                        text-align: center;
+                    }
+                }
+
+                .ColumnHeaders {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 5px;
+                    font-weight: 600;
+
+                    tr {
+                        color: #787878;
+
+                        th {
+                            padding-top: 4px;
+                            padding-bottom: 7px;
+                        }
+
+                        > th:first-child {
+                            width: 95px;
+                        }
+
+                        .LeftAlign {
+                            text-align: left;
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
+
+            .ApplicationFilterControl {
+                margin: 20px;
+
+
+
+                .Field {
+                    margin-bottom: 10px;
+
+                    .k-textbox, .k-combobox {
+                        width: 300px;
+                    }
+
+                    .Title {
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            .Options {
+                padding: 5px 22px;
+
+                .Option {
+                    margin: 10px 0;
+                    display: block;
+
+                    input[type=radio] {
+                        vertical-align: middle;
+                    }
+
+                    .Title {
+                        font-weight: 600;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+
+        .AppMenu {
+            .APForm.APWidget {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .form-row {
+                padding: 10px 0 10px 22px;
+                display: flex;
+                position: relative;
+
+                label {
+                    float: left;
+                    font-size: 12px;
+                    width: 27%;
+                    display: inline-block;
+                }
+
+                .FieldInput {
+                    width: 350px !important;
+                    float: left;
+                    display: inline-block;
+                    margin-right: 30px;
+                }
+
+                .k-tooltip.k-tooltip-validation {
+                    left: 30%;
+                    top: 35px;
+                }
+
+                .check-box-yes-no;
+            }
+
+            .ColumnHeaders {
+                width: 100%;
+                margin: 10px 0 10px 22px;
+
+                .ColumnHeader {
+                    padding-left: 50px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .ApplicationThemes {
+
+            .APForm.APWidget {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                .ThemesContent {
+                    height: ~"calc(100% - 65px)";
+                }
+            }
+
+            .ThemesList {
+                margin: 0 auto;
+                width: 95%;
+
+                .ThemeItem {
+                    width: 21%;
+                    height: 312px;
+                    border: 1px solid #c0c1c1;
+                    display: inline-block;
+                    padding: 10px;
+                    float: left;
+                    margin: 10px 10px 10px 0;
+                    position: relative;
+
+                    .OrangeColor {
+                        background-color: orange;
+                    }
+
+                    .BlueColor {
+                        background-color: #15437e;
+                        float: left;
+                    }
+
+                    .GreenColor {
+                        background-color: #0d6b30;
+                    }
+
+                    .RedColor {
+                        background-color: #d84710;
+                    }
+
+                    .White {
+                        background-color: #fff;
+                    }
+
+                    .ThemeIcon {
+                        //background-color: orange;
+                        width: 40px;
+                        height: 100px;
+                        display: inline-block;
+                    }
+
+                    .ThemeIcon1 {
+                        background-color: #424140;
+                        width: 40px;
+                        height: 40px;
+                        display: inline-block;
+                        margin: 0 0 0 -4px;
+                    }
+
+                    .ThemeIcon2 {
+                        background-color: #424140;
+                        width: 40px;
+                        height: 40px;
+                        display: inline-block;
+                        float: left;
+                    }
+
+                    .ThemeName {
+                        display: inline-block;
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom:5px;
+                    }
+                }
+
+                .ThemeSelected {
+                    border: 1px solid #57b1c9;
+
+
+                    .tick-mark {
+                        display: block !important;
+                    }
+                }
+            }
+
+            .ThemePreview {
+                display: none;
+                float: right;
+                border: 1px solid #ddd;
+                width: 28%;
+                height: 325px;
+                margin-right: 25px;
+                text-align: center;
+
+                .PreviewImage {
+                    margin: 10px 0 0 68px;
+                }
+            }
+
+            .ThemeConfig {
+                .ColorConfig {
+                    /*margin: 10px 25px 0;*/
+                    padding-left: 17px;
+
+                    .ColorPreview {
+                        height: 20px;
+                        width: 20px;
+                        display: inline-block;
+                        float: left;
+                        border-radius: 30px;
+                        margin: 3px 8px;
+                    }
+
+                    .Text, .ColorCode {
+                        display: inline-block;
+                    }
+
+                    .Text {
+                        /*font-weight: bold;*/
+                    }
+
+                    .ColorCode {
+                    }
+                }
+            }
+        }
+
+        .ApplicationSettings {
+
+            .APForm.APWidget {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .ApplicationSettingsConatiner {
+                height: ~"calc(100% - 73px)";
+                position: relative;
+
+                .Field {
+                    margin: 10px 0 0 22px;
+                    width: 615px;
+
+                    .FieldDescription {
+                        display: block;
+                        color: grey;
+                        font-size: 12px;
+                    }
+
+                    textarea {
+                        resize: none;
+                    }
+
+                    .DefaultLocale {
+                        width: 568px;
+                    }
+                }
+            }
+        }
+
+        .UploadImages {
+            min-height: 476px;
+
+            .APForm.APWidget {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+
+                .UploaderFormContent {
+                    height: ~"calc(100% - 68px)";
+                }
+
+                .k-tabstrip-wrapper {
+                    height: ~"calc(100% - 25px)";
+                }
+            }
+
+            .ImageUploaderTabStrip {
+                height: 100%;
+
+                .k-tabstrip-items {
+                    border-bottom: #57b1c9 1px solid;
+
+                    .k-item {
+                        border-radius: 5px 5px 0 0;
+                        border-color: #57b1c9;
+                        background-color: #57b1c9;
+                        margin: 0 3px -1px 0;
+                        height: 25px;
+                        font-size: 14px;
+
+                        .k-link {
+                            color: white;
+                        }
+
+                        &.k-state-active {
+                            background-color: white;
+
+                            .k-link {
+                                color: #57b1c9;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .FormContainer {
+                margin: 0 auto 0;
+                width: ~"calc(100% - 10px)";
+                text-align: center;
+                border: none;
+                height: ~"calc(100% - 43px) !important";
+                overflow: hidden;
+
+                .ImageUploaders {
+                    float: left;
+                    width: 98%;
+                    margin: 20px 10px;
+
+                    .ImageUploader {
+                        text-align: center;
+                        display: inline-block;
+                        margin: 15px 15px 0 0;
+                        position: relative;
+                        width: 145px;
+                        padding: 10px 0;
+                        background-color: #efefef;
+                        border: solid 1px #57b1c9;
+                        border-radius: 3px;
+                        box-shadow: 0px 0px 5px 1px #57b1c9;
+                        float: left;
+                        height: 110px;
+
+
+
+                        .TitleText {
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+
+                        .k-widget.k-upload {
+                            background-color: transparent !important;
+                            border: none !important;
+
+                            .k-upload-files {
+                                display: none !important;
+                            }
+                        }
+
+                        .RemoveSelectedFile {
+                            position: absolute;
+                            display: block;
+                            background-image: url(../../../resources/img/sprites/sprites.png);
+                            height: 20px;
+                            width: 20px;
+                            top: 5px;
+                            right: 5px;
+                            background-position: -29px -338px;
+                            z-index: 2;
+                            cursor: pointer;
+                            background-size: 250px;
+                        }
+
+                        .ImagePreviewContainerInner {
+                            display: block;
+                            height: 65px;
+                            margin-top: 5px;
+                            line-height: 65px;
+
+                            .PreviewImage {
+                                /*width: 50px;*/
+                                /*max-height: 65px;*/
+                                min-width: 50px;
+                                max-height: 65px;
+                                max-width: 80px;
+
+                                &.WithBorder {
+                                    border: 2px solid;
+                                    border-color: #006aae;
+                                    background-color: #006aae;
+                                }
+                            }
+                        }
+                    }
+
+                    .ImagePreviewContainer {
+                        display: inline-block;
+                        float: left;
+
+                        .ImageSizeText {
+                            position: absolute;
+                            display: block;
+                            bottom: 20px;
+                            z-index: 0;
+                            font-size: 11px;
+                        }
+
+                        .ImagePreview {
+                            display: inline-block;
+                            min-height: 170px;
+                            min-width: 500px;
+
+                            .WindowsPreview, .AndroidPreview, .iOSPreview {
+                                display: inline-block;
+                                height: 155px;
+                                width: 160px;
+                                margin-left: 30px;
+                                background-image: url(../../../resources/img/sprites/preview.png);
+                            }
+
+                            .WindowsPreview {
+                                &.Portrait {
+                                    &.Icon {
+                                        background-position: -1096px -675px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -1096px -115px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1096px -493px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -1095px -294px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon {
+                                        background-position: -1258px -674px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -1259px -115px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1261px -492px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -1259px -294px;
+                                    }
+                                }
+                            }
+
+                            .AndroidPreview {
+                                &.Portrait {
+                                    &.Icon {
+                                        background-position: -134px -657px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -154px -97px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -137px -466px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -150px -268px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -119px -847px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon {
+                                        background-position: -350px -653px;
+                                    }
+
+                                    &.Background {
+                                        background-position: -371px -125px;
+                                    }
+
+                                    &.Logo {
+                                        background-position: -368px -463px;
+                                    }
+
+                                    &.SplashScreen {
+                                        background-position: -362px -263px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -336px -844px;
+                                    }
+                                }
+                            }
+
+                            .iOSPreview {
+                                &.Portrait {
+                                    &.Icon, &.Icon_iPad {
+                                        background-position: -1986px -692px;
+                                    }
+
+                                    &.Background {
+                                    }
+
+                                    &.Logo {
+                                        background-position: -1988px -468px;
+                                    }
+
+                                    &.SplashScreen, &.SplashScreen_iPad {
+                                        background-position: -1992px -264px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -1974px -899px;
+                                    }
+                                }
+
+                                &.Landscape {
+                                    &.Icon, &.Icon_iPad {
+                                        background-position: -2189px -685px;
+                                    }
+
+                                    &.Background {
+                                    }
+
+                                    &.Logo {
+                                        background-position: -2181px -469px;
+                                    }
+
+                                    &.SplashScreen, &.SplashScreen_iPad {
+                                        background-position: -2187px -264px;
+                                    }
+
+                                    &.StoreLogo {
+                                        background-position: -2165px -892px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .Info {
+                        float: left;
+                        clear: both;
+                        margin-top: -20px;
+                    }
+                }
+
+                &[data-for=Android] {
+                    .PreviewImage.WithBorder {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                        border: 0 !important;
+                    }
+
+                    .ImageUploaders {
+
+                        .Description {
+                            text-align: left;
+                        }
+
+                        .TitleText {
+                            display: block;
+                        }
+
+                        .ImageUploaderSection {
+                            display: inline-block;
+                            float: left;
+                            width: ~"calc(100% - 400px)";
+
+                            .ImageUploader {
+                                margin: 15px 15px 27px 0;
+                            }
+
+                            .Info {
+                                float: none;
+                                clear: both;
+                                margin-top: 10px;
+                            }
+                        }
+
+                        .ImagePreview {
+                            min-width: 340px;
+
+                            .AndroidPreview {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .StoreCertificate {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            .StoreCertificatesContainer {
+                height: ~"calc(100% - 75px)";
+                position: absolute;
+                width: 100%;
+                padding-bottom: 5px;
+
+                .form-row {
+                    padding: 10px 0 0px 22px;
+
+                    label {
+                        float: left;
+                        font-size: 12px;
+                        width: 27%;
+                        display: inline-block;
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+
+                    .FieldInput {
+                        width: 350px !important;
+                        float: left;
+                        display: inline-block;
+                        margin-right: 30px;
+                    }
+
+                    .check-box-yes-no;
+                }
+
+                .k-upload {
+                    margin-left: 15px;
+                    margin-top: 5px;
+                    width: 95%;
+                }
+
+                .Field {
+                    margin-left: 22px;
+                    margin-top: 10px;
+                }
+
+                .Note {
+                    margin: 20px 20px 20px 40px;
+                }
+
+                .StoreCertificateItem {
+                    background: white;
+                    box-shadow: 0px 0px 1px;
+                    width: 96%;
+                    padding: 1px 0 15px 0;
+
+                    .Key {
+                        font-size: 14px;
+                        display: inline-block;
+                        font-weight: 700;
+                        width: 130px;
+                    }
+
+                    .HelpIcon {
+                        margin-left: 5px;
+                        margin-right: 4px;
+                    }
+                }
+
+                .BuildTypeContainer {
+                    margin: 0 0 20px 20px;
+
+                    .Description {
+                        margin-left: 0;
+                    }
+
+                    .BuildOption {
+                        margin-top: 10px;
+                        display: inline-block;
+                        margin-left: 22px;
+
+                        .BuildOptionCheckBox {
+                            vertical-align: bottom;
+                        }
+
+                        .Title {
+                            font-size: 13px;
+                            font-weight: 700;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .IosCertificate {
+
+                    .ProvisioningProfile {
+                        margin-left: 15px;
+
+                        .Description {
+                            margin-left: 7px;
+                        }
+
+                        .k-upload {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .NotificationList {
+            .DistrubutionList {
+                .EmailList {
+                    margin: 4px 0 5px 22px;
+                    width: ~"calc(100% - 200px)";
+                    height: 140px;
+                    resize: none;
+                }
+
+                .ImportControlField {
+                    position: relative;
+
+                    .Title {
+                        margin: 5px 0 10px 22px;
+                        font-weight: 600;
+                        display: block;
+                    }
+
+                    .Description {
+                        margin: 5px 0 10px 22px;
+                    }
+
+                    .k-widget.k-upload {
+                        width: ~"calc(100% - 200px)";
+                        margin-left: 22px;
+                        display: inline-block;
+                    }
+
+                    > .ImportControlButtons {
+                        position: absolute;
+                        left: 450px;
+                        top: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .NavigationPanel {
+        display: inline-flex;
+        width: 95%;
+        /*border: #57b1c9 1px solid;*/
+        right: 5px;
+        margin: 15px 0 0 0;
+        border-radius: 3px;
+        /*justify-content: center;*/
+        /*float: left;*/
+        /*min-height: 454px;*/
+        /*background-color: #fff;*/
+        /*box-shadow: darkgrey 0px 0px 5px;*/
+
+        .WidgetContent{
+            width:100%;
+        }
+
+        .Header {
+            font-size: 15px;
+            text-align: center;
+            padding-bottom: 5px;
+            padding-top: 2px;
+            background-color: @borderColor;
+            color: white;
+        }
+
+        .StatusContainer {
+            /*margin: 20px 0 20px 32px;*/
+            cursor: default;
+            display:inline-flex;
+            flex-grow: 1;
+
+
+            .StatusIcon {
+                display: inline-block;
+                height: 35px;
+                width: 10px;
+                vertical-align: middle;
+                background-color: #808080;
+                
+
+                &.Incomplete {
+                }
+
+                &.Completed {
+                    background-color: #5ec0db !important;
+                }
+
+                &.ActiveStep {
+                    background-color: #68db5e !important;
+                }
+            }
+
+            .StatusFor {
+                /*margin-left: 16px;*/
+                font-size: 13px;
+                /*font-weight: 600;*/
+                padding:5px 10px;
+                margin:3px 5px;
+                background-color: #aaa;
+                text-align:center;
+                width:100%;
+                border:2px solid #aaa;
+                // border-top:2px solid white;
+                // border-bottom:2px solid white;
+                cursor: pointer;
+
+                &.Incomplete {
+                }
+
+                &.Completed {
+                    background-color: #57b1c9 !important;
+                    color:#000;
+                    border:2px solid #57b1c9;
+                }
+
+                &.ActiveStep {
+                    background-color: #60de55 !important;
+                    color:black;
+                    border:2px solid #60de55;
+                    font-weight:700;
+                }
+            }
+            
+
+            .StatusFor::after {
+	  			border-left: 16px solid #aaa;
+                position: absolute; top: 37.5px;
+				content: "";  
+                z-index: 1;
+                margin-left: 26px;
+                border-top: 16px solid transparent;
+	 			border-bottom: 16px solid transparent;
+			}
+			
+			.StatusFor::before {
+                border-left: 16px solid white;
+                margin-left: -26px;
+				content: "";  
+                position: absolute; top: 37.5px;
+                border-top: 16px solid transparent;
+	  			border-bottom: 16px solid transparent;
+            }
+            
+            .Completed::after {
+	  			border-left: 16px solid #57b1c9;
+            }
+            
+            .ActiveStep::after {
+	  			border-left: 16px solid #60de55;
+			}
+            
+            
+			// .ActiveStep:first-child::before {
+	  		// 	border-left: 16px solid #60de55;
+            // }
+
+            //     .ActiveStep::before {
+            //         border-left: 16px solid white !important;
+            //   }
+            
+            // .Completed::before {
+	  		// 	border-left: 16px solid white;
+            // }
+        }
+    }
+}
+
+
+.check-box-yes-no {
+
+    fieldset {
+        position: relative;
+        width: 77px;
+        height: 26px;
+        background: #e1e1e1;
+        padding: 0;
+
+        .input-switch {
+            position: absolute;
+            opacity: 0;
+            z-index: -10;
+        }
+
+        .switch-bg {
+            position: absolute;
+            z-index: 0;
+            width: 50%;
+            height: inherit;
+            left: 50%;
+            background: #7e7e7e;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .switch-labels {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            box-shadow: 0px 0px 1px dimgrey;
+
+            &:before, &:after {
+                position: absolute;
+                height: 40px;
+                width: 50%;
+                line-height: 25px;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                text-align: center;
+            }
+
+            &:before {
+                content: attr(data-on);
+                left: 0;
+            }
+
+            &:after {
+                content: attr(data-off);
+                right: 0;
+                color: #fff;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+
+    .input-switch:checked ~ .switch-bg {
+        left: 0%;
+        background: #006baf;
+    }
+
+    .input-switch:checked ~ .switch-labels:before {
+        color: #fff;
+    }
+
+    .input-switch:checked ~ .switch-labels:after {
+        color: black;
+    }
+}

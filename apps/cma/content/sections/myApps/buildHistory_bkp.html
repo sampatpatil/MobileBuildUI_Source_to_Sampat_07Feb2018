@@ -1,0 +1,44 @@
+﻿<div class="itemContainer">
+    #if(data.isHeader){#
+    <span class="Header Version">App Version</span>
+    <span class="Header Version">Build Version</span>
+    <span class="Header Actions">
+        <span class="IconHolder">
+        <span class="DownloadIcon UltraSmall AndroidIcon"></span>
+        </span>
+        <span class="IconHolder">
+            <span class="DownloadIcon UltraSmall AppleIcon"></span>
+        </span>
+        <span class="IconHolder">
+            <span class="DownloadIcon UltraSmall WindowsIcon"></span>
+        </span>
+    </span>
+    #}
+    else if(data.isEmpty){#
+    <span class="Header NoWidth">No build history found.</span>
+    #}
+    else if(data.BuildHistory && data.BuildHistory.length){#
+    <span class="AppVersion">#:data.AppVersion#</span>
+    <span class="BuildDetailsContainer">
+        #$.each(data.BuildHistory, function(idx, buildData){#
+        <span class="BuildDetails">
+            <span class="BuildVersion">#:buildData.Version#</span>
+            <span class="ActionButtons">
+                <span class="DownloadButtonContainer">
+                    <span class="DownloadButton #:buildData.BuildRequestId.Android?'':'Hide'# #:buildData.BuildRequestId.Android#" data-command="Download" data-build-request-id="#:buildData.BuildRequestId.Android#"></span>
+                    <span class="CMA-Icon EmailButtonIcon #:buildData.BuildRequestId.Android?'':'Hide'# #:buildData.BuildRequestId.Android#" data-command="ShareLink" data-platform="Android" data-build-request-id="#:buildData.BuildRequestId.Android#"></span>
+                </span>
+                <span class="DownloadButtonContainer">
+                    <span class="DownloadButton #:buildData.BuildRequestId.iOS?'':'Hide'# #:buildData.BuildRequestId.iOS#" data-command="Download" data-build-request-id="#:buildData.BuildRequestId.iOS#"></span>
+                    <span class="CMA-Icon EmailButtonIcon #:buildData.BuildRequestId.iOS?'':'Hide'# #:buildData.BuildRequestId.iOS#" data-command="ShareLink" data-platform="iOS" data-build-request-id="#:buildData.BuildRequestId.iOS#"></span>
+                </span>
+                <span class="DownloadButtonContainer">
+                    <span class="DownloadButton #:buildData.BuildRequestId.Windows?'':'Hide'# #:buildData.BuildRequestId.Windows#" data-command="Download" data-build-request-id="#:buildData.BuildRequestId.Windows#"></span>
+                    <span class="CMA-Icon EmailButtonIcon #:buildData.BuildRequestId.Windows?'':'Hide'# #:buildData.BuildRequestId.Windows#" data-command="ShareLink" data-platform="Windows" data-build-request-id="#:buildData.BuildRequestId.Windows#"></span>
+                </span>
+            </span>
+        </span>
+        #});
+        }#
+    </span>
+</div>

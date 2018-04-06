@@ -1,0 +1,67 @@
+﻿.AnnouncementList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+
+    .TitleHeader {
+        font-size: 1.75em;
+        /*margin-left: 10%;*/
+        text-transform:uppercase;
+    }
+
+    .AnnouncementListContainer {
+        border-radius: 5px;
+        background-color: #fff;
+        margin-top: 20px;
+        margin-bottom:20px;
+        height:~"calc(100% - 78px)";
+
+        .k-grid.k-widget {
+            background-color: #eaeaea;
+            box-shadow: 0px 0px 1px black;
+            margin: 0;
+            position: initial;
+            height:100%;
+
+            .k-grid-header {
+                padding-right: 0 !important;
+
+                .k-header {
+                    background-color: #57b1c9;
+                    border-color: #a6cdd8;
+
+                    .k-link {
+                        color: white;
+                    }
+                }
+            }
+
+            .k-grid-content {
+                margin: 0;
+                position: initial;
+
+                .k-alt:not(.k-state-selected) {
+                    background-color: #fff;
+                }
+
+                tbody tr {
+                    cursor: default;
+                }
+
+                td[role=gridcell]{
+                    white-space:nowrap;
+                    text-overflow: ellipsis;
+                    overflow-x:hidden;
+                }
+            }
+
+            .k-grid-pager.k-widget {
+                position: initial;
+                background-color: #eaeaea;
+            }
+        }
+    }
+}

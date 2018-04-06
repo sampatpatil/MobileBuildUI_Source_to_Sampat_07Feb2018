@@ -1,0 +1,56 @@
+﻿#
+var path='State.Query.CMAUserSettings.Data.ApplicationList',
+    field=data.AP.Config.loadQuery('CMAUserSettings').Data.ApplicationList;
+#
+
+<div class="WizardContent custom-scrollable">
+    <!--<div class="Description">Build mobile app for specific applications</div>-->
+    <!--<div class="form-row">
+        <label>Enable to view filter options</label>
+        <fieldset>
+            <input id="EnableApplicationFilter" type="checkbox" data-bind="checked:State.Query.#:data.QueryId#.Form.ApplicationFilter.isFilterEnabled" class="input-switch" data-config-key="" data-config-group="">
+            <label for="EnableApplicationFilter"></label>
+            <span class="switch-bg"></span><span data-on="Yes" data-off="No" class="switch-labels"></span>
+        </fieldset>
+    </div>-->
+
+    <div class="ImportControlField hide">
+        <span class="Title" style="display:inline-block">#=data.T('sections.settings.ApplicationList.title')#: </span>
+        <a href="http://www.agilepoint.com" target="_blank" title="Learn how to import NX Applications list"><span class="k-icon CMA-Icon HelpIcon"></span></a>
+        <input type="file"
+        name="ApplicationListImport" data-role="filereader"
+        placeholder="#= data.T('sections.settings.ApplicationList.placeholder') #"
+        accept="#=field.config.type#"
+        data-vm-path="#:path#"
+        data-bind="config:#=path#.config,content:#=path#.Content,events:{contentLoaded:#=path#.contentLoaded}"
+        title="#= data.T('sections.settings.ApplicationList.title') #" />
+    </div>
+
+    <div class="Options">
+        <label class="Option">
+            <input type="radio" name="AppFilter" value="no" data-bind="checked:State.Query.#:data.QueryId#.Form.ApplicationFilter.filterValue,events:{change:State.Query.#:data.QueryId#.Form.ApplicationFilter.toggleSelection},enabled:State.Query.#:data.QueryId#.Form.ApplicationFilter.dataSource.length" />
+            <span class="Title">Show all of my AgilePoint NX applications in the custom mobile app</span>
+        </label>
+        <label class="Option">
+            <input type="radio" name="AppFilter" value="yes" data-bind="checked:State.Query.#:data.QueryId#.Form.ApplicationFilter.filterValue,events:{change:State.Query.#:data.QueryId#.Form.ApplicationFilter.toggleSelection},enabled:State.Query.#:data.QueryId#.Form.ApplicationFilter.dataSource.length" />
+            <span class="Title">Show only the AgilePoint NX applications selected below</span>
+        </label>
+    </div>
+
+    <div class="Description">Select the AgilePoint NX applications to show in your mobile app</div>
+
+    <div class="ApplicationFilterList" style="display:inline-block">
+        <table class="ColumnHeaders"><tr><th>Show</th><th class="LeftAlign">NX Application</th></tr></table>
+        <div class="ApplicationFilterListContainer custom-scrollable" data-template="AppItemTemplate" data-bind="source:State.Query.#:data.QueryId#.Form.ApplicationFilter.dataSource"></div>
+    </div>
+    <div class="ImportControlButtons" style="position:static; display:inline-block; vertical-align:top; margin-top:7px;">
+            <!--<span class="k-button" data-action="ImportApplicationList">Import</span>-->
+            <span class="k-button" data-action="ClearApplicationList">Remove Filters</span>
+    </div>
+    <script id="AppItemTemplate" type="text/x-kendo-template">
+        <div class="ListItem">
+            <label><span class="CheckBoxContainer"><input type="checkbox" class="selectitem" data-bind="checked:isChecked,enabled:State.Query.#:data.QueryId#.Form.ApplicationFilter.isFilterEnabled,events:{click:State.Query.#:data.QueryId#.Form.ApplicationFilter.updateSelectedList}" /></span><span class="AppTitle" data-bind="text:Value"></span></label>
+        </div>
+    </script>
+</div>
+<div class="Buttons"></div>

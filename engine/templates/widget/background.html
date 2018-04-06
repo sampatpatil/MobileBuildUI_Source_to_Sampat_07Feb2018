@@ -1,0 +1,20 @@
+#
+		var Block = data.AP.Model.getBlock(data.BlockId),
+			Images = Block.Widget.Config.Images,
+			ImageIndex = Images.length == 1 ? 0 : Math.round(Math.random() * Images.length - 1),
+			ImagePathKey = Block.Widget.Config.Images[ImageIndex],
+			ImagePathKeyEncoded = data.AP.Utils.encodeParam(ImagePathKey),
+			Repeat = Block.Widget.Config.Repeat,css='';
+var cfg = Block.get('Widget.Config');
+css = cfg? cfg.Class :'';
+		if(Repeat) { // Background image
+	#
+		<div id="#=data.BlockId#" class="#= Repeat #"
+            data-bind="style: { backgroundImage: translateStyleImagePath('#= ImagePathKeyEncoded #') }" />
+#		
+		} else { // Image tag
+	#
+		<img id="#=data.BlockId#" class="#=css||''#" data-bind="attr: { src: translateImagePath('#= ImagePathKeyEncoded #') }" />
+#
+		}
+	#

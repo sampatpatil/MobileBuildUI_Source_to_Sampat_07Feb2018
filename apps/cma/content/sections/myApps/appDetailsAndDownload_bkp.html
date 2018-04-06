@@ -1,0 +1,382 @@
+﻿#
+var AP=data.AP,
+    vm=AP.Config.loadQuery(data.QueryId).Form,
+    controls=vm.parent().get('Controls'),
+    translate=data.T,
+    appDetailsTitle=translate('sections.appDetails.title'),
+    appName=translate('sections.appDetails.appName'),
+    description=translate('sections.appDetails.description'),
+    thankingText=translate('sections.addNewApp.thankingText'),
+    downloadHeader=translate('sections.addNewApp.downloadTitle'),
+    companyName=translate('sections.appDetails.companyName'),
+    companyWebsite=translate('sections.appDetails.companyWebsite'),
+    downloadText=translate('form:Download.label'),
+    androidTitle=translate('form:Android.label'),
+    appleTitle=translate('form:Apple.label'),
+    windowsTitle=translate('form:Windows.label'),
+    path='State.Query.CMAUserSettings.Data.EmailList',
+    field=data.AP.Config.loadQuery('CMAUserSettings').Data.EmailList;
+
+    if(!vm.ApplicationSettings.Name){
+        AP.Controller.route('go/sections/myApps');
+        return '';
+    }
+#
+
+
+<div class="AppDetailsContainer">
+    <span class="Header">#:appDetailsTitle#</span>
+    <div class="AppDetailsContent custom-scrollable">
+        <!--<div class="AppIconHolder AppIconDisplayPosition">
+            <img class="AppIcon" src="#:vm.Icon#" />
+        </div>-->
+
+        <div class="MetaData">
+            <!-- <span class="ItemKey">#:appName#:</span> -->
+            <span class="ItemValue AppName">#:vm.ApplicationSettings.Name#</span>
+            <!--<span class="k-icon CMA-Icon Delete" data-action="MoveToTrash" title="Move to Archive"></span>-->
+            <!-- <span class="k-button TrashButton" title="Move to Archive" data-action="MoveToTrash">Move To Archive</span> -->
+        </div>
+        <div class="MetaData">
+            <!-- <span class="ItemKey">#:companyName#:</span> -->
+            <span class="ItemValue CompanyName">by #:vm.ApplicationSettings.CompanyName#</span>
+            <span class="k-icon CMA-Icon InfoIcon HoveredItem FromLeft" style="vertical-align:sub; ">
+                <span class="ItemDescription">
+                    <div class="">
+                        <span class="ItemKey">Website</span>
+                        <span class="ItemValue">#:vm.ApplicationSettings.CompanyWebsite#</span>
+                    </div>
+                    <div class="">
+                        <span class="ItemKey">Support Email:</span>
+                        <span class="ItemValue">#:vm.ApplicationSettings.CompanySupportEmail#</span>
+                    </div>
+                    <div class="">
+                        <span class="ItemKey">Info Email:</span>
+                        <span class="ItemValue">#:vm.ApplicationSettings.CompanyInfoEmail#</span>
+                    </div>
+                    <div class="">
+                        <span class="ItemKey">Copyright:</span>
+                        <span class="ItemValue">#:vm.ApplicationSettings.CopyrightInfo#</span>
+                    </div>
+                </span>
+            </span>
+        </div>
+        <div class="MetaData" style="margin-top:15px; margin-bottom:15px; max-width:500px;">
+            <span class="ItemKey">Version:</span>
+            <span class="ItemValue">#:vm.ApplicationSettings.AppVersion#</span>
+            <span class="ItemKey">|</span>
+            <span class="ItemKey">Locale:</span>
+            <span class="ItemValue">#:data.AP.Utils.fetchFullLocales(vm.ApplicationSettings.DefaultLocale)#</span>
+            <span class="ItemKey">|</span>
+            <span class="ItemKey">Status:</span>
+            <span class="ItemValue">#:vm.ApplicationSettings.AppStatus#</span>
+            <div style="float:right; width:150px; display:flex; text-align:center;">
+                <span style="width:33.33%; cursor:pointer;" data-action="OpenEditForm">Edit</span>
+                <span style="width:33.33%; cursor:pointer;" data-action="MoveToTrash">Archive</span>
+                <span style="width:33.33%; cursor:pointer;" data-action="OpenRequestBuildWindow">Build</span>
+            </div>
+        </div>
+        <div class="MetaData">
+            <span class="ItemKey">#:description#:</span><br/>
+            <span class="ItemValue MultiLine">#:vm.ApplicationSettings.Description#</span>
+        </div>
+        
+        
+        <!-- <div class="AuthenticationDetails">
+            <span class="SubHeader">Authentication Details:</span>
+            <div class="ServerDetails ServerInstanceUrl">
+                <span class="SubHeader1">Server Instance Url:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.ServerConfiguration.ProductionServerInstanceUrl#</span>
+                <!--<span class="SubHeader1">Server Instance Url:</span>
+                <div class="Item"><span class="ItemKey">Development:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.ServerConfiguration.DevelopmentServerInstanceUrl#</span></div>
+                <div class="Item"><span class="ItemKey">Staging:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.ServerConfiguration.StagingServerInstanceUrl#</span></div>
+                <div class="Item"><span class="ItemKey">Production:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.ServerConfiguration.ProductionServerInstanceUrl#</span></div>--/>
+            </div>
+
+            #if(vm.AuthenticationConfiguration.ActiveDirectoryConfiguration.isSelected){#
+            <div class="ServerDetails">
+                <span class="SubHeader1">Active Directory Configuration:</span>
+                <div class="Item"><span class="ItemKey">Domain:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.ActiveDirectoryConfiguration.Domain#</span></div>
+            </div>
+            #}#
+
+            #if(vm.AuthenticationConfiguration.OfficeConfiguration.isSelected){#
+            <div class="ServerDetails">
+                <span class="SubHeader1">WAAD/Office 365 Configuration:</span>
+                <div class="Item"><span class="ItemKey">Client Id:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.OfficeConfiguration.ClientId#</span></div>
+                <div class="Item"><span class="ItemKey">Return URL:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.OfficeConfiguration.ReturnURL#</span></div>
+                <div class="Item"><span class="ItemKey">Resource:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.OfficeConfiguration.Resource#</span></div>
+            </div>
+            #}#
+
+            #if(vm.AuthenticationConfiguration.SalesforceConfiguration.isSelected){#
+            <div class="ServerDetails">
+                <span class="SubHeader1">Salesforce Configuration:</span>
+                <div class="Item"><span class="ItemKey">Consumer Key:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.SalesforceConfiguration.ConsumerKey#</span></div>
+                <div class="Item"><span class="ItemKey">Consumer Secret:</span><span class="ItemValue">#:vm.AuthenticationConfiguration.SalesforceConfiguration.ConsumerSecret#</span></div>
+            </div>
+            #}#
+
+        </div> -->
+
+        #if(vm.ApplicationFilter.isFilterEnabled()){#
+        <div class="EnabledApplications MetaData">
+            <span class="ItemKey">Application Filters:</span>
+            <span class="ItemValue">#:vm.ApplicationFilter.SelectedApps.join(', ')#</span>
+        </div>
+        #};#
+
+        <div class="AppMenu MetaData">
+            <span class="ItemKey">Features:</span>
+            <span class="ItemValue">#:_.pluck(_.where(vm.AppMenu.Options,{isEnabled:true})||[],'Value').join(', ')#</span>
+        </div>
+
+        <div class="AppIconConfiguration">
+            <span class="SubHeader">Theme:</span>
+            <div class="ThemeDetails">
+                <!-- <span class="SubHeader">Theme:</span> -->
+            <table class="ColorConfig">
+                <tr>
+                    <td><span class="Text">Background Color:</span></td>
+                    <td><span class="ColorPreviewSmall" style="background-color:#:vm.ApplicationThemes.backgroundColorCode#"></span></td>
+                    <!-- <td><span class="ColorCode">#:vm.ApplicationThemes.backgroundColorCode#</span></td> -->
+                    <td><span class="Text">Menu Color:</span></td>
+                    <td><span class="ColorPreviewSmall" style="background-color:#:vm.ApplicationThemes.menuColorCode#"></span></td>
+                    <!-- <td><span class="ColorCode">#:vm.ApplicationThemes.menuColorCode#</span></td> -->
+                    <td><span class="Text">Button Color:</span></td>
+                    <td><span class="ColorPreviewSmall" style="background-color:#:vm.ApplicationThemes.backgroundColorCode#"></span></td>
+                    <!-- <td><span class="ColorCode">#:vm.ApplicationThemes.buttonColorCode#</span></td> -->
+                </tr>
+            </table>
+            </div>
+        </div>
+            #if(vm.PlatformSelector.CreateAndroidApp && false){# //remove &&false to display this section
+            <div class="AppIconsDetails">
+                <span class="SubHeader1">Android Icons:</span>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Android.HDPI.Icon.Content#" />
+                    <span class="IconTitle">#:translate('form:Icon.label')#</span>
+                </div>
+                <div class="AppIconDetail">
+                    <img class="AppIcon WithBorder" src="#:vm.UploadImages.Android.HDPI.Logo.Content#" />
+                    <span class="IconTitle">#:translate('form:Logo.label')#</span>
+                </div>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Android.HDPI.Background.Content#" />
+                    <span class="IconTitle">#:translate('form:Background.label')#</span>
+                </div>
+                <!--<div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Android.HDPI.StoreLogo.Content#" />
+                    <span class="IconTitle">#:translate('form:StoreLogo.label')#</span>
+                </div>-->
+            </div>
+            #}#
+
+            #if(vm.PlatformSelector.CreateWindowsPhoneApp && false){# //remove &&false to display this section
+            <div class="AppIconsDetails">
+                <span class="SubHeader1">Windows Phone Icons:</span>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Windows.Icon.Content#" />
+                    <span class="IconTitle">#:translate('form:Icon.label')#</span>
+                </div>
+                <div class="AppIconDetail">
+                    <img class="AppIcon WithBorder" src="#:vm.UploadImages.Windows.Logo.Content#" />
+                    <span class="IconTitle">#:translate('form:Logo.label')#</span>
+                </div>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Windows.SplashScreen.Content#" />
+                    <span class="IconTitle">#:translate('form:SplashScreen.label')#</span>
+                </div>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.Windows.Background.Content#" />
+                    <span class="IconTitle">#:translate('form:Background.label')#</span>
+                </div>
+            </div>
+            #}#
+
+            #if(vm.PlatformSelector.CreateiPhoneAndiPadApp && false){# //remove &&false to display this section
+            <div class="AppIconsDetails">
+                <span class="SubHeader1">iOS Icons:</span>
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.iOS.Icon.Content#" />
+                    <span class="IconTitle">#:translate('form:Icon.label')#</span>
+                </div>
+                <!--<div class="AppIconDetail">
+                    <img class="AppIcon WithBorder" src="#:vm.UploadImages.iOS.Logo.Content#" />
+                    <span class="IconTitle">#:translate('form:Logo.label')#</span>
+                </div>-->
+                <div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.iOS.SplashScreen.Content#" />
+                    <span class="IconTitle">#:translate('form:SplashScreen.label')#</span>
+                </div>
+                <!--<div class="AppIconDetail">
+                    <img class="AppIcon" src="#:vm.UploadImages.iOS.StoreLogo.Content#" />
+                    <span class="IconTitle">#:translate('form:StoreLogo.label')#</span>
+                </div>-->
+            </div>
+            #}#
+            
+            <!-- PREVIEWS -->
+            <div class="AppIconConfiguration">
+            <span class="SubHeader" style="margin-bottom:10px;">Preview:</span>
+            #if(vm.PlatformSelector.CreateAndroidApp){#
+                <div class="ImagePreviewContainer">
+                    <div class="PlatformName">Android:</div>
+                    <div class="ImagePreview">
+                        <span class="AndroidPreview Portrait Logo">
+                        </span>
+                        <!-- <span class="AndroidPreview Landscape Logo">
+                        </span> -->
+                    </div>
+                    <div class="ImagePreview">
+                        <span class="AndroidPreview Portrait SplashScreen">
+                        </span>
+                        <!-- <span class="AndroidPreview Landscape SplashScreen">
+                        </span> -->
+                    </div>
+                    <div class="ImagePreview">
+                        <span class="AndroidPreview Portrait StoreLogo">
+                        </span>
+                        <!-- <span class="AndroidPreview Landscape StoreLogo">
+                        </span> -->
+                    </div>
+                </div>
+                #}#
+        
+                #if(vm.PlatformSelector.CreateiPhoneAndiPadApp){#
+                    <div class="ImagePreviewContainer">
+                        <div class="PlatformName">iOS:</div>
+                        <div class="ImagePreview">
+                            <span class="iOSPreview Portrait Icon">
+                            </span>
+                            <!-- <span class="iOSPreview Landscape Logo">
+                            </span> -->
+                        </div>
+                        <div class="ImagePreview">
+                            <span class="iOSPreview Portrait SplashScreen">
+                            </span>
+                            <!-- <span class="iOSPreview Landscape SplashScreen">
+                            </span> -->
+                        </div>
+                    </div>
+                    #}#
+        
+        
+                #if(vm.PlatformSelector.CreateWindowsPhoneApp){#
+                <div class="ImagePreviewContainer">
+                    <div class="PlatformName">Windows:</div>
+                    <div class="ImagePreview">
+                        <span class="WindowsPreview Portrait Logo">
+                        </span>
+                        <!-- <span class="WindowsPreview Landscape Logo">
+                        </span> -->
+                    </div>
+                    <div class="ImagePreview">
+                        <span class="WindowsPreview Portrait Icon">
+                        </span>
+                        <!-- <span class="WindowsPreview Landscape Icon">
+                        </span> -->
+                    </div>
+                    <div class="ImagePreview">
+                            <span class="WindowsPreview Portrait Background">
+                            </span>
+                            <!-- <span class="WindowsPreview Landscape Background">
+                            </span> -->
+                        </div>
+                    <div class="ImagePreview">
+                        <span class="WindowsPreview Portrait SplashScreen">
+                        </span>
+                        <!-- <span class="WindowsPreview Landscape SplashScreen">
+                        </span> -->
+                    </div>
+                </div>
+                #}#
+
+        </div>
+
+        
+        <!-- <div class="PlatformDetails">
+            <span class="SubHeader">Platform Selected:</span>
+            <div class="Item"><span class="ItemKey">Android:</span><span class="ItemValue">#:vm.PlatformSelector.CreateAndroidApp?'Yes':'No'#</span></div>
+            <div class="Item"><span class="ItemKey">Windows Phone:</span><span class="ItemValue">#:vm.PlatformSelector.CreateWindowsPhoneApp?'Yes':'No'#</span></div>
+            <div class="Item"><span class="ItemKey">iOS:</span><span class="ItemValue">#:vm.PlatformSelector.CreateiPhoneAndiPadApp?'Yes':'No'#</span></div>
+        </div> -->
+
+    </div>
+    <!-- <div class="Buttons">
+        <span class="k-button" data-action="OpenEditForm">Edit</span>
+    </div> -->
+</div>
+<div class="DownloadContainer">
+    <div class="Header">#:downloadHeader#<span class="k-icon CMA-Icon Refresh" title="Refresh Build Status" data-action="refreshBuildStatus"></span></div>
+    <!--<div class="Header" data-bind="invisible:State.Query.CMAAddOrEditApp.Controls.isBuildRequestExists">Request for build</div>-->
+    <!--<div class="AwaitingUpload" data-bind="invisible:State.Query.CMAAddOrEditApp.Controls.isBuildRequestExists">
+        <span class="ThankingText">There is no build request in queue. Click below to request for a build.</span>
+    </div>-->
+    <div class="DownloadLinks">
+        <div class="DownloadItem" data-bind="css:{Enabled:State.Query.CMAAddOrEditApp.Form.PlatformSelector.CreateAndroidApp}">
+            <span class="DownloadIcon Large AndroidIcon"></span>
+            <span class="TextContent">
+                <span class="PlatformTitle">#:androidTitle#</span>
+                <span class="DownloadLink Status" data-bind="text:State.Query.CMAAddOrEditApp.Controls.Build.Android.status"></span>
+            </span>
+            <span class="CMA-Icon DownloadButtonIcon" data-action="openDownloadUrl" data-platform="Android" data-extension="apk" data-bind="dataAttr:{download-url:State.Query.CMAAddOrEditApp.Controls.Build.Android.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.Android.isDownloadAvailable"></span>
+            <span class="CMA-Icon EmailButtonIcon" data-action="OpenEmailPopup" data-platform="Android" data-bind="dataAttr:{build-request-id:State.Query.CMAAddOrEditApp.Controls.Build.Android.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.Android.isDownloadAvailable"></span>
+        </div>
+        <div class="DownloadItem" data-bind="css:{Enabled:State.Query.CMAAddOrEditApp.Form.PlatformSelector.CreateiPhoneAndiPadApp}">
+            <span class="DownloadIcon Large AppleIcon"></span>
+            <span class="TextContent">
+                <span class="PlatformTitle">#:appleTitle#</span>
+                <span class="DownloadLink Status" data-bind="text:State.Query.CMAAddOrEditApp.Controls.Build.iOS.status"></span>
+            </span>
+            <span class="CMA-Icon DownloadButtonIcon" data-action="openDownloadUrl" data-platform="iOS" data-extension="iap" data-bind="dataAttr:{download-url:State.Query.CMAAddOrEditApp.Controls.Build.iOS.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.iOS.isDownloadAvailable"></span>
+            <span class="CMA-Icon EmailButtonIcon" data-action="OpenEmailPopup" data-platform="iOS" data-bind="dataAttr:{build-request-id:State.Query.CMAAddOrEditApp.Controls.Build.iOS.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.iOS.isDownloadAvailable"></span>
+        </div>
+        <div class="DownloadItem" data-bind="css:{Enabled:State.Query.CMAAddOrEditApp.Form.PlatformSelector.CreateWindowsPhoneApp}">
+            <span class="DownloadIcon Large WindowsIcon"></span>
+            <span class="TextContent">
+                <span class="PlatformTitle">#:windowsTitle#</span>
+                <span class="DownloadLink Status" data-bind="text:State.Query.CMAAddOrEditApp.Controls.Build.Windows.status"></span>
+            </span>
+            <span class="CMA-Icon DownloadButtonIcon" data-action="openDownloadUrl" data-platform="Windows" data-extension="appx" data-bind="dataAttr:{download-url:State.Query.CMAAddOrEditApp.Controls.Build.Windows.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.Windows.isDownloadAvailable"></span>
+            <span class="CMA-Icon EmailButtonIcon" data-action="OpenEmailPopup" data-platform="Windows" data-bind="dataAttr:{build-request-id:State.Query.CMAAddOrEditApp.Controls.Build.Windows.buildRequestId}, visible:State.Query.CMAAddOrEditApp.Controls.Build.Windows.isDownloadAvailable"></span>
+        </div>
+    </div>
+    <div class="Buttons">
+        <span class="k-button" data-action="OpenRequestBuildWindow">Request Build</span>
+        <span class="k-button" data-action="ViewBuildHistory">View Build History</span>
+    </div>
+    <div class="k-separator"></div>
+    <div class="DistrubutionList">
+        <div class="TextContentTitle">Build Notification List</div>
+        <!--<input type="text" class="FieldInput custom-scrollable" data-role="multicombolist" data-value-field="Value" data-text-field="Value" />-->
+
+        <textarea class="k-textbox EmailList" disabled="disabled" placeholder="Enter email in CSV(Comma Separated Values) format" data-bind="value:State.Query.CMAUserSettings.Data.EmailList.value" />
+
+        <!--<div class="form-row">
+            <label>Auto Deploy</label>
+            <fieldset>
+                <input id="switch3" type="checkbox" class="input-switch" data-config-key="" data-config-group="">
+                <label for="switch3"></label>
+                <span class="switch-bg"></span><span data-on="Yes" data-off="No" class="switch-labels"></span>
+            </fieldset>
+        </div>-->
+        <!--<div class="k-button sendemail" data-action="saveDistributionList">Save Notification List</div>-->
+        <!--<div class="k-separator"></div>-->
+        <!--<div class="ImportControlField">
+            <span class="Title">#:data.T('sections.settings.EmailList.title')#</span>
+            <input type="file"
+                   name="EmailListImport" data-role="filereader"
+                   placeholder="#: data.T('sections.settings.EmailList.placeholder') #"
+                   accept="#:field.config.type#"
+                   data-vm-path="#:path#"
+                   data-bind="config:#:path#.config,content:#:path#.Content, events:{contentLoaded:#:path#.contentLoaded}"
+                   title="#: data.T('sections.settings.EmailList.title') #" />
+
+            <div class="Buttons">
+                <span class="k-button" data-action="SelectFileForImportEmailList">Import List</span>
+                <span class="k-button" data-action="ClearEmailList">Clear List</span>
+            </div>
+        </div>-->
+    </div>
+    <!--<div class="k-separator"></div>-->
+</div>

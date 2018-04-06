@@ -1,0 +1,96 @@
+﻿.xmltree {
+    //font-size: 15px;
+    ul {
+        display: none;
+        margin: 0;
+        padding: 10px 0 0 0;
+        border: none;
+        margin-left: 15px;
+        border-left: solid 1px #d86;
+
+        &, .xmltree.xmltree li {
+            list-style: none;
+        }
+    }
+
+    &.startExpanded ul {
+        display: block;
+    }
+
+
+    li {
+        padding: 0 0 0 12px;
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+        border: none;
+    }
+
+    .attr {
+        margin: -3px 0 7px 0;
+    }
+
+    a:hover {
+        color: #d00;
+    }
+
+    .LIText, .xmltree .noKids .LIText:hover, .xmltree .currSel li .LIText {
+        color: #333;
+    }
+
+    .tree_node {
+        margin-right: 8px;
+        background: #d86;
+        padding: 4px;
+        color: #f4f4f4;
+    }
+
+    .attr span {
+        color: #373;
+    }
+
+    .attrValue {
+        margin-left: 8px;
+    }
+
+    .tree_node, .xmltree .attr span, .xmltree .LIText {
+        display: inline !important;
+    }
+
+    &.hideAttrs .attr, .xmltree.hideNodeNames .tree_node {
+        display: none !important;
+    }
+
+    .currSel .LIText {
+        color: #d00;
+        text-decoration: none !important;
+    }
+
+    .plusMin {
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        top: 2px;
+        left: -7px;
+        background: #fec;
+        border: solid 1px #d86;
+        color: #d55;
+        text-align: center;
+        font-size: 12px;
+        line-height: 12px;
+        cursor: pointer;
+    }
+
+        .plusMin:hover {
+            border-color: #fa8;
+            background: #fff7da;
+        }
+
+    .noKids .plusMin {
+        display: none;
+    }
+
+    &.subTreeRequestsOnAllNodes .plusMin, .xmltree .subTreeNode .plusMin {
+        display: block;
+    }
+}

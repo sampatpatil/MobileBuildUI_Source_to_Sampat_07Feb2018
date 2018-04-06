@@ -1,0 +1,57 @@
+﻿#
+var platformSelectorTitle=data.T('sections.addNewApp.platformSelector.title'),
+    authenticationConfigurationTitle=data.T('sections.addNewApp.authenticationConfiguration.title'),
+    applicationSettingsTitle=data.T('sections.addNewApp.applicationSettings.title'),
+    uploadImagesTitle=data.T('sections.addNewApp.uploadImages.title'),
+    navigationPanelTitle=data.T('sections.addNewApp.navigationPanel.title'),
+    baseQuery='State.Query.'+data.QueryId+'.Form';
+#
+
+ <!-- <div class="Header">#:navigationPanelTitle#</div> -->
+ <div style="font-size:1.2em; font-weight:700;">Section Menu:</div>
+<div style="display:flex;">
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.ApplicationSettings.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationSettings.isComplete,ActiveStep:#=baseQuery#.ApplicationSettings.isActive}">#:applicationSettingsTitle#</span>
+</div>
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.AuthenticationConfiguration.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.AuthenticationConfiguration.isComplete,ActiveStep:#=baseQuery#.AuthenticationConfiguration.isActive}">#:authenticationConfigurationTitle#</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.ApplicationFilter.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationFilter.isComplete,ActiveStep:#=baseQuery#.ApplicationFilter.isActive}">Application Filters</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.AppMenu.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.AppMenu.isComplete,ActiveStep:#=baseQuery#.AppMenu.isActive}">Menu Options</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.ApplicationThemes.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.ApplicationThemes.isComplete,ActiveStep:#=baseQuery#.ApplicationThemes.isActive}">Theme</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.PlatformSelector.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.PlatformSelector.isComplete,ActiveStep:#=baseQuery#.PlatformSelector.isActive}">#:platformSelectorTitle#</span>
+</div>
+
+<div class="StatusContainer" data-bind="visible:#=baseQuery#.NavigationPanel.isCertificateRequired">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.StoreCertificate.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.StoreCertificate.isComplete,ActiveStep:#=baseQuery#.StoreCertificate.isActive}">Platform Settings</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.UploadImages.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.UploadImages.isComplete,ActiveStep:#=baseQuery#.UploadImages.isActive}">#:uploadImagesTitle#</span>
+</div>
+
+<div class="StatusContainer">
+    <!-- <span class="StatusIcon" data-bind="css:{Completed:#=baseQuery#.NotificationList.isComplete}"></span> -->
+    <span class="StatusFor" data-bind="css:{Completed:#=baseQuery#.NotificationList.isComplete,ActiveStep:#=baseQuery#.NotificationList.isActive}">Build App</span>
+</div>
+<!-- <div class="cmaicons cmaicons-BuildApp2 cmaicons-3x"></div> -->
+</div>

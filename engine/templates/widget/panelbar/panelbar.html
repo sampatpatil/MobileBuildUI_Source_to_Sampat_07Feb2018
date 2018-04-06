@@ -1,0 +1,18 @@
+﻿#var results = data.results,cfg = data.config,displayMember = cfg.displayMember,menuGroups = _.groupBy(results,cfg.grouping.key);
+    _.each(menuGroups,function(items,key){#
+    <li>#=data.AP.View.Templates.renderTemplate('widget/panelbar/panelbaritem', key)#
+        #if(items.length > 0){#
+        <ul>
+            #_.each(items,function(item){
+             var display = item[displayMember];
+            if(display){#            
+             <li data-id="#=item[cfg.idField]#">#=data.AP.View.Templates.renderTemplate('widget/panelbar/panelbaritem',{config:cfg,item:item})#</li>
+            #}#        
+        #})#
+        </ul>
+        #}#
+    </li>
+#})#
+    
+
+

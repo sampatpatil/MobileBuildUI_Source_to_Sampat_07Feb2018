@@ -1,0 +1,10 @@
+
+		
+	<div class="WidgetToolBar">		
+	#
+		for(var ButtonIndex =0; ButtonIndex < data.Buttons.length; ButtonIndex++) {
+			var ButtonData = $.extend({ AP: data.AP }, data.Buttons[ButtonIndex]);
+	#
+	#= data.AP.View.Templates.renderTemplate('widget/toolbar/widgettoolbarbutton', ButtonData) #
+	# } #
+	</div>

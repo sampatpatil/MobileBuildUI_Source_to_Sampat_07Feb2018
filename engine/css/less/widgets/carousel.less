@@ -1,0 +1,59 @@
+﻿.CarouselItem {
+    height: 24em;
+    width: 95%;   
+
+    .show-when-maximized, .show-when-active {
+        display: none;
+    }
+
+    .appears {
+        &.when {
+            &.not {
+                display: block;
+                .pull-left;
+                padding-left: 5px;
+            }
+
+            display: none;
+        }
+    }
+
+
+    &.active-item {
+        .settransition(0.5s);
+
+        .when {
+            &.active {
+                &.appears {
+                    &.not {
+                        display: none;
+                    }
+
+                    display: block;
+                    .pull-left;
+                }
+            }
+        }
+
+        &.maximized {
+            width: 99%;
+            //margin-top: 0 !important;
+            height: 28em !important;
+            //top: 0 !important;
+            left: 1px !important;
+            right: 1px;
+
+            .when {
+                &.maximized {
+                    &.appears {
+                        &.not {
+                            display: none;
+                        }
+
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
